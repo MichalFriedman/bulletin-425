@@ -27,7 +27,15 @@ Verification is manual, in a browser: both languages at widths 320, 390, 430, 76
 ## Layout and deployment
 
 - `bulletin-425.html`, `bulletin-mobile.css`, `bulletin-mobile.js`, `assets/` — the source edition. Opening the HTML directly works; the three files and `assets/` must travel together.
-- `out/` — the published site, and the only thing hosting serves (`.openai/hosting.json` sets `static.directory: out`). It is a byte-identical mirror of the source files, plus `out/index.html` (a copy of `bulletin-425.html`) and `out/Bulletin425.pdf`. **Any source edit is only live once mirrored into `out/`.**
+- `out/` — the published site, and the only thing hosting serves. It is a byte-identical mirror of the source files, plus `out/index.html` (a copy of `bulletin-425.html`) and `out/Bulletin425.pdf`. **Any source edit is only live once mirrored into `out/`.**
+
+### Deployment
+
+Live at **https://michalfriedman.github.io/bulletin-425/**, from the `site-publish` branch (the repo's default) via `.github/workflows/pages.yml`, which uploads `out/` as the Pages artifact. Pages cannot serve an arbitrary subdirectory from a branch, which is why this goes through Actions rather than a branch/folder source.
+
+To publish a change: mirror source into `out/` (see Commands), commit, and `git push origin site-publish` — the workflow redeploys on every push to that branch, and `gh run watch` follows it. All asset paths in the HTML and CSS are relative, which is what lets the site work under the `/bulletin-425/` project-page subpath; keep it that way — a single root-absolute `/assets/…` would break every image.
+
+`.openai/hosting.json` (`static.directory: out`) points at an earlier OpenAI static-hosting project (`appgprj_6aa27…`) that predates the Pages setup. It is inert here — driving it needs the ChatGPT/Codex surface it was published from.
 - `out/Bulletin425.pdf` (~13 MB) is a size-reduced copy of the 27 MB source PDF at the repo root, deliberately regenerated rather than copied — the root PDF is untracked on `site-publish` (it *is* tracked on `main`, which is otherwise the same content).
 - `bulletin-425.original.html` (gitignored, 6.5 MB) is the untouched HTML supplied at the start. Reference only; never edit or ship it.
 - `tmp/` (gitignored) holds screenshots used while matching the print layout.
