@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bulletin 3.0 — איגוד יוצאי סין, גיליון 425</title>
+<meta name="description" content="הבולטין של סבתא וסבא, גרסת 2026. איגוד יוצאי סין, ספטמבר 2026, גיליון מס׳ 425.">
+<style>
+:root{
+  --paper:#F1EEE6;
+  --paper-2:#E7E2D6;
+  --ink:#16213F;
+  --ink-soft:#41496A;
+  --muted:#6C7288;
+  --seal:#A81F2D;
+  --rule:#D5CEC0;
+  --card:#FBF9F4;
+  --shadow:rgba(22,33,63,.10);
+  --base:19px;
+  --serif:"Bulletin Mekomi",'Times New Roman',Georgia,serif;
+  --sans:"Bulletin Almoni","Segoe UI",Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#11141C; --paper-2:#171B25; --ink:#E9E5DA; --ink-soft:#BDC2D0;
+    --muted:#949BAC; --seal:#E4707A; --rule:#2C323F; --card:#181C26;
+    --shadow:rgba(0,0,0,.5);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#11141C; --paper-2:#171B25; --ink:#E9E5DA; --ink-soft:#BDC2D0;
+  --muted:#949BAC; --seal:#E4707A; --rule:#2C323F; --card:#181C26;
+  --shadow:rgba(0,0,0,.5);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--serif); font-size:var(--base); line-height:1.85;
+  overflow-x:hidden;
+}
+img{max-width:100%; height:auto; display:block}
+a{color:inherit; text-underline-offset:.2em; text-decoration-color:var(--seal)}
+:focus-visible{outline:2.5px solid var(--seal); outline-offset:3px; border-radius:2px}
+
+/* ---------- header ---------- */
+.bar{
+  position:sticky; top:0; z-index:50;
+  display:flex; align-items:center; gap:.6rem;
+  padding:.5rem max(.9rem, env(safe-area-inset-right)) .5rem max(.9rem, env(safe-area-inset-left));
+  background:color-mix(in srgb, var(--paper) 88%, transparent);
+  backdrop-filter:saturate(1.4) blur(12px); -webkit-backdrop-filter:saturate(1.4) blur(12px);
+  border-bottom:1px solid var(--rule);
+}
+.bar .mark{
+  font-family:var(--sans); font-weight:900; font-size:.95rem; letter-spacing:-.01em;
+  margin-inline-end:auto; display:flex; align-items:center; gap:.45rem; color:var(--ink);
+}
+.seal{width:.72em; height:.72em; background:var(--seal); border-radius:1.5px; flex:none}
+.btn{
+  font-family:var(--sans); font-weight:700; font-size:.8rem; line-height:1;
+  padding:.5rem .7rem; border:1px solid var(--rule); border-radius:999px;
+  background:var(--card); color:var(--ink); cursor:pointer; white-space:nowrap;
+}
+.btn:hover{border-color:var(--ink-soft)}
+.btn[aria-pressed="true"]{background:var(--ink); color:var(--paper); border-color:var(--ink)}
+.sizer{display:flex; border:1px solid var(--rule); border-radius:999px; overflow:hidden; background:var(--card)}
+.sizer button{
+  font-family:var(--sans); font-weight:700; border:0; background:none; color:var(--ink);
+  cursor:pointer; padding:.45rem .6rem; line-height:1;
+}
+.sizer button:first-child{font-size:.72rem}
+.sizer button:last-child{font-size:.95rem}
+.sizer button+button{border-inline-start:1px solid var(--rule)}
+
+/* ---------- layout ---------- */
+.wrap{max-width:38rem; margin:0 auto; padding:0 1.15rem}
+main{padding-bottom:5rem}
+section[hidden]{display:none !important}
+
+/* ---------- hero ---------- */
+.hero{position:relative; background:#0C1730}
+.hero img{width:100%; max-height:78vh; object-fit:cover; object-position:center top}
+.masthead{padding:1.6rem 1.15rem 1.9rem; text-align:center; background:var(--paper); border-bottom:1px solid var(--rule)}
+.masthead h1{
+  font-family:var(--sans); font-weight:900; font-size:clamp(2.6rem,17vw,4.2rem);
+  margin:0; line-height:.9; letter-spacing:-.035em; direction:ltr;
+}
+.masthead h1 sup{font-size:.4em; vertical-align:.5em; margin-inline-start:.12em; letter-spacing:-.02em}
+.masthead .sub{font-family:var(--sans); font-weight:700; font-size:1.02rem; margin:.75rem 0 .3rem; color:var(--ink)}
+.masthead .meta{font-family:var(--sans); font-weight:500; font-size:.82rem; color:var(--muted); line-height:1.7}
+.masthead .meta a{text-decoration:none}
+
+/* ---------- articles ---------- */
+article{padding:2.4rem 0 1rem; border-top:1px solid var(--rule)}
+article:first-of-type{border-top:0}
+.kicker{
+  font-family:var(--sans); font-weight:700; font-size:.76rem; color:var(--seal);
+  display:flex; align-items:center; gap:.4rem; margin:0 0 .7rem;
+}
+.kicker::before{content:""; width:.6em; height:.6em; background:var(--seal); border-radius:1.5px; flex:none}
+h2{
+  font-family:var(--sans); font-weight:900; font-size:clamp(1.75rem,7.2vw,2.5rem);
+  line-height:1.08; letter-spacing:-.02em; margin:0 0 .5rem;
+}
+h2 .thin{display:block; font-weight:500; font-size:.62em; letter-spacing:-.01em; color:var(--ink-soft); line-height:1.25; margin-top:.25rem}
+h3{font-family:var(--sans); font-weight:700; font-size:1.22rem; line-height:1.35; margin:2rem 0 .6rem}
+h4{font-family:var(--sans); font-weight:700; font-size:1rem; margin:1.5rem 0 .35rem; color:var(--ink)}
+.standfirst{
+  font-size:1.06rem; line-height:1.7; color:var(--ink-soft); font-weight:500;
+  margin:.9rem 0 1.4rem; padding-inline-start:.9rem; border-inline-start:3px solid var(--seal);
+}
+.byline{font-family:var(--sans); font-weight:700; font-size:.85rem; color:var(--muted); margin:.2rem 0 1.3rem}
+p{margin:0 0 1.05em}
+.sig{font-family:var(--sans); font-weight:700; font-size:.95rem; line-height:1.5; margin-top:1.6rem; color:var(--ink)}
+.sig span{display:block; font-weight:500; color:var(--muted); font-size:.85rem}
+.dropcap::first-letter{
+  font-family:var(--sans); font-weight:900; font-size:3.1em; line-height:.82;
+  float:inline-start; margin:.06em .12em 0 .12em; color:var(--seal);
+}
+
+/* ---------- figures ---------- */
+figure{margin:1.6rem 0; }
+figure img{width:100%; border-radius:3px; box-shadow:0 1px 10px var(--shadow)}
+figcaption{font-family:var(--sans); font-weight:500; font-size:.79rem; line-height:1.6; color:var(--muted); margin-top:.5rem}
+.portrait{max-width:15rem}
+.pair{display:grid; grid-template-columns:1fr 1fr; gap:.6rem}
+.pair figcaption{grid-column:1/-1}
+@media (max-width:26rem){ .pair{grid-template-columns:1fr} }
+
+/* ---------- blocks ---------- */
+.panel{
+  background:var(--card); border:1px solid var(--rule); border-radius:6px;
+  padding:1.25rem 1.15rem; margin:1.8rem 0;
+}
+.panel h3{margin-top:0}
+.panel.seal-panel{border-color:var(--seal); border-width:1.5px}
+.panel.seal-panel h3{color:var(--seal)}
+.toc{list-style:none; margin:0; padding:0}
+.toc li{border-top:1px solid var(--rule)}
+.toc li:first-child{border-top:0}
+.toc a{
+  display:flex; gap:.85rem; align-items:baseline; padding:.72rem 0;
+  text-decoration:none; line-height:1.45;
+}
+.toc .n{font-family:var(--sans); font-weight:900; font-size:.9rem; color:var(--seal); min-width:1.7rem; flex:none}
+.toc .t{font-family:var(--sans); font-weight:700; font-size:1rem}
+.toc .d{display:block; font-family:var(--serif); font-weight:400; font-size:.87rem; color:var(--muted); margin-top:.1rem}
+ul.plain{padding-inline-start:1.15rem; margin:0 0 1.05em}
+ul.plain li{margin-bottom:.45em}
+.roster{font-family:var(--sans); font-size:.92rem; line-height:1.75; margin:0 0 1.1em}
+.roster b{font-weight:700}
+.roster .grp{font-weight:900; color:var(--seal); display:block; margin:1rem 0 .15rem; font-size:.84rem}
+.give{width:100%; border-collapse:collapse; font-family:var(--sans); font-size:.88rem; margin:1rem 0}
+.give td{padding:.5rem .3rem; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.5}
+.give td:last-child{white-space:nowrap; font-weight:700; text-align:end}
+.give .cty{font-weight:900; color:var(--seal); font-size:.8rem}
+.names{font-family:var(--sans); font-size:.9rem; line-height:1.7}
+.names p{margin:0 0 .8em}
+.names .src{font-weight:900; color:var(--seal); font-size:.82rem; display:block; margin-bottom:.15rem}
+.note{font-size:.9rem; color:var(--muted); font-style:italic}
+
+/* Behind-the-frame cards */
+.frame{
+  background:var(--card); border:1px solid var(--rule); border-radius:6px;
+  padding:1.1rem; margin:1.5rem 0;
+}
+.frame figure{margin:0 0 .9rem}
+.frame h4{margin:0 0 .1rem; font-size:1.12rem}
+.frame .who{font-family:var(--sans); font-weight:500; font-size:.82rem; color:var(--muted); margin-bottom:.7rem}
+.frame p:last-child{margin-bottom:0}
+.frame p{font-size:.97rem}
+
+/* save the date */
+.std{
+  background:var(--ink); color:var(--paper); border-radius:8px; padding:1.6rem 1.25rem; margin:2rem 0;
+  text-align:center;
+}
+:root[data-theme="dark"] .std, :root:not([data-theme="light"]) .std{border:1px solid var(--rule)}
+.std .lbl{font-family:var(--sans); font-weight:900; font-size:.8rem; color:#E8B96B; margin:0 0 .5rem}
+.std .date{font-family:var(--sans); font-weight:900; font-size:2.2rem; line-height:1; margin:0 0 .5rem; direction:ltr}
+.std p{color:inherit; opacity:.92; font-size:.95rem; margin:.4rem 0}
+.std .ag{font-family:var(--sans); font-size:.86rem; opacity:.85; margin-top:.9rem}
+
+.contact{font-family:var(--sans); font-size:.92rem; line-height:1.8}
+.contact a{font-weight:700; text-decoration:none; border-bottom:1.5px solid var(--seal)}
+
+hr.rule{border:0; border-top:1px solid var(--rule); margin:2.2rem 0}
+.end{color:var(--seal); font-weight:900}
+
+/* ---------- drawer ---------- */
+.scrim{
+  position:fixed; inset:0; z-index:60; background:rgba(10,14,26,.55);
+  opacity:0; pointer-events:none; transition:opacity .22s ease;
+}
+.scrim.open{opacity:1; pointer-events:auto}
+.drawer{
+  position:fixed; z-index:61; inset-block:0; inset-inline-end:0; width:min(21rem,88vw);
+  background:var(--paper); border-inline-start:1px solid var(--rule);
+  transform:translateX(0); transition:transform .26s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto; padding:1rem 1.15rem 3rem;
+  box-shadow:-8px 0 30px var(--shadow);
+}
+html[dir="rtl"] .drawer{transform:translateX(-105%)}
+html[dir="ltr"] .drawer{transform:translateX(105%)}
+.drawer.open{transform:translateX(0) !important}
+.drawer h3{margin:.3rem 0 1rem; font-size:1.05rem}
+.drawer .toc a{padding:.6rem 0}
+.drawer .close{position:absolute; inset-block-start:.8rem; inset-inline-start:.9rem}
+@media (prefers-reduced-motion:reduce){ .drawer,.scrim{transition:none} }
+
+.totop{
+  position:fixed; z-index:40; inset-block-end:1rem; inset-inline-end:1rem;
+  width:2.8rem; height:2.8rem; border-radius:50%; border:1px solid var(--rule);
+  background:var(--card); color:var(--ink); cursor:pointer; font-size:1.1rem; line-height:1;
+  box-shadow:0 2px 12px var(--shadow); opacity:0; pointer-events:none; transition:opacity .2s;
+}
+.totop.show{opacity:1; pointer-events:auto}
+
+footer{
+  border-top:1px solid var(--rule); margin-top:3rem; padding:2rem 0 3rem;
+  font-family:var(--sans); font-size:.85rem; color:var(--muted); line-height:1.8;
+}
+footer a{font-weight:700; text-decoration:none; border-bottom:1.5px solid var(--seal); color:var(--ink)}
+.sr{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
+</style>
+<link rel="stylesheet" href="bulletin-mobile.css">
+</head>
+<body>
+<a class="skip-link" href="#sec-he">דלגו לתוכן / Skip to content</a>
+
+<header class="bar">
+  <span class="mark"><span class="seal"></span><span data-t="Bulletin 3.0">Bulletin 3.0</span></span>
+  <div class="sizer" role="group" aria-label="גודל טקסט / Text size">
+    <button type="button" id="smaller" aria-label="הקטנת טקסט / Smaller text">א</button>
+    <button type="button" id="bigger" aria-label="הגדלת טקסט / Larger text">א</button>
+  </div>
+  <button class="btn" type="button" id="langbtn" aria-pressed="false">English</button>
+  <button class="btn" type="button" id="tocbtn" aria-expanded="false" aria-controls="drawer"><span id="tocbtn-label">תוכן</span></button>
+</header>
+
+<div class="scrim" id="scrim"></div>
+<nav class="drawer" id="drawer" aria-label="תוכן העניינים">
+  <button class="btn close" type="button" id="drawerclose" aria-label="סגירה / Close">✕</button>
+  <div id="drawer-he">
+    <h3>תוכן הבולטין</h3>
+    <ul class="toc" id="toc-he"></ul>
+  </div>
+  <div id="drawer-en" hidden>
+    <h3>Contents</h3>
+    <ul class="toc" id="toc-en"></ul>
+  </div>
+</nav>
+
+<main>
+<section id="sec-he" dir="rtl" lang="he">
+
+  <div class="cover"><div class="masthead">
+    <h1>Bulletin<sup>3.0</sup></h1>
+    <p class="sub">הבולטין של סבתא וסבא — גרסת 2026<br>איגוד יוצאי סין</p>
+    <p class="meta">ספטמבר 2026 &nbsp;|&nbsp; גיליון מס׳ 425<br><a href="https://www.jewsofchina.org">www.jewsofchina.org</a></p>
+  </div><div class="hero"><img src="assets/images/photo-01.webp" alt="שער הבולטין: קולאז׳ של תצלומים ומסמכים מהקהילות היהודיות בסין" decoding="async" width="860" height="1079"></div></div>
+
+  <div class="cover-actions"><a class="read-start" href="#he-chairman">לקריאת הגיליון <span aria-hidden="true">↓</span></a><button class="original-open" type="button" data-original="1">דפדוף במקור</button></div><div class="wrap">
+
+    <div class="panel">
+      <h3>תוכן הבולטין</h3>
+      <ul class="toc" id="toc-he-top"></ul>
+    </div>
+
+    <div class="panel">
+      <h3>מה שסבתא וסבא התחילו — אנחנו ממשיכים</h3>
+      <p>בולטין איגוד יוצאי סין יוצא לאור זה שנים רבות, והוא משמש במה קהילתית, חמה ורבת־משמעות. מטרותיו:</p>
+      <ul class="plain">
+        <li>לחזק את תחושת השותפות והזהות המשותפת בקרב בני ובנות הקהילה היהודית שחיו בעבר בסין, ולשלב את בני הדור הבא בפעילות הקהילה ובהמשכיות הדרך.</li>
+        <li>לשמר ערוץ קשר רציף בין יוצאי סין בישראל ובתפוצות.</li>
+        <li>לסייע באיסוף, תיעוד, שימור והנגשה של מסמכים היסטוריים ועדויות אישיות, המספרים את סיפורה הייחודי של הקהילה.</li>
+        <li>לתמוך בהשגת מטרות האיגוד.</li>
+      </ul>
+      <p>בבולטין זה בחרנו לשים זרקור על הסיפורים האישיים והמשפחתיים, על השמות, המקומות, הזמנים והזיכרונות. מאין באו? מה עשו? איך נראתה הילדות בסין? ואילו רגעים קטנים נשמרו בלב?</p>
+    </div>
+
+    <article id="he-chairman" data-page="3">
+      <p class="kicker">מילה אישית מהיו״ר</p>
+      <h2>לחברי וחברות איגוד יוצאי סין והמשפחות, שלום וברכה<span class="thin">יקי (יעקב) מטלין, יו״ר איגוד יוצאי סין</span></h2>
+      <figure class="portrait"><img loading="lazy" src="assets/images/photo-02.webp" alt="יקי (יעקב) מטלין, יו״ר איגוד יוצאי סין" decoding="async" width="443" height="568"></figure>
+      <p class="dropcap">בכל שנה אנו מייחלים שלא נצטרך עוד להמתין לשקט ולימים טובים יותר. גם השנה, יותר מכל, אני מאחל שהשקט יגיע במהרה, יישאר איתנו ושתהיה שנה טובה!</p>
+      <p>בבולטין זה פתחנו מדור חדש אשר שמו: ׳מאחורי הפריים — תמונה אחת. 100 מילים. סיפור שנשאר׳. בו נעלה רגע נוסטלגי שיעלה חיוך על פנינו והתרגשות בליבנו. יש משהו מיוחד בסיפורים שנשארים איתנו לאורך השנים. הם מחברים אותנו אל השורשים שלנו, אל האנשים שעיצבו את דרכנו ואל החוויות הקטנות, שבחלוף הזמן הופכות לחלק ממי שאנחנו.</p>
+      <p>לכל אחת ואחד מאיתנו יש סיפור משפחתי שמלווה אותו, מסורת שעוברת מדור לדור, תמונה ישנה שמעלה חיוך, מאכל שמחזיר אותנו לילדות או סיפור שסופר שוב ושוב סביב השולחן המשפחתי.</p>
+      <p>לרגעים האלה יש כוח מיוחד. הם מחזירים אותנו הביתה, לאנשים היקרים לנו ולתחושת החום שמלווה אותנו גם כשהשנים חולפות. הם מזכירים לנו שלכל משפחה יש את הסיפורים שלה, את הצחוק, את המסורות ואת הזיכרונות שהופכים אותה לייחודית.</p>
+      <p>אני מזמין אתכם לשתף את הסיפורים האלה, שיעברו לדורות הבאים, כי הזיכרונות הטובים של אתמול הם המתנה שמלווה אותנו גם היום, ודרכם ובזכותם נמשיך יחד לשמור על הסיפור של יהדות סין.</p>
+      <p class="sig">שנה טובה!<br>יקי (יעקב) מטלין<span>יו״ר איגוד יוצאי סין</span></p>
+      <figure class="new-year"><img loading="lazy" src="assets/images/new-year-he.png" width="862" height="638" alt="למשפחת יוצאי סין לדורותיה — שנה טובה"></figure>
+
+      <aside class="chinese-course" aria-labelledby="chinese-course-title">
+<div class="course-main"><div class="course-art" role="img" aria-label="קולאז׳ קליגרפיה ואמנות סינית"></div>
+<h3 id="chinese-course-title">יש מי שרואה סימניות<br>ויש מי שרואה עולם!</h3>
+<h4>קורס סינית<br>למתחילים</h4>
+<p class="course-date"><bdi>3.11.26</bdi> ימי ב׳</p>
+<ul><li>שעה וחצי בשבוע.</li><li>פותחים דלת לעולם חדש.</li><li>מכירים אנשים מהאיגוד.</li><li>מחדדים את הראש.</li></ul></div>
+<div class="course-contact"><p>פתוח לחברי איגוד יוצאי סין ובני משפחותיהם בעלות סמלית.<br>לפרטים: <a href="tel:+97235171997"><bdi>03-5171997</bdi></a> | <a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a><br>מותנה במס׳ משתתפים מינימלי.</p></div>
+</aside>
+    </article>
+
+    <article id="he-amb" data-page="4">
+      <p class="kicker">דברי השגרירים</p>
+      <h2>ידידות רבת שנים<span class="thin">שגריר סין בישראל ושגריר ישראל בסין</span></h2>
+
+      <h3>דבר שגריר סין בישראל</h3>
+      <figure class="portrait"><img loading="lazy" src="assets/images/photo-04.webp" alt="שְׂיָאוֹ ג׳ונג׳אנג, שגריר סין בישראל" decoding="async" width="330" height="437"></figure>
+      <p>קוראות וקוראים יקרים,</p>
+      <p>אני מתכבד להיענות להזמנתכם לפרסם את דבריי בבולטין של האיגוד, ולנצל הזדמנות זו כדי לשלוח את ברכותיי החמות והכנות לכל חבריי באיגוד יוצאי סין.</p>
+      <p>במהלך מלחמת העם הסיני נגד התוקפנות היפנית ומלחמת העולם השנייה נגד הפשיזם, העם הסיני והעם היהודי חוו יחד תקופות קשות, חלקו את מצוקות המלחמה וניצבו זה לצד זה בשעות מבחן. בכך נכתב פרק בלתי נשכח בתולדות הידידות בין סין לעם היהודי.</p>
+      <p>הינכם שומרי מורשתה של היסטוריה משותפת זו וממשיכיה. הסיפורים המשפחתיים והזיכרונות היקרים שאתם נושאים עמכם, הם חוליות חשובות בחברות המתמשכת בין עמינו. הם משמרים את הרוח והחום של אותה היסטוריה משותפת ומעבירים אותם מדור לדור.</p>
+      <p>בשנה הבאה נחגוג 35 שנים לכינון היחסים הדיפלומטיים בין סין לישראל, וכן 10 שנים ליצירת השותפות המקיפה והחדשנית בין שתי המדינות. לאורך שלושה עשורים ומחצה המשיכו יחסי סין–ישראל להתפתח באופן יציב ובריא, חרף האתגרים השונים, והעמיקו שיתופי הפעולה המעשיים בין שתי המדינות במגוון רחב של תחומים. סין רואה תמיד את יחסיה עם ישראל בראייה אסטרטגית וארוכת טווח וממשיכה לפתח אותם.</p>
+      <p>שגרירות סין בישראל נכונה לפעול יחד עם איגוד יוצאי סין, להעמקת הקשרים בין שני העמים ולשמירה משותפת על הידידות המסורתית בין סין לישראל ובין העם הסיני לעם היהודי.</p>
+      <p>יחד נוכל להבטיח כי ידידות רבת שנים זו תוסיף לפרוח, תתחדש ותתחזק, ותמשיך להאיר באור של עידן חדש.</p>
+      <p class="sig">שְׂיָאוֹ ג׳ונג׳אנג<span>שגריר סין בישראל</span></p>
+
+      <hr class="rule">
+
+      <h3>דבר שגריר ישראל בסין</h3>
+      <figure class="portrait"><img loading="lazy" src="assets/images/photo-05.webp" alt="אלי בלוצרקובסקי, שגריר ישראל בסין" decoding="async" width="330" height="437"></figure>
+      <p>Da Jia Hao לכל הקוראים,</p>
+      <p>אני שמח מאוד על ההזדמנות לחלוק את מחשבותיי לגבי הקשרים בין ישראל לסין לקראת ה־35 שנה ליחסים שיחול ב־2027.</p>
+      <p>סין הינה מעצמת על תרבותית, חברתית, מדעית, כלכלית, פוליטית ועוד. מדינה ענקית עם היסטוריה של אלפי שנים. כשהמערב היה שקוע בחושך של ימי הביניים, סין כבר במאה ה־5 הכניסה מערכת של בחינות למשרות ממשלתיות, המציאה אבק שריפה, נייר ואפילו גלידה.</p>
+      <p>לאחר שנים רבות בהן סבלה ממלחמות, עוני והשפעות זרות, הצליחה להפוך לאחת האומות המובילות בזירה העולמית. כל המבקר בסין משתומם לנוכח הטכנולוגיות המתוחכמות מהן נהנים אזרחיה, הארכיטקטורה העירונית המרשימה בעלת גוון עתידני, התנופה התעשייתית המתקדמת.</p>
+      <p>ישראל, מדינה קטנה אך מעצמה בתחום החדשנות, יכולה לתרום רבות בתחומים הרלוונטיים למשק הסיני. למשל בנושא של AGING, נושא המסתמן כאחד האתגרים המרכזיים עמם מתמודדת סין, חינוך ובעיקר טיפוח מצוינות וכן התמודדות עם תלמידים בעלי צרכים מיוחדים, מו״פ חקלאי, ניהול משק המים ועוד.</p>
+      <p>קידום היחסים בין מדינות אינו רק עניין של ממשלות. הקשר בין העמים הוא הנדבך המרכזי המחבר בינינו ובהקשר זה איגוד יוצאי סין הינו אחד הגשרים בינינו לבין הממלכה המרכזית. ההיסטוריה שלכם הינה חלק משמעותי מהמורשת המשותפת של שני העמים ואנו בהחלט רואים את האיגוד כשותף במאמצינו לחזק את הקשרים עם המעצמה במזרח.</p>
+      <p>בשנה הבאה נציין 35 שנה ליחסים, ואנו מתכננים סדרת אירועים. אנו מזמינים גם את האיגוד וגם את חברי האיגוד כיחידים ליטול חלק באירועים אלה, לבוא לסין ולהכיר אותה טוב יותר. הקשרים בין האנשים הינם תמיד היסוד המרכזי ליחסים בין מדינות.</p>
+      <p class="sig">אלי בלוצרקובסקי<span>שגריר ישראל בסין</span></p>
+
+      <figure><img loading="lazy" src="assets/images/photo-06.webp" alt="נציגי איגוד יוצאי סין באירוע ההליכה של שגרירות סין לאורך הירקון" decoding="async" width="900" height="194"><figcaption>בינואר 2026, השתתפו נציגי איגוד יוצאי סין באירוע ההליכה המסורתי של שגרירות סין בישראל לכבוד ראש השנה הסיני, שהתקיים לאורך הירקון בתל אביב.</figcaption></figure>
+    </article>
+
+    <article id="he-assoc" data-page="5">
+      <p class="kicker">מה נשמע באיגוד?</p>
+      <h2>הטור של אפרת מרגלית<span class="thin">מזכ״לית איגוד יוצאי סין</span></h2>
+      <p class="standfirst">עוד שנה לא פשוטה עברה על כולנו ואני פותחת את הטור השנתי שלי בברכה ותקווה לשנה טובה, שקטה, בטוחה, בריאה ושמחה לכולם, בארץ ובעולם. השנה, על אף הקשיים והמתח, המשכנו לעבוד, לתכנן ולחשוב ואלינו הצטרפו חברים נוספים, דור שני ושלישי לילידי סין, כדי לפתח, לתכנן ולהתקדם בעבודת האיגוד ובשימור המורשת. אז מה התחדש ומה בתכנית?</p>
+
+      <p>השנה התכנסנו <b>לטקס הרמת כוסית לראש השנה תשפ״ו</b>. בטקס השתתפו חברי האיגוד ונציגים משגרירות סין שהגיעו לשאת ברכה לשנה החדשה. תוכנן אירוע נוסף לפסח, ולצערנו, הוא לא התקיים, עקב המלחמה.</p>
+      <figure><img loading="lazy" src="assets/images/photo-07.webp" alt="טקס הרמת כוסית לכבוד ראש השנה במשרד האיגוד" decoding="async" width="760" height="512"><figcaption>טקס הרמת כוסית לכבוד ראש השנה במשרד האיגוד</figcaption></figure>
+
+      <p><b>חלוקת מענק דו־שנתי לחיילים ולחיילות</b> המשרתים בשירות סדיר, בראש השנה וביום העצמאות, הינה מסורת ארוכת שנים באיגוד. השנה, קיבלו כ־40 חיילים וחיילות, שהם כמובן צאצאים ישירים של יוצאי סין, מענק של 350 ₪ לכל חג.</p>
+
+      <p><b>שיעורי סינית</b> התקיימו השנה במשך שני סמסטרים במשרד איגוד יוצאי סין ושילבו בתוכם לימודי קליגרפיה סינית. הקורס התקיים בשיתוף עם אגודת הידידות ישראל–סין. אנו מתכננים לפתוח כיתת מתחילים לצד המתקדמים אחרי החגים.</p>
+      <figure><img loading="lazy" src="assets/images/photo-08.webp" alt="שיעור סינית במשרד האיגוד" decoding="async" width="760" height="505"><figcaption>איך אומרים את זה בסינית? שיעורי סינית באיגוד</figcaption></figure>
+
+      <p><b>פרוייקט הסרט ״הסינים באים״</b> הגיע לסיומו. זהו סרט מקורי בהפקת האיגוד, המורכב מראיונות של ילידי סין והרבה תמונות, הסרט כולל כתוביות באנגלית. אירוע הקרנת הסרט מתוכנן לתחילת השנה הבאה.</p>
+      <figure><img loading="lazy" src="assets/images/photo-09.webp" alt="לוגו הסרט ״הסינים באים״" decoding="async" width="760" height="336"><figcaption>״הסינים באים״ — סרט בהפקת האיגוד</figcaption></figure>
+
+      <p><b>בדרך לטיול שורשים בסין.</b> בנובמבר 2025 התקיימה נסיעה לסין, שבמסגרתה נערכו ביקורים באתרי הקהילות היהודיות בטיאנג׳ין, חרבין ושנגחאי, במטרה להכיר מקרוב את היעדים ולבחון אפשרויות לקראת טיול שורשים עתידי לחברי האיגוד.</p>
+      <p>במסגרת הביקור התקיימה פגישה עם שגריר ישראל בסין, אלי בלוצרקובסקי, ועם צוות השגרירות. במפגשים עלו נושאים הקשורים לשימור המורשת היהודית בסין, ואנו ממשיכים להיות עמם בקשר בנושא. נספחת התרבות של השגרירות הצטרפה אלינו לביקור בחרבין, ובשנגחאי נפגשנו עם הקונסולית הכללית.</p>
+      <p>הנסיעה אורגנה על ידי החברות הסיניות CCECC ו־CEAI. בעקבות הביקור נוצרו קשרים עם המארחים המקומיים, קשרים שנמשכים גם כיום, והם אף לוקחים חלק בפעילויות ובאירועים של האיגוד.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-10.webp" alt="פגישה עם הנהלת CCECC ו-CEAI" decoding="async" width="760" height="413"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-11.webp" alt="ישיבה עם נציגי החברות הסיניות ושגרירות ישראל" decoding="async" width="760" height="460"></figure>
+        <figcaption>פגישה עם הנהלת CCECC, CEAI, חברי המשלחת ונציגים משגרירות ישראל</figcaption>
+      </div>
+
+      <p><b>טקס הענקת מלגות לסטודנטים</b> לשנת הלימודים תשפ״ו והמפגש השנתי של איגוד יוצאי סין התקיים בדצמבר 2025 במוזיאון ארץ ישראל. בטקס נכחו כ־200 מחברי האיגוד. שגריר סין בישראל, השגריר שְׂיָאוֹ ג׳ונג׳אנג, כיבד בנוכחותו בטקס, יחד עם דיפלומטים נוספים משגרירות סין.</p>
+      <p>התחלנו בסיור מודרך בתערוכת הצילומים ׳עדות מקומית׳, המשכנו לקבלת פנים עם כיבוד וצפינו בגרסה מקוצרת של הסרט ׳הסינים באים׳, שהופק ע״י האיגוד. כמובן שסיימנו בטקס חלוקת המלגות לסטודנטים צאצאי ילידי סין. חברים אשר תרמו מלגות לזכר או לכבוד בני משפחתם העניקו באופן אישי את המילגה לסטודנטים. הוענקה מלגה של 1,000 ₪ ל־65 סטודנטים וסטודנטיות. באירוע שמחנו לפגוש חברים שחידשו את הקשר עם האיגוד, יחד עם משפחותיהם.</p>
+
+      <p><b>ראש השנה הסיני בשגרירות</b> — חברי איגוד יוצאי סין הוזמנו לאירוע לכבוד ראש השנה הסיני בשגרירות הסינית החדשה שנפתחה השנה בשכנות למשרד האיגוד ברמת החייל. נהנינו ממוזיקה סינית, מאוכל טעים וממפגשים מעניינים.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-12.webp" alt="שגריר סין בישראל במסיבת ראש השנה הסיני" decoding="async" width="470" height="674"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-13.webp" alt="מופע במסיבת ראש השנה הסיני בשגרירות" decoding="async" width="620" height="452"></figure>
+        <figcaption>מסיבת ראש השנה הסיני בשגרירות סין. משמאל: שְׂיָאוֹ ג׳ונג׳אנג, שגריר סין בישראל</figcaption>
+      </div>
+
+      <p><b>יש לנו לוגו חדש!</b> שמחים להציג באופן רשמי את הלוגו החדש והמרשים של איגוד יוצאי סין. הלוגו עוצב ע״י ענת פרידמן, שאביה, אריה שוחט, נולד בסין.</p><figure class="association-logo"><img loading="lazy" src="assets/images/association-logo.webp" alt="הלוגו של איגוד יוצאי סין" width="363" height="152"></figure>
+      <p>בלב הלוגו ניצבת חותמת סינית מסורתית, אדומה ובולטת, שבתוכה משולבות המילים ״איגוד יוצאי סין״. כמו חותם אישי, האותיות העבריות משתלבות במוטיב הסיני והופכות לחלק ממנו, מבלי לאבד את זהותן.</p>
+      <p>החותמת, ששימשה בסין לסמל של זהות, אישור ואותנטיות, מסמלת את חותם התרבות שסין הותירה בקהילה היהודית שחייתה בה. לצידה מופיעות אותיות בעברית ובאנגלית, המבטאות את החיבור בין התרבות הסינית לזהות הישראלית.</p>
+
+      <p><b>אתר האינטרנט של איגוד יוצאי סין</b> נמצא בעיצומו. על כך התודה למיכל פרידמן, ביתה של ענת, דור שלישי לילידי סין, שיחד עם ענת פרידמן, מעצבות ומקימות את האתר.</p>
+      <p>כחלק מהעבודה על האתר ובמטרה להקל ולייעל את השירות לחברי האיגוד, עברנו מטפסים ידניים לתהליך הגשה דיגיטלי, תוך שימוש בכלים טכנולוגיים מתקדמים. הטפסים המקוונים מאפשרים להגיש בקשות למלגות ולמענקים בקלות, במהירות ובנוחות.</p>
+
+      <p><b>בית הכנסת של איגוד יוצאי סין</b> — אנו מחפשים תורמים לשיפוץ בית הכנסת על מנת שישמש את האיגוד והחברים.</p>
+
+      <p><b>פגישה עם שיר גדעון, סגנית שגריר ישראל לסין</b> — בחודש יולי נפגשנו (יו״ר האיגוד יקי מטלין ומזכ״לית האיגוד אפרת מרגלית) עם סגנית שגריר ישראל לסין, שהיתה בביקור בארץ, בבית הכנסת של איגוד יוצאי סין בתל אביב. שיר התעניינה מאוד בסיפור בית הכנסת ובהיסטוריה של יהדות סין בכלל.</p>
+      <figure><img loading="lazy" src="assets/images/photo-14.webp" alt="אפרת מרגלית, שיר גדעון ויקי מטלין בבית הכנסת" decoding="async" width="760" height="534"><figcaption>משמאל: מזכ״לית האיגוד, אפרת מרגלית; שיר גדעון, סגנית שגריר ישראל בסין; ויו״ר איגוד יוצאי סין, יקי מטלין</figcaption></figure>
+
+      <p><b>ומשהו אישי ממני</b> — היום קיבלתי תמונה של אמא שלי, כשהיתה בת 6 ואולי 7. התמונה העלתה בי סיפור ועוד סיפור, והחזירה לרגע עולם שלם שהיה ואיננו עוד, אך עדיין ממשיך להתקיים בזיכרונות, בסיפורים שאנחנו מספרים ומעבירים הלאה — וכך ממשיך להיות חלק מההווה.</p>
+      <p>וחשבתי על הבולטין שלנו ועל הסיפורים והתמונות שלכם, והסיפורים שנשמעו ונכתבו כאן במשך השנים וגם על מה שאתם תמשיכו להעביר הלאה לילדים ולנכדים ולעולם. אנחנו שמחים להמשיך יחד איתכם במסורת ולתת במה לסיפורים ולתמונות, לקולות ולזכרונות שלכם ושל משפחותיכם.</p>
+      <p class="contact">להצטרפות לאיגוד, לקבוצת הוואטסאפ, לרשימת התפוצה במיילים, לשאלות ורעיונות, אתם מוזמנים לפנות אלינו:<br>
+      <a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a> &nbsp;|&nbsp; <a href="tel:+97235171997">03-5171997</a></p>
+      <p class="sig">שנה טובה.<br>אפרת מרגלית<span>מזכ״לית איגוד יוצאי סין</span></p>
+    </article>
+
+    <article id="he-scholar-invite" data-page="7">
+      <p class="kicker">מנציחים באהבה, מעניקים עתיד</p>
+      <h2>אנו מזמינים אתכם לתרום מילגה<span class="thin">על שם יקירכם, כהוקרה והנצחה</span></h2>
+      <figure><img loading="lazy" src="assets/images/photo-15.webp" alt="טקס הענקת המלגות" decoding="async" width="900" height="337"><figcaption>צילום: הילה אייזינגר</figcaption></figure>
+      <p>כמידי שנה, גם בשנה״ל תשפ״ז, יעניק איגוד יוצאי סין מילגות לימודים לבני משפחות יוצאי סין, כדי לעודד השכלה, להוקיר מצוינות ולחזק את הדור הבא של הקהילה.</p>
+      <p>כתורמים, שמכם יופיע על תעודת המילגה שיקבלו הסטודנטים, ובמהלך הטקס, נציג המשפחה יעניק את המילגה באופן אישי — כמחווה של כבוד, זיכרון ותקווה. המשפחה התורמת תקבל תעודת הוקרה, ושם התרומה יופיע בבולטין ובאתר.</p>
+      <p><b>סכום מינימלי לתרומה: 1,000 ₪.</b></p>
+      <p class="contact">מעוניינים להנציח בדרך משמעותית וקהילתית? נשמח שתפנו אלינו:<br>
+      <a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a> &nbsp;|&nbsp; <a href="tel:+97235171997">03-5171997</a></p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-16.webp" alt="הענקת מלגה בטקס" decoding="async" width="700" height="470"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-17.webp" alt="הענקת מלגה בטקס" decoding="async" width="700" height="486"></figure>
+        <figcaption>תודה על שותפותכם!</figcaption>
+      </div>
+    <div class="pair"><figure><img loading="lazy" src="assets/images/scholarship-speaker.webp" alt="דברים בטקס הענקת המלגות" width="526" height="290"></figure><figure><img loading="lazy" src="assets/images/photo-33.webp" alt="תצלום מהטקס: דגם בית הכנסת" width="700" height="312"><figcaption>צילום: הילה אייזינגר</figcaption></figure></div></article>
+
+  </div>
+
+  <div class="wrap">
+
+    <article id="he-clurman" data-page="8">
+      <p class="kicker">שני עולמות</p>
+      <h2>הבית בקצה העולם<span class="thin">שנות הזהב של משפחת קלורמן</span></h2>
+      <p class="byline">מאת: איירין קלורמן</p>
+      <p class="standfirst">יש סיפורים משפחתיים שהם גם סיפורה של תקופה. סיפורה של משפחת קלורמן הוא אחד מהם. מהבריחה מפוגרומים באירופה ועד לבניית חיים מלאי תקווה ושגשוג בחרבין — המשפחה הייתה חלק מדור של יהודים שהפכו עיר צעירה בצפון סין לבית חם ולמרכז של עשייה, תרבות וקהילה.</p>
+      <figure><img loading="lazy" src="assets/images/photo-18.webp" alt="אתל (רוזה) ואיסק גריגורי קלורמן עם ילדיהם" decoding="async" width="335" height="454"><figcaption>אתל (רוזה) ואיסק גריגורי עם הילדים: רוּבים (צ׳ארלס) וצביה (סילביה), 1928</figcaption></figure>
+
+      <p class="dropcap">אחרי מאות שנים של דיכוי, רדיפות ועוני ברוסיה, ארץ המולדת, היהודים שמצאו את דרכם לחרבין בתחילת המאה ה־20 היו סוף סוף חופשיים לשלוט בגורלם, להקים עסקים, לייסד מוסדות תרבותיים ודתיים, ולעזור בבניין עיר מבראשית. קרובי המשפחה שלי נצרו את החלק הזה בחווייתם מחרבין, והאירועים הטרגיים שעברו לקראת סוף שהותם לא הצליחו להשכיח את גאוותם על היותם ״יהודים מסין״.</p>
+      <p>סבתי, אתל (רוזה) קיליס קלורמן, הייתה בת חמש כשהגיעה לחרבין עם אחותה הצעירה נינה ועם אימן ההרה, ילנה קיליס. היה זה מיד לאחר הפוגרום הנורא באודסה בשנת 1905, אותו שרדו על ידי כך שהסתתרו במשך מספר ימים בעליית הגג בבניין בו גרו.</p>
+      <p>משהבינו שבטוח לצאת מהמחבוא, עלו על רכבת לאורכה של רוסיה עד הגעתן לחרבין, שם התאחדו עם אבי המשפחה, נחום, שהיגר קודם לכן למנצ׳וריה. ילנה הנסערת פחדה אפילו לרדת מהרכבת כדי לרכוש אוכל, ושלוש הנשים נאלצו לצלוח את המסע בן מספר השבועות באכילת סלמי יבש בלבד.</p>
+      <p>חרבין של שנת 1905 הייתה עיירת ספר. לא נדרשה ויזת כניסה, אבל לעיר גם לא היה הרבה מה להציע. רוזה נהגה לספר על הקרח שנוצר על קירות הבתים הדקיקים. ובכל זאת, משפחתם המשיכה לצמוח ומנתה שמונה ילדים. חרבין התפתחה לכדי עיר מצליחה, והקצבייה של נחום שגשגה.</p>
+
+      <h3>שנות הזהב של המשפחה</h3>
+      <p>בתום לימודיה בבית הספר היסודי בחרבין, רוזה נשלחה ללמוד ב־Institut de St. Joseph, פנימייה קתולית יוקרתית בשנחאי, שם למדה אנגלית וצרפתית. בקרב התלמידות נכללו מספר בנות יהודיות נוספות שהוריהן היו אמידים מספיק כדי לממן לבנותיהן חינוך ברמה הגבוהה ביותר.</p>
+      <p>בשנת 1906 לערך, סבי יצחק (איסקו חיים גרשביץ׳) קלורמן הגיע מאורינין, עיירה במחוז קמנץ־פודולסק, כיום באוקראינה. אביו, תלמיד תורה מסור, לא עבד למחייתו ולכן נאלץ יצחק לפרנס את המשפחה כבר מגיל 10. כשהיה בן 15, התחמק מתפקיד שולייה בחנות אופניים וברח לחרבין כשבידו רובל בודד ו־50 קופייקות.</p>
+      <p>בחרבין החל יצחק לעבוד כפועל ולאחר מכן כקצב ויזם. בתקופת מלחמת העולם הראשונה עזב את חרבין כדי להתחמק מגיוס לצבא הרוסי, ועבד בניו יורק כמנקה חלונות. הוא חסך את כספו וקנה שיירי חומרי בניין אותם שלח לסין, שם תכנן למכור אותם בתום המלחמה.</p>
+      <p>בשובו לחרבין, בשעה ששקל חומרי בניין בעזרת המאזניים בקצבייה של קיליס, פגש את רוזה בת ה־17. הוא היה מבוגר ממנה בעשור והשכלתו הרשמית הייתה מועטה, ובכל זאת משפחתה של רוזה עודדה את הנערה להיענות להצעת הנישואין של יצחק האמיד.</p>
+      <p>אבי, רוּבים יצחק (בהמשך שינה את שמו לצ׳ארלס יצחק) נולד לרוזה ויצחק באוקטובר 1918. אחותו צביה (סילביה) נולדה ב־1921, ואחיו ישראל (איזרה או איזריק, שונה מאוחר יותר לג׳וני) נולד ב־1928. משפחת קלורמן כבר הייתה עשירה בתקופה זו, וחגיגת הולדתו נמשכה שלושה ימים.</p>
+      <p>יצחק התמסר לעסקיו ובסופו של דבר הקים בית עסק לממכר עץ לבניין, ומשק בקר. הוא גם בנה כמה בנייני דירות בחרבין ורכש אורווה של סוסי מירוץ שהיו לו לגאווה גדולה.</p>
+      <figure><img loading="lazy" src="assets/images/photo-19.webp" alt="איסק גריגורי קלורמן ובנו ישראל בפארק בחרבין" decoding="async" width="620" height="776"><figcaption>איסק גריגורי קלורמן ובנו ישראל קלורמן, בפארק בחרבין, אפריל 1937</figcaption></figure>
+      <p>הקלורמנים גרו ברחוב מספר שתיים בבניין מהודר שיצחק תכנן ובנה. בשש הדירות הותקנו כל חידושי השעה, כולל שירותים פנימיים, דבר שכמעט ולא נראה בחרבין באותם ימים. בנוסף לסוסי המירוץ, למשפחה היה סוס וכרכרה, שכן רחובותיה הבוציים של חרבין באותן שנים לא התאימו למכוניות.</p>
+      <p>רוזה נהגה להתהדר בפרוות ותכשיטים ולקנות בחנויות היוקרתיות ביותר בחרבין. היא אהבה ללכת לקונצרטים ואופרטות. בבית פיקחה על המשרתים שהכינו מטעמים רוסיים ויהודיים, אבל את המאפים אהבה להכין בעצמה.</p>
+      <p>הילדים למדו בבתי הספר הרוסיים המצוינים של חרבין, שם זכו להשכלה בכל התחומים, משירה ועד מתמטיקה מתקדמת. לסילביה הייתה מורה פרטית לפסנתר, ולבנים היו מורים פרטיים לקראת עלייתם לתורה בבית הכנסת החדש, אחד משני בתי הכנסת של חרבין. כמו רוב התלמידים היהודים בחרבין, שלושת הילדים עסקו בספורט, התעמלות ופעילויות חברתיות בחסות בית״ר, תנועת הנוער הציונית. (אחד מהמדריכים הבכירים בבית״ר היה מרדכי אולמרט, אביו של אהוד אולמרט.)</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-20.webp" alt="רוּבים (צ׳ארלס) קלורמן בשבט גדעון של צופי בית״ר, 1930" decoding="async" width="760" height="465"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-21.webp" alt="נבחרת ההתעמלות של צופי בית״ר חרבין, שנות ה-40" decoding="async" width="760" height="485"></figure>
+        <figcaption>מימין: רוּבים (צ׳ארלס) קלורמן (שני מימין מקדימה), שבט גדעון של צופי בית״ר, 1930. משמאל: נבחרת ההתעמלות של צופי בית״ר חרבין, שנות ה־40</figcaption>
+      </div>
+      <figure><img loading="lazy" src="assets/images/photo-22.webp" alt="מחליקים על נהר סונגרי הקפוא" decoding="async" width="760" height="391"><figcaption>מחליקים על נהר סונגרי (סונגחואה) הקפוא. מימין: רוּבים (צ׳ארלס) קלורמן</figcaption></figure>
+
+      <h3>עננים מעל חרבין</h3>
+      <p>למרות הרווחה וההנאות, החיים בחרבין הלכו והתקדרו. רוסים לבנים שברחו מהמהפכה הבולשביקית הביאו איתם אנטישמיות שהתבטאה בדרכים רבות. אבי וחבריו היהודים נקלעו לקטטות בכל בוקר בדרכם לבית הספר, ויצחק השתמש מדי פעם באגרופיו אל מול בריונים רוסיים שתקפו עוברי אורח יהודיים.</p>
+      <p>ב־1931 הופיעו הכוחות היפניים והפכו את חרבין למרכז מפעלם לכיבוש מנצ׳וריה. אנשי עסקים יהודים נהיו למטרות, גם של הצבא היפני וגם של שודדים סיניים שחברו לבריונים רוסיים אנטישמיים. בני האוכלוסייה הזרה בעיר חיו בפחד, במיוחד אחרי האירוע המצמרר בשנת 1933 בו נחטף, עונה, ולבסוף נרצח הפסנתרן היהודי שמעון קספה, בנו של בעל מלון מודרן היוקרתי בעיר.</p>
+      <p>ב־1936, הקלורמנים עברו לדירה בקומה העליונה של בניין דירות בן שלוש קומות שיצחק בנה ברחוב יאמסקיה. צוותי כיבוש יפניים שכרו את שתי הקומות האחרות.</p>
+      <figure><img loading="lazy" src="assets/images/photo-23.webp" alt="בניין הדירות ברחוב יאמסקאיה 83 בחרבין, 1936" decoding="async" width="860" height="534"><figcaption>איסק גריגורי קלורמן מול בניין הדירות החדש שלו ברחוב יאמסקאיה 83 (כיום דאאן) בשנת 1936. הבניין כבר אינו קיים היום.</figcaption></figure>
+      <p>לאור חוסר הוודאות המשתולל, המשפחה החליטה לשלוח את אבי לאוניברסיטת קליפורניה בברקלי כדי להתבסס בארה״ב, למקרה ששאר המשפחה תצטרך לעזוב את סין. לאחר סיום לימודיו בבית הספר התיכון המסחרי הראשון של חרבין, בו למדו בשפה רוסית, אבי למד במשך שנה בבית ספר תיכון בריטי בטינזין (היום: טיאנג׳ין) כדי שיוכל ללמוד קצת אנגלית לפני שיפליג.</p>
+
+      <h3>חיים חדשים מעבר לים</h3>
+      <p>במאי 1938, זמן קצר לאחר שאבי הגיע לסן פרנסיסקו, יצחק נחטף על ידי הקמפייטאי, המשטרה החשאית היפנית, בדרכו לעבודה, מרחק רחובות ספורים מבניין הדירות ביאמסקיה. איש מעולם לא ראה אותו שוב. הניחו שהוא עונה למוות ונקבר בקבר אחים, יחד עם אינספור קורבנות סיניים וזרים אחרים. יצחק התנגד לניסיונות היפניים להשתלט על נכסי המשפחה, אבל עכשיו הרכוש שלהם הוחרם, והקלורמנים התמוטטו כלכלית.</p>
+      <p>לאחר מלחמת העולם השנייה, עם השינויים הפוליטיים בסין, עבר בניין הדירות ברחוב יאמסקיה לבעלות השלטונות. הבניין נותר על תילו עד שנות ה־80, אז נהרס.</p>
+      <p>כולם פחדו שאבי יפגוש באותו גורל כמו יצחק אם יחזור לסין. בהיותו חסר אמצעים למימון שכר לימוד ומתוך דאגה לרווחת משפחתו, אבי מעולם לא התחיל את לימודיו בקולג׳. במקום זה הוא עבד בעבודות מזדמנות וחסך את כספו עד שהוא וחברו מחרבין, מארק רוס, הצליחו לקנות את חנות המכולת No-D-Lay ברובע מיֵשֵן בסן פרנסיסקו. מארק ואבי גרו עם הוריו של מארק, נדז׳דה איסקובנה ומארק איליץ׳ טרוצקי. מארק איליץ׳ היה מזכיר אגודת הקהילה היהודית בחרבין.</p>
+      <p>כשארה״ב הצטרפה למלחמה ב־1941, אבי התגייס לצבא ארה״ב. הוא שינה את שמו לצ׳ארלס יצחק קלורמן ונודע בשם ״צ׳ארלי״ למשך שארית חייו. בסופו של דבר הוא התנדב ל־Merrill's Marauders, יחידה שביצעה משימות מאחורי קווי האויב בג׳ונגלים של בורמה. כיוון שגדל עם סוסים, מונה צ׳ארלי לנפח בחיל הפרדות של הצבא. הוא נעזר בידע הבסיסי שלו בשפה הסינית וביכולתו להבחין בין בעלי ברית סיניים לאויבים יפניים כדי לשמש כמתורגמן לעת צורך.</p>
+      <p>בחרבין, רוזה נישאה בשנית, אבל הנישואין היו קצרי מועד. ב־1942 עזבו רוזה, ג׳וני וסילביה את חרבין ועברו לשנגחאי, שכבר הייתה עמוסה באלפי פליטים יהודיים מאירופה. סילביה ניגנה בפסנתר במועדון לילה כדי להרוויח כסף. ג׳וני טיפל בסוסים שבעלי ברית בריטיים ואמריקניים שנכלאו הותירו מאחור, וכן בסוסים שהיו בבעלות הפרשים היפניים.</p>
+      <p>בשנת 1945 השתחרר צ׳ארלי מהשירות הצבאי ונסע לחגוג את חג ההודיה בסן פרנסיסקו, בבית דודיו, נתן קלורמן (אחיו של יצחק) ואשתו, ראי. שניהם גרו בחרבין לפני המלחמה, ושם גם נולד בנם הארי.</p>
+      <p>באותו חג הודיה הכיר צ׳ארלי את מרים גרנט, שבאה עם אמה שרה (סוניה) גרנט (לשעבר גרודסקי). הגרנטים היו יהודים רוסיים מניקולסק אוסיריסק ליד ולדיווסטוק. הם הגיעו לחרבין כדי להימלט מהמהפכה הבולשביקית, וחיו שם שנים ספורות כשמרים הייתה פעוטה.</p>
+      <p>מרים וצ׳ארלי נישאו בסן פרנסיסקו חודשיים מאוחר יותר, בינואר 1946. בעזרת הצלב האדום הצליח צ׳ארלי סוף כל סוף ליצור קשר עם משפחתו בסין. הוא הצליח להביא את אימו ואחיו לסן פרנסיסקו משנגחאי זמן קצר לפני שנולדתי במרץ 1947. אחי גרג נולד ב־1948.</p>
+      <p>סילביה, אחותו של צ׳ארלי, עלתה לישראל משנחאי ב־1949. כמו חלוצים ישראליים רבים, היא התגוררה זמן מה באוהל ונאלצה להוביל מים. סילביה פגשה ונישאה לישראלי יליד גרמניה, היינץ אפשטיין, ולזוג נולדה בת בשם נורית. בשנות ה־60 וה־70, סילביה השתמשה בכישורי המזכירות שלה ובשליטתה בשפה הרוסית והאנגלית, ובמשך 10 שנים עבדה בסניף תל אביב של איגוד יוצאי סין. היא גם עבדה בויצ״ו, ארגון הנשים הציוני הבינלאומי. סילביה נפטרה בראשון לציון ב־1988.</p>
+      <p>ב־1951, צ׳ארלי לקח את אמי, אחי ואותי לפיליפינים, שם פתח סניף של חברת המסחר ״שרירו״. משפחת שרירו ייסדה את חברת המסחר הבינלאומית שלה בחרבין ב־1906, והקלורמנים הכירו אותם משם.</p>
+      <p>צ׳ארלי עזב את חברת שרירו והקים חברה לייצור מזון. בנוסף, ייסד בדרום הפיליפינים פרוייקט בתחום הבקר, בהשראת עסקי הבקר של אביו בחרבין. בשנות ה־60 חזרו הוריי לסן פרנסיסקו ומשם עברו לרינו, נבדה, בסמוך לחוות הבקר שלהם.</p>
+      <p>רוזה נפטרה ברינו ב־1994, וצ׳ארלי ב־2001. <span class="end">■</span></p>
+
+      
+    </article>
+
+<article id="he-memory" data-page="11" class="memorial">
+<p class="kicker">לזכרה</p><h2>לאה (לילי) קורושי קרוגליאק ז״ל</h2>
+<figure class="portrait"><img loading="lazy" src="assets/images/photo-24.webp" alt="לאה (לילי) קורושי קרוגליאק" width="494" height="494"></figure>
+<p class="life-dates" dir="ltr">1932–2026</p><p>ילידת טיינג׳ין, סין</p>
+<p>בצער רב ובלב כואב אנו מודיעים על פטירתה של לאה (לילי) קורושי קרוגליאק ז״ל.</p>
+<p>לאה הייתה אם, סבתא, סבתא־רבתא ואחות אהובה.</p>
+<p>הותירה אחריה את בנותיה, אידה ומירה, נכדים ונינים, אחותה רחל מוסקוביץ׳, אחיה צביקה קרוגליאק, וכל בני משפחותיהם.</p><p><b>יהי זכרה ברוך</b></p>
+<div lang="en" dir="ltr"><h3>In Her Memory</h3><p>It is with great sadness that we announce the passing of <b>Leah (Lily) Koroshi Krugliak</b>.</p><p>Born in Tianjin, China · 1932–2026</p><p>Leah was a beloved mother, grandmother, great-grandmother, and sister.</p><p>Her daughters, Ida and Mira, grandchildren and great-grandchildren, her sister, Rachel Moskowitz, her brother, Tzvika Krugliak, and their families.</p><p>May her memory be a blessing.</p></div></article>
+    <article id="he-lench" data-page="12">
+      <p class="kicker">שני עולמות</p>
+      <h2>להקיף את העולם 3 פעמים<span class="thin">המסע של ד״ר לנצ׳יצקי</span></h2>
+      <p class="byline">מאת: אורית כנען</p>
+      <p class="standfirst">המסע של ד״ר יעקב ישה לנצ׳יצקי נשמע כמו תסריט הוליוודי: סבא שנחטף לצבא הצאר וגורש לסיביר, בריחה ברכבת הטרנס־סיבירית, לימודים בארה״ב ובאירופה, ומפגשים בלתי נתפסים, עם נכדו של טולסטוי ועם האצולה הסינית. אחרי שהקיף את העולם שלוש פעמים, הלב של הרופא מטיינג׳ין פעם בכיוון אחד — אל ארץ ישראל. אורית כנען משרטטת את דיוקנו של אביה: הרפתקן, ג׳נטלמן ורופא בכל רמ״ח איבריו.</p>
+      <figure><img loading="lazy" src="assets/images/photo-25.webp" alt="ברכה דרכלר דורון וזלמן זאמה לנצ׳יצקי, 1927" decoding="async" width="700" height="951"><figcaption>ברכה דרכלר דורון וזלמן זאמה לנצ׳יצקי, 1927</figcaption></figure>
+
+      <p class="dropcap">ד״ר יעקב ישה לנצ׳יצקי עלה לישראל יחד עם אמו ברכה דרכלר דורון ואחותו סוסיה, בנובמבר 1950, באונייה ״אנה סאלן״. הם לא הורשו לעבור בתעלת סואץ, לכן נסעו דרך האוקיינוס השקט, עברו בתעלת פנמה, חצו את האוקיינוס האטלנטי עד לאיטליה ומשם באונייה ״נגבה״ לחוף חיפה בא״י.</p>
+      <p>סבו מצד אימו, דרכלר דורון, היה מילדי ״החטופים״ ברוסיה (״הקנטוניסטים״ — ילדים שנלקחו על ידי הרשויות ברוסיה של המאה ה־19, חונכו במסגרת צבאית עד שהגיעו לבגרות וגויסו לצבא). הוא נלקח מהוריו בהיותו ילד בן חמש או שש, בשנת 1840, ובדרך נס זכר את שמו ומקום הולדתו. לאחר עשרים וחמש שנה בשירות ה״צאר״ בצבא הרוסי חזר לבית הוריו. הוא נהיה ״מהפכן״ והתנגד לשלטון הצאר יחד עם חבריו. הם תקפו את נציג הצאר שהגיע לעירם וכולם נידונו למוות. אך לבסוף, עונשו הוחלף לגירוש לסיביר לכל ימי חייו ומאסר עולם, כי שירת את צבא הצאר. כך צעד קשור ברגליו ובידיו לחברו, במשך שנתיים לסיביר, כאשר חלק מהדרך עשו ברכבת. כעבור שנתיים הצטרפה אליו אשתו ושני ילדיו. בסיביר נולדו להם עוד בנות נוספות, ואחת מהן היא אמו של ישה, ברכה. המשפחה גרה ליד אירקוצק בכפר רוטינה והייתה המשפחה היהודית היחידה במקום.</p>
+      <p>אביו של ישה, זלמן זאמה לנצ׳יצקי, נולד בלובלין שבפולין. במגיפת כולרה שפרצה נפטרו הוריו תוך שלושה ימים. סנדלר עני אימץ אותו ואת אחותו מרים בהיותם ילדים קטנים. (היה להם קשר עד מלחמת העולם השנייה בה ניספו.) השם לנצ׳יצקי ניתן להם כ׳יהודי חסות׳ מטעם הפריץ. אביו של ישה גויס לצבא והגיע עם הצבא הרוסי לסיביר ושם נישא לברכה. האב עסק במסחר בפרוות, היה חייט וייצר מברשות.</p>
+      <p>ישה נולד ב־1906 ואחר שנתיים נולדה אחותו סוסיה. כשנולדה הלך האב לצורף באירקוצק וביקש לקנות לבתו מזכרת. המוכר אמר לו שהבוקר נוסע ברכבת הטרנס־סיבירית ומכר לו תכשיט זהב של ״עשרת הדיברות״. בהיותו בן שש, בשנת 1913, נדדה המשפחה לחרבין ברכבת הטרנס־סיבירית.</p>
+      <p>ב־1913 היו בחרבין 5,032 יהודים, 11.5% מכלל האוכלוסייה הרוסית. כולם היו אזרחי האימפריה הרוסית.</p>
+
+      <h3>סטודנט ללא גבולות</h3>
+      <p>בגימנסיה הרוסית סיים את לימודיו. בסיימו חפץ לנסוע לרוסיה כי אהד את הקומוניזם; אביו שכנע אותו לנסוע ללמוד הנדסת מכרות בברקלי בארה״ב. ב־1.9.1923 הם יצאו לנסיעה דרך יפן והתעכבו בעיר יוקוהמה, נכנסו לבנק ואז אירעה רעידת אדמה עוצמתית בעוצמה של 7.9 בסולם ריכטר, בה ניספו יותר מ־142 אלף איש. הכל סביבם נחרב, הם צעדו לים ובדרכם פערה האדמה את פיה. לאחר שלושה ימים נרגעה רעידת האדמה. אמו ואחותו קראו בעיתון על הרעש וחשבו שהם נהרגו, אך כעבור מספר ימים הגיעה טלגרמה וכל באי הבית השיקו כוסות יין.</p>
+      <p>ישה למד הנדסה במשך שנה והגיע לתובנה כי הוא צריך לטפל באנשים. הוא חזר לסין ונסע משם לאיטליה ללמוד רפואה בפביאה ואח״כ בבולוניה. לאחר שבע שנים הוא סיים את לימודי הרפואה וקיבל רשיון לעסוק במקצוע כרופא כירורג.</p>
+      <p>הוא נסע לוינה, שם עבד והשתלם בפקולטה לרפואה באוניברסיטת וינה עד אוקטובר 1931. משם נסע לפריז ולמד בפקולטה לרפואה באוניברסיטת פריז עד 1931.</p>
+      <figure><img loading="lazy" src="assets/images/photo-26.webp" alt="תעודת לימודים של הפקולטה לרפואה באוניברסיטת פריז, 1931" decoding="async" width="760" height="540"><figcaption>תעודת לימודים רשמית של הפקולטה לרפואה של אוניברסיטת פריז, 1931</figcaption></figure>
+
+      <h3>רופא בעולם הגדול</h3>
+      <p>בשנת 1932, תקופה בה רוחות הפשיזם התחזקו, החליט לנסוע לבקר את הוריו. בדרכו עבר בפורט סעיד והחליט לראות את פלשתינה. הקונסול הבריטי נתן לו ויזה, אך כשעמד לצאת שאל אותו: ״אולי אתה במקרה יהודי?״ וכשהשיב ״כן״, נלקחה ממנו הויזה.</p>
+      <p>הוא חזר לסין לעיר ״טיינג׳ין״ וגר ברובע האנגלי, בו היו מועדונים ופארקים יפים. תמיד סיפר על החיים התרבותיים, על הפגישות במועדון, על חברים רבים ביניהם שגריר אוסטרליה בסין (שהציע לו לימים להגר לאוסטרליה ולא למדינת ישראל).</p>
+      <figure><img loading="lazy" src="assets/images/photo-27.webp" alt="כרטיס הביקור של ד״ר לנצ׳יצקי מטיינג׳ין" decoding="async" width="420" height="900"><figcaption>כרטיס הביקור של ד״ר לנצ׳יצקי, 166 Chung Cheng Road, Tientsin</figcaption></figure>
+      <p>בטיינג׳ין פתח מרפאה, היה נשוי 16 שנה, ללא ילדים. בשנת 1933 נפטר בטיינג׳ין אביו זלמן זאמה לנצ׳יצקי.</p>
+      <p>מבין הסיפורים הרבים מאותה תקופה, שניים נחרטו בזיכרון במיוחד: בעיר פרצה מגיפת כולרה קשה כתוצאה משיטפונות ועליית מי הנהר על גדותיו. על מגיפה זו שמעתי בילדותי וראיתי את התמונה של אבי מטפל בחולים ברחוב באלונקות. בכינוס הדלקת נר חנוכה בשנת 2010 שמעתי עדות מפי אחד המשתתפים שסיפר לי שאמו ואחותו של אבי גרו בקומה נמוכה שהוצפה ומשפחתו אירחה אותם בביתם הגבוה יותר. יום אחד הגיע אבי על רפסודה. לשאלתי ״אתה בטוח?״ השיב ״כן!״ אבי בדק אותם, ולשאלה מה ניתן לעשות כדי לא להידבק במגיפה השיב: תאכל כל יום ראש שום! מאז אני אוהב שום וכל משפחתי ניצלה.</p>
+      <figure><img loading="lazy" src="assets/images/photo-28.webp" alt="ד״ר לנצ׳יצקי מטפל בחולים במגיפת הכולרה" decoding="async" width="860" height="573"><figcaption>ד״ר לנצ׳יצקי (לבוש חליפה במרכז התמונה) מטפל בחולים במגיפת הכולרה</figcaption></figure>
+      <p>לאחר תקופת עבודה מאומצת החליט לנסוע לטיבט, מצויד בתיק רופא ותרופות טיפל בחולים. ביקש להתקבל אצל הדלאי לאמה, שוחח איתו והתרשם מאוד מאישיותו. יום אחד פגש באיש לבן, סבר כי עליו לבוא עמו בדברים בשפה האנגלית. מיד התברר לו שהאיש דובר רוסית — היה זה נכדו של לב טולסטוי. אחת מבנותיו של טולסטוי הגיעה לארה״ב ובנה היה כתב של עיתון אמריקאי והגיע לטיבט. שעות רבות בילו הם בשיחות ארוכות.</p>
+      <p>כשנוסדה מדינת ישראל הוא הלך כמו כל היהודים לבית הכנסת. כשעלו הקומוניסטים לשלטון בסין עזב את סין והפליג ארצה שלושה חודשים. באונייה ערך בריתות, ניתח וטיפל באנשים. לשאלת אמי ״למה באת לארץ?״ השיב: ״אני באתי לארץ, אני שהייתי זר ורחוק מהיהדות, שלא ידעתי מהי צורת ׳אלף׳ בעברית, שלא קיבלתי חינוך יהודי, לפתע כשהייתי צריך לקום ולעזוב את סין דפק ליבי בקרבי: סע עם כל היהודים לארץ ישראל. אם זה קרה לי, זה יקרה לעוד הרבה יהודים שרחוקים מהיהדות, לפתע ידפוק ליבם ויטה אותם לארץ. מפני זה אני מאמין בנצחיות של עם ישראל בארצו״.</p>
+      <p>ד״ר יעקב ישה לנצ׳יצקי בא בתור רופא מחליף לנהלל אחרי שסבב את העולם הגדול שלוש פעמים. הוא הגיע בסוף לעיגול הקטן; הוא בא מעולם זר ורחוק.</p>
+      <p>בשנת 1951 נשא לאישה את עדינה לוין ועבר לגור בנהלל. ב־1952 נולדה להם בת, אורית. היו אלו ימי הצנע; חברו הטוב מסין, ליפשיץ, שהיגר לארה״ב, היה שולח לתינוקת צנצנות גרבר.</p>
+      <p>אהב מאוד את מקצוע הרפואה והיה אומר ״המקצוע הכי אנושי״ — לרפא בני אדם ולהצילם, להקל על מכאובם ותמיד להילחם נגד המוות. ד״ר לנצ׳יצקי עבד במעברות בעפולה, כפר ברוך ובנהלל.</p>
+      <p>בהספד שכתב עליו דוד גולן: ״זכורים לי ימי המתיחות של ערב מלחמת ששת הימים. בעמל ללא לאות התקין בית חולים ארעי במקלט. גאה היה עליו, ובלא מעט גאווה של רופא ואדם סיפר שאף ניתוחים לא מסובכים יהיה בכוחו לבצע שם ובלבד שלא יזדקקו לכך״.</p>
+      <p>לפני שנים מספר נתבקשתי ע״י מנהלת ארכיון נהלל לשלוח לה תמונה של אבי בתור רופא, כי יש לה רק תמונה שלו בחולצה לבנה ועניבה. השבתי לה: ככה הוא הלך למרפאה.</p>
+      <p>הוא היה אדם מלומד, רחב אופקים, מוכשר, אוהב שירה, בעל אופי סוער, בקיא בהרבה נושאים, יודע שבע שפות, קוצב חרוזים בשפת נעוריו.</p>
+      <p>ב־19.10.1968 נפטר ונקבר בנהלל. <span class="end">■</span></p>
+    </article>
+
+    <article id="he-donations" data-page="14">
+      <p class="kicker">תודה</p>
+      <h2>בהוקרה ובהערכה<span class="thin">על תרומתכם הנדיבה</span></h2>
+      <table class="give">
+        <tr><td class="cty" rowspan="10">ישראל</td><td>אילנה וגיורא לסק לזכר אלה ושלמה לסק ז״ל ומרים ודניאל ברקוביץ ז״ל</td><td>7,000 ₪</td></tr>
+        <tr><td>מרים יקיר ואריה טנדט לזכר ליקה (לאה) ומילה (שמואל) טנדט ז״ל</td><td>1,500 ₪</td></tr>
+        <tr><td>רמה שלמוני (רוזן) לזכר ערן ונורית רוזן ז״ל</td><td>1,000 ₪</td></tr>
+        <tr><td>משפ׳ מקוב, ברכה, קדר לזכר דינה טריגובוב־קדר ז״ל</td><td>2,000 ₪</td></tr>
+        <tr><td>יהודית מרום וינון פרי לזכר רחל (רייצ׳ל) ויצחק (ייסאי) פרסוב ז״ל</td><td>2,000 ₪</td></tr>
+        <tr><td>ליאורה טנדט לזכר גסיה ויאשה טנדט ורבקה שוחט ז״ל ולזכר לובה וליובה ברונר ז״ל</td><td>2,000 ₪</td></tr>
+        <tr><td>יקי מטלין לזכר בוריס מטלין ז״ל</td><td>1,000 ₪</td></tr>
+        <tr><td>דרור טריגובוב לכבוד אביו משה טריגובוב שייבדל לחיים ארוכים</td><td>1,000 ₪</td></tr>
+        <tr><td>ישראל קרני — מענק לחיילים לזכר רות קרני ז״ל</td><td>350 ₪</td></tr>
+        <tr><td>אידה שמואלזון לזכר לאה (לילי) קורושי קרוגליאק ז״ל</td><td>200 ₪</td></tr>
+        <tr><td class="cty">סין</td><td>תרומת השגרירות הסינית בישראל</td><td>52,000 ₪</td></tr>
+        <tr><td class="cty">ארה״ב</td><td>תרומת קרן פרנק ואת׳ל דון</td><td>19,236 USD</td></tr>
+        <tr><td class="cty">בריטניה</td><td>ירושת אלכס יוליוס פיימן</td><td>18,564 GBP</td></tr>
+        <tr><td class="cty">אוסטרליה</td><td>ירושת לוסי רייהיל</td><td>77,485 AUD</td></tr>
+      </table>
+    </article>
+
+    <article id="he-tanya" data-page="15">
+      <p class="kicker">סיפורה של טנייה שליפר</p>
+      <h2>לב פתוח, ידיים יוצרות<span class="thin">טנייה (מטלין) שליפר, 28.2.1934 – 23.12.2025. יהי זכרה ברוך</span></h2>
+      <p class="byline">מאת: אורלי שליפר וגליה פרדו, בנותיה של טנייה</p>
+      <p class="standfirst">טנייה שליפר הייתה אישה רבת כישרונות, ציונית בנשמתה, יוצרת ואשת משפחה מסורה. זהו סיפורה של ילדה שובבה שהפכה לאישה מעוררת השראה.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-29.webp" alt="טנייה שליפר בצעירותה" decoding="async" width="620" height="700"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-30.webp" alt="טנייה שליפר ביום חתונתה" decoding="async" width="620" height="780"></figure>
+      </div>
+      <p class="dropcap">טנייה שליפר — קצרה היריעה מלספר קורותיה. נולדה בחרבין וגדלה כבת יחידה לרוזה וגרישה מטלין. הייתה ילדה מלאת חיים, שובבה ויצירתית אך גם נדרשה להתנהג כ״יאה״ לילדה יהודיה. לפני אחד החגים נרכשו וילונות חדשים לביתם, עליהם פרחים גדולים וצבעוניים. טנייה היתה בת ארבע או חמש, רצתה לשמח את אמה ולתת לה מתנה מפית יפה. נטלה מספריים וגזרה מהווילון את הפרח הכי יפה — מיותר לציין ששמחה לא היתה התגובה המצופה.</p>
+      <p>במלחמת העולם השנייה בעת הכיבוש היפני התייתמה מאביה. הבית היה מסורתי וציוני, בו שמרו כשרות וצוינו חגי ישראל. כילדה צעירה למדה בתלמוד תורה ואח״כ בבית ספר ״הורוד״ הרוסי. הייתה חברה בתנועת בית״ר.</p>
+      <p>בבית הספר בו למדה נדרשו התלמידים במפקד הבוקר, בנוסף לכל הברכות ופיקוחו של חייל יפני, להוסיף קידה וברכה לכיוון יפן (מזרח) לכבודו של קיסר יפן הירוהיטו. המורים היהודים ״הכשירו״ את הגזרה באמרם לילדים שזה לכיוון ארץ ישראל וירושלים.</p>
+      <h3>בדרך אל החלום</h3>
+      <p>בגיל 15 דאגה בעצמה לכל האישורים וסידורי עליה לה ולאימה. בקיץ 1950, לאחר מסע ארוך ומייגע של ימים ברכבת לטיינג׳ין, המשיכו באוניה ״הנריק ג׳ייסן״ להונג קונג. בהונג קונג עלו על מטוס רעוע שהתקלקל פעמיים בדרך ולבסוף הגיעו לישראל היישר למחנה ״שער עליה״ שבחיפה, לסלילת דרך וחיים חדשים.</p>
+      <p>בחלוף ימים ספורים, כצעירה אידיאליסטית, חיפשה להגשים את החלום הציוני עליו גדלה, וברוח תנועת בית״ר חיפשה יישוב בו גרים בית״רים. תחילה הגיעו לרמת רזיאל, אח״כ עברו לנורדיה ומשם לירושלים, שם למדה בבית ספר לאחיות, התגייסה לצבא והייתה מן הנשים הראשונות שעברו קורס צניחה, ושרתה כאחות בחיל רפואה. עבדה כאחות מוסמכת בבי״ח שיבא וכאחות אחראית בקופ״ח כללית. לימים נישאה לאבינו, ראובן (בובה) שליפר, יליד חרבין, בנם של פוליה ומשה שליפר ז״ל.</p>
+      <p>טנייה, אשת אשכולות, ברוכת הכישרונות, לא חדלה כל חייה לקרוא, ללמוד וליצור. הייתה כבור סוד שאינו מאבד טיפה. קרמיקאית, צורפת, ציירת מוכשרת ובשלנית מופלאה. ביתה כמו ליבה היה תמיד פתוח וחם לכל אדם. זכתה להנות משבעה נכדים ושבעה נינים.</p>
+      <p>בדצמבר האחרון נפרדה מאיתנו לעולם שכולו טוב, מוקפת במשפחתה האוהבת. <span class="end">■</span></p>
+    </article>
+
+  </div>
+
+  <div class="wrap">
+
+    <article id="he-syn" data-page="16">
+      <p class="kicker">בית הכנסת של עולי סין</p>
+      <h2>בית הכנסת של עולי סין<span class="thin">מבית כנסת לבית של קהילה</span></h2>
+      <p class="byline">מאת: אפרת מרגלית וענת פרידמן</p>
+<p class="standfirst">הידעתם שברחוב הגולן ברמת החייל עומד בית הכנסת לזכר הקהילות היהודיות בסין? מבנה שנולד מתוך סיפור יוצא דופן של קשר בין ישראל לסין ולסיפור הקהילות היהודיות בסין. כיום, כשישים שנה לאחר שנחנך, אנחנו מבקשים להעניק לו חיים חדשים: להפוך אותו לבית של קהילה, זיכרונות ומורשת, וליצור בו מקום שיחבר בין העבר לדורות הבאים.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-31.webp" alt="בית הכנסת של עולי סין ברחוב הגולן, רמת החייל" decoding="async" width="760" height="600"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-32.webp" alt="פנים בית הכנסת של עולי סין" decoding="async" width="760" height="569"></figure>
+      </div>
+      <p class="dropcap">ברחוב הגולן 31 בשכונת רמת החייל בתל אביב, בחצר גדולה ובה עצים גבוהים ושיחים עבותים, נמצא ״בית הכנסת של עולי סין״. לצד בית הכנסת שביל המחבר בין שני רחובות. בשביל רצים ילדים, עוברים אנשים הממהרים לעבודה, מהשביל הזה מגיעה הגברת שמאכילה את החתולים, ומהשביל הזה מגיעים לרחובות צרים בהם אפשר למצוא חנייה. ואני תוהה, האם השכנים, הילדים, העוברים ושבים עצרו ליד הכניסה הראשית של בית הכנסת ושאלו מי אלה עולי סין ומדוע זה שמו של בית הכנסת.</p>
+
+      <h3>קצת היסטוריה</h3>
+      <p>בשנת 1954, בעקבות פיתוח שנגחאי, נהרס אחד מבתי הכנסת בעיר (חלקם, יחד עם מבנים נוספים של הקהילה היהודית, הפכו לרכוש ממשלתי). ממשלת סין, שלמרות שעדיין לא היו לה יחסים דיפלומטיים עם ישראל, רצתה כמחווה של רצון טוב לפצות על הרס בית הכנסת. דרך הקונסוליות בברן שבשוויץ העבירה הממשלה הסינית לישראל סכום כסף שווה בערכו לזה של בית הכנסת ההרוס. התנאי לקבלת הכסף היה שהוא יוקדש לבניית בית כנסת חדש בישראל. עיריית תל־אביב תרמה חלקת אדמה ברחוב הגולן שברמת החי״ל (״שיכון שנגחאי״ באותה תקופה).</p>
+      <p>עם הכסף מממשלת סין, תרומות מתושבי סין לשעבר ותרומתה של משפחת פונבה — בית הכנסת קם לזכר הקהילות היהודיות בסין. הוא נחנך רשמית ב־1962. לוחות נתלו על קירותיו לזכר מנהיגי הקהילות והתורמים לבנייתו מישראל ומהעולם.</p>
+
+      <h3>החזון שלנו</h3>
+      <p>בית הכנסת הינו רכושו של האיגוד ואחזקתו מתבצעת על־ידו ומתקציבו. במשך השנים, היווה בית הכנסת מרכז חשוב ומשמעותי עבור חברי איגוד סין. בבית הכנסת נערכו חתונות, אירועי בר מצווה ובת מצווה ומפגשים חגיגיים שונים.</p>
+      <p>כחלק מתוכניות שימור המורשת של יהדות סין, אנו פועלים לאיתור אפשרויות מימון לשיפוץ בית הכנסת, במטרה להפוך אותו לבית לקהילה שלנו – לא רק בית תפילה, אלא מקום של מפגש, תרבות ושימור מורשת, שיהיה פתוח לכולם.</p>
+      <p>בנוסף, אנו שואפים להקים במקום מוזיאון קטן שיספר את סיפורם של יהודי סין. מקום שיאפשר לדורות הבאים להכיר את השורשים, להבין מאין הגיעו ולשמור את הסיפור חי – לא רק עבור צאצאי יהודי סין, אלא עבור הקהל הרחב וכל מי שמתעניין בהיסטוריה ובמורשת הייחודית הזו.</p>
+      <p>בכנס ה־27 של איגוד המוזיאונים העולמי שהתקיים בפראג באוגוסט 2022 בנושא ״כוחם של מוזיאונים״, נקבעה הגדרה חדשה (לא סופית) למילה מוזיאון: מוזיאון הוא מוסד קבע, ללא כוונת רווח, הפועל בשירות החברה, אשר חוקר, אוסף, משמר, מפרש ומציג מורשת מוחשית ובלתי מוחשית. המוזיאונים פתוחים לציבור, נגישים, מכילים ומטפחים מגוון וקיימות. הם פועלים ומתקשרים באופן אתי, מקצועי ובשיתוף קהילות, ומציעים חוויות מגוונות של חינוך, הנאה, התבוננות ושיתוף ידע.</p>
+      <p>בחרבין, טיאנג׳ין ושנגחאי בתי הכנסת שימשו, מעבר למטרה העיקרית של בית תפילה, גם מקום מפגש, התכנסות לילדים ולמבוגרים, חגיגות ואסיפות. <span class="end">■</span></p>
+
+      <div class="panel seal-panel">
+        <h3>בואו להיות שותפים</h3>
+        <p>אנחנו באיגוד יוצאי סין רוצים להפוך את ״בית הכנסת של עולי סין״ לבית — בית של קהילה, זיכרונות ומורשת.</p>
+        <ul class="plain">
+          <li>מה הייתם רוצים למצוא בבית של יוצאי סין?</li>
+          <li>איזה סיפור משפחתי הייתם רוצים לראות נשמר?</li>
+          <li>אילו תמונות או חפצים נמצאים אצלכם בבית ויכולים לספר משהו על החיים של המשפחה בסין?</li>
+        </ul>
+        <p>אנחנו מזמינים אתכם לקחת חלק בתהליך — לשתף, להציע, לספר ולחשוב איתנו איך ייראה הבית המשותף שלנו.</p>
+        <p>יחד נוכל להפוך את ״בית הכנסת של עולי סין״ למקום חי, פתוח ופועם, שמחבר בין מי שהיו שם, מי שחיים כאן היום, לבין הדורות שיבואו.</p>
+      </div>
+
+      <aside class="poem" aria-label="שיר אינסופי, יהודה עמיחי">
+<h3>שִׁיר אֵינְסוֹפִי</h3><p class="byline">יהודה עמיחי</p>
+<p>בְּתוֹךְ מוּזֵאוֹן חָדִישׁ<br>בֵּית כְּנֶסֶת יָשָׁן,<br>בְּתוֹךְ בֵּית הַכְּנֶסֶת<br>אֲנִי,<br>בְּתוֹכִי<br>לִבִּי,<br>בְּתוֹךְ לִבִּי<br>מוּזֵאוֹן,<br>בְּתוֹךְ הַמּוּזֵאוֹן<br>בֵּית כְּנֶסֶת,<br>בְּתוֹכוֹ אֲנִי,<br>בְּתוֹכִי<br>לִבִּי,<br>בְּתוֹךְ לִבִּי<br>מוּזֵאוֹן</p></aside>
+    </article>
+
+    <article id="he-scholarships" data-page="18">
+      <p class="kicker">מלגות תשפ״ו</p>
+      <h2>מילגה של קהילה כמו משפחה<span class="thin">הכירו את מקבלי המלגות של תשפ״ו</span></h2>
+      <p class="standfirst">65 מלגות הוענקו השנה לצעירים ולצעירות, נכדים ונינים למשפחות יוצאי סין. בזכות קרנות הזיכרון שהקימו בני הקהילה לאורך השנים, אנו ממשיכים להשקיע בדור הבא — דור של מצוינות, שייכות והמשכיות.</p>
+      <figure><img loading="lazy" src="assets/images/scholarship-group.webp" alt="טקס הענקת המלגות במוזיאון ארץ ישראל" decoding="async" width="2800" height="541"><figcaption>צילום: הילה אייזינגר</figcaption></figure>
+
+      <div class="names">
+        <h3>מקבלי מלגות מקהילת יוצאי חרבין</h3>
+        <p><span class="src">תרומת קרן איגוד יוצאי סין לזכר הקהילה היהודית בסין</span>
+        ביטון אושרי, נכדה של אסתר (פרידה) ונדל · בר אורין טרייבר שקד, נכדתה של פנינה טרייבר · ברנע עידן, נינתה של חנה פרידוביץ׳ בלקומין · גולדינר לינוי, נכדתה של מיה (מרים) גולדינר טנדט · גולדינר רוני, נכדתה של מיה (מרים) גולדינר טנדט · גילעד שיר, נכדתו של יוסף גילעד · גרשון לינוי, נכדתה של אניה מזרחי · דגני אורי, נכדתו של הנרי למברג · וגנר ניצן דני, נכדו של דניאל מילר</p>
+        <p><span class="src">תרומת קרן איגוד יוצאי סין לזכר תדי קאופמן ז״ל</span>
+        חזיז דנה, נכדתם של בלה וישראל צ׳רנומורסקי · יניר ניב, נכדתה של יהודית סנדל · יסינובר רותם, נכדו של שמעון יסינובר</p>
+        <p><span class="src">תרומתה של ליאורה טנדט לזכר גסיה ויאשה טנדט וריבה שוחט ז״ל ולובה וליובה ברונר ז״ל</span>
+        ביטון נועה, נכדתו של משה קרוטר · ברגר מור, נכדתו של לב סנדלר</p>
+        <p><span class="src">תרומתם של מרים יקיר ואריה טנדט לזכר ליקה (לאה) ומילה (שמואל) טנדט ז״ל</span>
+        בריל מענית, נכדתו של גרשון פיין</p>
+        <p><span class="src">תרומתם של גיורא ואילנה לסק לזכר אלה ושלמה לסק ז״ל ומרים ודניאל ברקוביץ׳ ז״ל</span>
+        אורנשטיין איתמר, נכדו של מנחם מוסייב (אסיף) · אלעזר נתן, נכדו של נח דרגון</p>
+        <p><span class="src">תרומתם של יהודית מרום וינון פרי לזכר רחל (רייצ׳ל) ויצחק (ייסאי) פרסוב ז״ל</span>
+        בוטון נעמי, נכדתו של פול מילר (שרגא) · בוטון רות, נכדתו של פול מילר (שרגא)</p>
+        <p><span class="src">תרומתו של יקי מטלין לזכר בוריס מטלין ז״ל</span>
+        קפון ניר, נכדו של שמואל כסלו</p>
+        <p><span class="src">תרומת קרן פרנק ואת׳ל דון</span>
+        יפה עופר, נכדו של שלמה ירחו · לבוביץ׳ יעקב, נכדה של רחל לבוביץ׳ ונינה של גניה גולניק · ליובמן מירי, נכדתה של צציליה ליובמן · לסמן נוי, נכדתה של איזבל בלה טיקוצקי · מורדכוביץ׳ חגי, נכדו של אריה מורדכוביץ׳ · מקוב ארבל, נכדה של דינה טריגובוב קידר · נבון גלי, נכדתה של אסתר כץ · נובהארי עדן, נכדתו של נוח דרגון · סימר טל, נכדם של מולי בלום ומשה סימרינוב · ספיר נועה, נינתם של סילביה ונפתלי שרון · סרוסי גלעד, נכדם של ראובן וטניה שלייפר · פוחודייב איליה, נכדה של אספיר ירכו · רובינסון רחל, נכדתם של נדיה וזאב רובינסון · שדה כפיר, נכדו של נתניאל פדוביץ׳ ונינה של ברוריה גלזמן · שוחט עידן, נכדו של אריה שוחט · שטרנברג נועם, נינתם של ניוסיה ודוד חנין · שמואלי איסר, נכדה של חטינה קרבצקי דג׳מלה · שמואלי ברק, נכדה של חטינה קרבצקי דג׳מלה</p>
+
+        <h3>מקבלי מלגות מקהילת יוצאי שנגחאי</h3>
+        <p><span class="src">תרומתה של רמה שלמוני (רוזן) לזכר ערן ונורית רוזן ז״ל</span>
+        בחנוף ענבר, נכדתו של נתן בחנוף</p>
+        <p><span class="src">תרומתו של דרור טריגובוב לכבוד אביו משה טריגובוב שייבדל לחיים ארוכים</span>
+        לאו בן, נכדה של אווה לאו</p>
+        <p><span class="src">תרומת קרן איגוד יוצאי סין לזכר הקהילה היהודית בסין</span>
+        בומש אביעד, נכד של יוסי בומש · בומש שחר, נכד של יוסי בומש · בלוך־ווסט אליענה טופז, נכדתם של יוג׳ין וג׳ורג׳ בלוך · בן יוסף לירי רנה, נכדתה של אילנה בן יוסף ונינתו של דויד וולוביק · ברזני גל, נכדתה של אריקה שלזינגר · גרשון עמית, נינם של הדסה ודויד וולוביק</p>
+        <p><span class="src">תרומת קרן איגוד יוצאי סין לזכר תדי קאופמן ז״ל</span>
+        ונדל אייל, נכדה של אסתר ונדל · חפץ תומר, נכדה של רחל הלל · טאוב גיא, נכדם של מיכאל ומלכה לאור</p>
+        <p><span class="src">תרומת קרן פרנק ואת׳ל דון</span>
+        ירון יובל, נכדתה של מרים האוזמן מיינצר · כהן שחר, נכדה של קלרה כהן ונינה של אריקה ווילהויט · כסיף יסמין, נכדתה של זלטה (טוסיה) שגרין כסיף · סרוסי ברום גל, נכדתה של קלייר כהן · קלפוס אפרת, נכדתה של חיה רבקה רות טורונצ׳יק קלפוס · קלפוס כונן רני, נכדתה של חיה רבקה רות טורונצ׳יק קלפוס · רעם תמר, נכדתו של אריה רעם משנחאי · שגרין נטלי, ביתו של מייק (מרסל) שגרין · שפרירי עידו, נכדם של עליזה פרידה שפרירי (גורדון) · שפרירי יפתח, נכדם של עליזה פרידה שפרירי (גורדון)</p>
+
+        <h3>מקבלי מלגות מקהילת יוצאי טיאנג׳ין</h3>
+        <p><span class="src">תרומת המשפחה לזכר דינה טריגובוב־קדר ז״ל</span>
+        גפן יואב, נכדו של דניאל פרידמן · גפן עמוס, נכדו של דניאל פרידמן</p>
+        <p><span class="src">תרומת קרן איגוד יוצאי סין לזכר הקהילה היהודית בסין</span>
+        בר אור יריב, נכד של אייבי כסלו (קיסילוב)</p>
+        <p><span class="src">תרומת קרן איגוד יוצאי סין לזכר תדי קאופמן ז״ל</span>
+        זיו חן, נכדתה של מרים שוורץ</p>
+
+        <h3>מקבלי מלגות מקהילת יוצאי קונמינג</h3>
+        <p><span class="src">תרומת קרן פרנק ואת׳ל דון</span>
+        מיינצר יונתן, נינם של וילהלם וסילינג מיינצר ונכדו של ישראל מיינצר</p>
+
+        <h3>מקבלי מלגות מקהילת יוצאי ווסו (שיחו)</h3>
+        <p>קנובובץ אלכסנדר, נכדה של לידיה נונין</p>
+      </div>
+    </article>
+
+    <article id="he-miller" data-page="20">
+      <p class="kicker">אבא ואמא מסין</p>
+      <h2>המשפחה הסינית<span class="thin">סיפורה של משפחת מילר</span></h2>
+      <p class="byline">מאת: ליאת מילר, ביתו של סם מילר</p>
+      <p class="standfirst">מה נשאר איתנו מהמקום שבו נולדנו, גם אחרי שעברנו אלפי קילומטרים ובנינו את חיינו במקום אחר? עבור ליאת מילר, סין הייתה הרבה יותר מארץ המוצא של הוריה. היא הייתה שפה, חברים, סיפורים וזיכרונות ובעיקר חלק בלתי נפרד מהבית.</p>
+
+      <p class="dropcap">כילדה קטנה תמיד הייתי מעט מבולבלת לגבי מוצא הוריי. תגובתם של השואלים לתשובתה של ילדה עם שיער שחור וחלק המכסה עיני שקד — ״את באמת נראית קצת סינית״ — סיפקה עבורי את האסמכתא המושלמת לארץ מוצאם של הוריי, סם וחנה מילר, שניהם ילידי סין.</p>
+      <p>בבית התנהל תמיד הוויכוח הנצחי בין שתי ערי ילדותם. אבא, שגדל בטיאנג׳ין, עיר נמל בינלאומית גדולה ומשגשגת, טען כמובן לעליונותה על פני עיר הולדתה של אמא, חרבין. אמא זכרה את חרבין כעיר גדולה ותוססת, בעלת אופי רוסי מובהק וחיי קהילה עשירים; אבא אהב להרגיז אותה ולטעון שמדובר בסך הכול בעיירה של רחוב אחד.</p>
+      <p>השורשים ה״סיניים״ מילאו את הבית, לא רק בריהוט ובחפצי אמנות, אלא בעיקר בחבריהם הסינים: הארי מרינסקי, טדי קאופמן, ג׳ורג׳ פוליאק, בובי ברשדצקי, ג׳ורג׳ קנפול ועוד רבים אחרים.</p>
+      <p>אלה, כמובן, היו חברי הילדות שגדלו בטיאנג׳ין ובקהילות יהודיות נוספות של סין ועלו, ברובם, לארץ. לימים נישאו, חלקם ליוצאי סין כמוהם וחלקם לילידי הארץ, אך קשרי החברות ביניהם נותרו עמוקים וליוו אותם לכל אורך חייהם.</p>
+      <p>מאחורי החברויות האלה עמד גם סיפורו של דור יהודי־ציוני שגדל בצד השני של העולם, אבל ארץ ישראל הייתה נוכחת בחייו כבר מגיל צעיר. אבא והארי מרינסקי יצאו מסין עוד לפני קום המדינה בדרכם לארץ, ובהמשך חזרו לסין כדי לסייע לצעירים נוספים מבני הקהילה לעשות את דרכם לכאן. זה היה חלק מסיפור חייהם, אבל עבורי, הרבה לפני שהבנתי את משמעותו ההיסטורית, הם פשוט היו החברים של אבא ואמא.</p>
+      <p>עבורי, ״משפחת הסינים״ הייתה המשפחה המורחבת שלי, תמיד מחבקת, תמיד מלאה בסיפורים ובשמחת חיים. בכל פעם שנפגשו, לא משנה אם היו בני חמישים, שישים, שמונים ואף יותר, משהו בהם השתנה. יחד הם חזרו להיות אותם נערים ונערות צעירים שגדלו בצד השני של העולם וחלמו על ארץ ישראל. אותו ניצוץ — אומץ, שובבות אולי — לא עזב אותם מעולם.</p>
+      <p>נדמה לי שסין עצמה שמרה אצלם משהו מן הנעורים האלה. אולי משום שעזבו אותה צעירים כל כך, אולי משום שכל כך הרבה מן הזיכרונות המשותפים שלהם נשארו שם.</p>
+
+      <h3>בחזרה לטיאנג׳ין</h3>
+      <p>בשנת 1998 יצאנו לטיול שורשים — אבא, אמא, אילנה אחותי ושני ילדיה הגדולים שאולי ונועה, פיני מרינסקי, בנו של הארי, ושתי בנותיו, ואילנה אולשבסקי, שבעלה אריה היה אף הוא יליד סין. חזרנו לערי ילדותם וזכינו לראות במו עינינו את המקומות שעד אז הכרנו בעיקר מן הסיפורים: את בית הכנסת הישן, את בית הספר הבריטי שבו אבא למד, ואפילו את בית ילדותו בטיאנג׳ין.</p>
+      <figure><img loading="lazy" src="assets/images/photo-34.webp" alt="משפחת מילר בסמטאות טיאנג׳ין, 1998" decoding="async" width="860" height="500"><figcaption>אבי סאם, אני, אחותי אילנה וילדיה שאולי ונועה ואימי חנה</figcaption></figure>
+      <p>אני זוכרת במיוחד את הדרך אל הבית. צריך לזכור — אלה היו ימים שלפני טלפונים חכמים, מפות גוגל או וייז. הסתובבנו בסמטאות הקטנות של טיאנג׳ין, ואבא, אז כבר כמעט בן שבעים, לא נזקק לדבר. הוא ידע בדיוק לאן ללכת. בצעדים מהירים ובטוחים הוביל אותנו מסמטה לסמטה, כאילו עזב את השכונה רק אתמול, ולרגע היה נדמה שהוא שוב אותו נער בן שמונה־עשרה.</p>
+      <p>להפתעתנו, הבית עדיין עמד שם בשלמותו.</p>
+      <p>גם תיירים מערביים כמעט שלא נראו אז בסין, ובוודאי שלא בסמטאות האלה, כך שדי בלטנו בנוף, חבורה של כעשרה ״לבנים״ צועדת יחד בין בתי השכונה.</p>
+      <p>בצד הדרך עמדו אב סיני ובנו הקטן. הילד הביט בנו בסקרנות ושאל את אביו, במנדרינית כמובן, מה עושים כאן כל הלבנים האלה.</p>
+      <p>מה שהוא לא ידע הוא שאחד מאותם ״לבנים״ היה אבא שלי.</p>
+      <p>אבא דיבר קרוב לשמונה שפות, וביניהן מנדרינית, שאותה למד בילדותו מהמטפלת הסינית שעבדה בבית משפחתו. בלי להסס הוא פנה אל הילד וענה לו, במנדרינית רהוטה:</p>
+      <p><b>״אני? זה היה הבית שלי. נולדתי כאן.״</b></p>
+      <p>הילד ואביו נותרו לרגע פעורי פה. משם כבר התפתחה שיחה קולחת בין השלושה, שבסופה אפשרו לנו גם להיכנס פנימה ולסייר בבית.</p>
+      <p>וכך, כמעט חמישים שנה אחרי שעזב את טיאנג׳ין, אבא נכנס שוב לבית שבו נולד וגדל — הפעם יחד איתנו.</p>
+      <figure><img loading="lazy" src="assets/images/photo-35.webp" alt="איור של בית משפחת מילר בטיאנג׳ין" decoding="async" width="700" height="1084"><figcaption>הבית של סם מילר בטיאנג׳ין. איור: ליאת מילר</figcaption></figure>
+
+      <h3>מה שנשאר איתנו</h3>
+      <p>שנים אחר כך, אני כמובן יודעת שאינני סינית. אבל נדמה לי שמה שנשאר איתי יותר מכול הוא ההבנה שסין מעולם לא הייתה עבורם רק המקום שממנו באו. היא נשארה חלק מן הבית שבנו כאן.</p>
+      <p>אולי משום כך היה איגוד יוצאי סין משמעותי כל כך עבורו. האיגוד היה הרבה יותר ממסגרת חברתית או מקום להעלאת זיכרונות. הוא היה דרך לשמור על החוט שחיבר בין האנשים, בין המקומות, ובין מי שהיו שם למי שהפכו להיות כאן; לשמר את המורשת, את החברויות ואת הערכים שעליהם גדלו, ולהבטיח שהסיפורים האלה לא ייעלמו יחד עם הדור שנשא אותם.</p>
+      <p>ובתוך כל אלה נשמרה גם ארץ ישראל כפי שנראתה להם אז, ממרחק של אלפי קילומטרים, לא רק כמקום, אלא כהבטחה. הבטחה לבית, לחירות, לשייכות ולחברה שאפשר לבנות יחד.</p>
+      <p>נדמה לי שעבור אבא, השמירה על הסיפור הזה לא הייתה רק מבט לאחור. הייתה בה גם תקווה, שאותה ארץ שהייתה עבורם אז חלום והבטחה, תדע להיות כזאת שוב. <span class="end">■</span></p>
+    </article>
+
+    <article id="he-frame" data-page="22">
+      <p class="kicker">מאחורי הפריים</p>
+      <h2>תמונה אחת. 100 מילים. סיפור שנשאר.</h2>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-36.webp" alt="כובע מקורי בעיצובה של בָּבָּה רִיבָה" decoding="async" width="560" height="264"><figcaption>כובע מקורי בעיצובה של בָּבָּה רִיבָה, שנשמר אצל נינתה ליאורה טנדט לאורך השנים</figcaption></figure>
+        <h4>רוח חרבין בכובע קסמים</h4>
+        <p class="who">ענת פרידמן</p>
+        <p>סבתי, בָּבָּה רִיבָה — רִיבָה שוחט — הייתה כובענית: אומנית שעיצבה ויצרה כובעי נשים בעבודת יד עדינה, מלאכת מחשבת של דמיון, יצירתיות ותפירה מדויקת. במשך שנים, כל שידעתי עליה היה סיפור מטושטש על חנות קטנה של כובעים ופרוות בחרבין המושלגת של תחילת המאה העשרים.</p>
+        <p>לפני כשנתיים, במהלך לימודי הסינית באיגוד, פגשתי את טניה שלייפר, ילידת חרבין, 1931. כשסיפרתי לה על שורשיי בחרבין, ועל בָּבָּה רִיבָה, עיניה אורו לפתע: ״אני הכרתי את רִיבָה! היא עיצבה והכינה לי את הכובע הראשון שלי, לכבוד בת המצווה״.</p>
+        <p>ברגע אחד, הכובע של טניה הפך לכובע קסמים אמיתי. הוא ביטל את חוקי הזמן, וחוט עדין של משי ונוסטלגיה החזיר לחיים פיסת היסטוריה משפחתית חמה, שחיכתה כמעט מאה שנה להתגלות.</p>
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-37.webp" alt="בָּבָּה רִיבָה" decoding="async" width="460" height="697"><figcaption>בָּבָּה רִיבָה</figcaption></figure>
+          <figure><img loading="lazy" src="assets/images/photo-38.webp" alt="טניה שלייפר בילדותה" decoding="async" width="380" height="413"><figcaption>טניה שלייפר</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-39.webp" alt="דינה טריגובוב־קדר בתלבושת בית״ר, חרבין 1943–1944" decoding="async" width="418" height="889"></figure>
+        <h4>ביתר״ית מלידה</h4>
+        <p class="who">מילי מקוב</p>
+        <p>דינה טריגובוב־קדר, בת כארבע, מצולמת בחרבין שבסין בשנת 1943 או 1944, לבושה בתלבושת בית״ר.</p>
+        <p>חרבין הייתה אז בית לקהילה יהודית ציונית ותוססת, ששמרה על זהותה ועל חלומה הלאומי גם הרחק מארץ ישראל. הוריה של דינה חינכו אותה ברוח ערכי בית״ר – אחריות, גאווה יהודית ואהבת המולדת.</p>
+        <p>בעוד העולם היה נתון לטלטלות המלחמה, ניצבת דינה הקטנה בחיוך בטוח ותמים, מבלי לדעת שהתמונה הזו תשמר סיפור של זהות ושייכות. התמונה היא יותר מזיכרון משפחתי; היא עדות לכוחה של קהילה ששמרה על תקווה, מסורת וחזון גם בקצה השני של העולם.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-40.webp" alt="ברוך (בוריה) טריגובוב ובתו דינה בסירת פדלים על נהר הסונגרי" decoding="async" width="835" height="553"></figure>
+        <h4>חיבוק על נהר הסונגרי</h4>
+        <p class="who">מילי מקוב</p>
+        <p>על נהר הסונגרי (בסינית: סונגחואה) בחרבין שבסין, באחד מימי הקיץ של שנות הארבעים, שטו ברוך (בוריה) טריגובוב ובתו הקטנה דינה בסירת פדלים. המים השקטים נפרשו סביבם, והרוח הקלה של הנהר ליוותה את רגע האושר המשפחתי.</p>
+        <p>עבור דינה הייתה זו הרפתקה קטנה, ועבור אביה, הזדמנות לבלות עם בתו האהובה. עבור יהודי חרבין, נהר הסונגרי היה חלק בלתי נפרד מחיי היום־יום, מקום להחלקה על הקרח בחודשי החורף, ובקיץ — בילוי ומנוחה.</p>
+        <p>התצלום לוכד רגע של חום, אהבה וקרבה משפחתית, ומנציח את חייה של הקהילה היהודית בחרבין, ששמרה על שמחת החיים ועל תקווה גם בימים של אי־ודאות בעולם.</p>
+      </div>
+
+      <div class="frame">
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-41.webp" alt="גניה טנדט לבית שוחט ובנה זאב" decoding="async" width="620" height="641"></figure>
+          <figure><img loading="lazy" src="assets/images/photo-42.webp" alt="מוצץ" decoding="async" width="360" height="406"></figure>
+        </div>
+        <h4>כשזאב בלע מוצץ</h4>
+        <p class="who">ליאורה טנדט</p>
+        <p>בתמונה סבתי, גניה טנדט לבית שוחט, ואבי, זאב, שניהם ילידי חרבין.</p>
+        <p>סבתי סיפרה שכאשר אבי היה עולל קטן בחרבין, הוא בלע את המוצץ שלו. היא נבהלה מאוד ורצה איתו לרופא. לאחר שבדק אותו, אמר הרופא בחיוך: ״גברת טנדט, פשוט תקני לו מוצץ חדש!״</p>
+      </div>
+
+      <div class="frame">
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-43.webp" alt="כפית העץ ומסלול הטיסה מהונג קונג" decoding="async" width="700" height="929"></figure>
+          <figure><img loading="lazy" src="assets/images/photo-44.webp" alt="שלט ׳העץ של סניה׳ במושב עמיקם" decoding="async" width="420" height="358"></figure>
+        </div>
+        <h4>הכפית מהונג קונג</h4>
+        <p class="who">דרור טריגובוב</p>
+        <p>בכניסה למושב עמיקם, על גזע עץ, קבוע שלט הנושא את הכיתוב: ״העץ של סניה, לזכר שמעון אורלוב ז״ל, ממייסדי עמיקם״.</p>
+        <p>אין לי קשר משפחתי עם סניה אורלוב, ואף לא זכיתי להכירו. סניה, יליד חרבין, נפטר כשנה לאחר שנולדתי. אך הקשר המיוחד שלו עם סבי וסבתי, מניה ובוריה טריגובוב, הותיר חותם — וחלק מחפציו של המתעד הנלהב נשמרו בבית הוריי, ליה ומוריק טריגובוב, גם עשרות שנים לאחר מותו.</p>
+        <p>בין חפציו שנשמרו: כפית עץ שהוגשה במהלך טיסה שהמריאה מהונג קונג במסע עלייתו לארץ, ורישום מדויק של עצירות הביניים וזמני ההגעה: הונג קונג, בנגקוק, כלכותה, בומביי, שארג׳ה ולוד.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-45.webp" alt="אהוד אולמרט, רעייתו עליזה ואחיו עמי בבית העלמין היהודי בחרבין" decoding="async" width="582" height="409"></figure>
+        <h4>בבית הקברות היהודי בחרבין</h4>
+        <p class="who">רה״מ לשעבר אהוד אולמרט</p>
+        <p>בית העלמין היהודי בעיר חרבין מטופל ומטופח על ידי ממשלת המחוז, אשר טורחת לשמר את המורשת היהודית של העיר הזו, השוכנת באזור מנצ׳וריה בצפון מזרח סין. באחד מהרחובות הראשיים של העיר נמצא בית הכנסת אשר מספר המתפללים בו תלוי בדרך כלל במספר המבקרים היהודים המזדמנים לעיר, הן לתיירות וגם לעסקים. גם מסעדה יהודית נמצאת בקרבת מקום.</p>
+        <p>לי, ולבני משפחתי, בית הקברות הוא המקום שאליו אני מגיע מייד בתחילת הביקור שלי בעיר. שם קבור סבא שלי יוסף אולמרט ז״ל, ושם קבורים כמה בני משפחה נוספים שגרו בעיר הזו.</p>
+        <p>בתמונה המצורפת אפשר לראות אותי עם רעייתי עליזה ואחי הבכור עמי ז״ל, שהיה במועד ביקורי שם נספח לענייני חקלאות של ממשלת ישראל. זה היה הביקור הראשון שלי בחרבין בהיותי ממלא תפקיד רשמי — אז ממלא מקום ראש הממשלה ושר התמ״ת.</p>
+        <p>בכניסה לבית העלמין הוצב עמוד שיש גדול ובמרכזו משפט תודה שכתבתי לשלטונות הסינים על הטיפוח של המורשת היהודית בארצם. המילים, בכתב ידי, חרותות באותיות זהב במרכזו של עמוד השיש.</p>
+        <p>בית העלמין היהודי הוא אתר תיירות המופיע בחוברות הסברה המיועדות למבקרים בסין. בשבילי, בשביל אחי ובני משפחתי — הוא נקודת המוצא. מכאן, מהעיר הזו, יצאו הוריי לארץ ישראל, ולכאן שבתי כראש ממשלת ישראל, לכבד את זכרו של סבי יוסף ז״ל שחי בעיר הזו משנת 1917 ושם נפטר ונקבר ב־1941.</p>
+        <p>סין היא חלק מהביוגרפיה של משפחתי ושלי. הייתה כל חיי — ותישאר.</p>
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-46.webp" alt="אנדרטה בבית העלמין היהודי בחרבין" decoding="async" width="560" height="747"></figure>
+          <figure><img loading="lazy" src="assets/images/photo-47.webp" alt="עמוד השיש עם משפט התודה בכתב ידו של אהוד אולמרט" decoding="async" width="700" height="517"></figure>
+        </div>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-48.webp" alt="ארבעה דורות של נשות המשפחה, חרבין" decoding="async" width="700" height="478"></figure>
+        <h4>ארבעה דורות מחרבין להקמת מושב עמיקם</h4>
+        <p class="who">מרים יקיר</p>
+        <p>תמונה משפחתית היסטורית זו צולמה בחרבין שבסין, ובה מונצחים ארבעה דורות של נשות המשפחה. מימין יושבת סבתא ורה ליפסון, משמאל יושבת ביתה רוזה גולדשמידט, מאחוריה עומדת נכדתה, ליקה־לאה גולדשמידט, ובמרכז קדמת התמונה עומדת הנינה, הילדה מרים יקיר (לשעבר טנדט).</p>
+        <p>המשפחה עלתה מסין ארצה מתוך חזון ציוני עמוק לבניית הארץ. יחד עם שמואל (מילה) טנדט שנישא לליקה ועוד 23 משפחות נוספות מיוצאי סין, הם עלו ישירות לקרקע, הפכו לחלוצים ומייסדים והקימו את המושב הבית״רי החדש — מושב עמיקם. מורשתם חיה ופועמת בנו עד היום.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-49.webp" alt="חתונת סופיה בירולין ואריה ליכומנוב בבית הכנסת החדש בחרבין, 1933" decoding="async" width="760" height="569"></figure>
+        <h4>הפתעה על קיר המוזיאון</h4>
+        <p class="who">משה ליכומנוב</p>
+        <p>זהו צילום טקס חתונתם המפואר של הוריי, סופיה בירולין ואריה ליכומנוב, בבית הכנסת החדש בחרבין בשנת 1933. התמונה צולמה על ידי הצלם הידוע יעקב ליפשיץ, שהיה דודה של אימי, הכלה, סופיה.</p>
+        <p>התמונה נשמרה באלבום המשפחתי במשך שנים רבות, ואני הכרתי אותה מאז ילדותי. והנה, בביקור השורשים שערכנו אחותי דינה ז״ל ואני בבית הכנסת החדש בחרבין בשנת 2006, נדהמנו לגלות את תמונת החתונה מוצגת במוזיאון, ולצידה פרטי הסבר לא מדויקים.</p>
+        <p>אחראי המוזיאון לא ידע מי המצולמים בתמונה, מתי צולמה ומי היה הצלם. כמובן שסיפקנו לו את הפרטים הנכונים. הוא הופתע, רשם את שמות החתן והכלה ואת יתר הפרטים, והבטיח לעדכן את הכיתוב.</p>
+        <figure><img loading="lazy" src="assets/images/photo-50.webp" alt="משה ליכומנוב ואחותו דינה ליד התמונה המוצגת במוזיאון" decoding="async" width="700" height="439"><figcaption>אחותי, דינה וינקוב ליכומנוב ז״ל, ואני, עומדים ליד התמונה המוצגת, מתפעלים ותוהים כיצד הגיעה לידי הסינים.</figcaption></figure>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-51.webp" alt="גיטה קלישק (מוריאל אונגמוט)" decoding="async" width="520" height="576"></figure>
+        <h4>מי את גיטה קלישק, מוריאל אונגמוט?</h4>
+        <p class="who">עופר דרור</p>
+        <p>אמי, גיטה קלישק, נולדה להוריה אווה ומאייר בדרזדן שבגרמניה בשנת 1932. תקופה קצרה לאחר מכן, היטלר עלה לשלטון.</p>
+        <p>אביה, שהיה אדם עם חושים מחודדים, הודיע לסבתי שעכשיו, כשהיטלר עלה לשלטון, הם חייבים לעזוב לפריז. אמי הייתה בת מספר חודשים ואחותה סוניה כשנתיים גדולה יותר. סבי עשה חייל בעסקיו והתעשר מאוד.</p>
+        <p>בשנת 1940 הגרמנים נכנסו לפריז וסבי, שהיה בעל חנות לתכשיטים, קנה פספורטים לו, לאשתו ולשתי בנותיו מגוי שוויצרי. השוויצרי דיווח לשלטונות על אובדן המסמכים לאחר 3 ימים, מה שאפשר למשפחה לברוח למרסיי. כולם קבלו שמות חדשים: אמי הפכה למוריאל, אחותה סוניה לג׳ני ושם המשפחה היה אונגמוט. תוך 3 ימים עלו על אנייה ששטה לשנגחאי שבסין. הם הגיעו לשם כשוויצרים לא יהודים. הם גרו באזור צרפתי.</p>
+        <p>כשהיפנים כבשו את שנגחאי הם הקימו מחנות ריכוז ליהודים בלי שהבינו איך ולמה, אולם ביצעו את הדרישה הזו של בעלי בריתם הגרמנים כלשונה. ליהודים אסור היה לעזוב את הגטו למעט במקרים בהם הייתה להם עבודה מחוץ לגטו. סבי מאייר ״העסיק״ כ־40 מהם ובכך עזר להם לצאת ולהתפרנס.</p>
+        <p>בשנת 1949 יצאה אונייה שנשכרה על ידי ה־UJF (United Jewish Federation) משנגחאי לישראל ולאמריקה. אמי ואחותה הפליגו בספינה זו והגיעו לארץ לאחר מסע של מספר חודשים. הוריה חיכו להם בארץ וכולם נקלטו כאן בהצלחה.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-52.webp" alt="לאה (ליקה) גנקין וזלדה גנקין" decoding="async" width="620" height="888"></figure>
+        <h4>רגע לפני שהדרכים נפרדו</h4>
+        <p class="who">אירית פרידמן ושרית כרמי, בנותיה של זלדה</p>
+        <p>לאה (ליקה) גנקין ז״ל, דודתנו, וזלדה גנקין ז״ל, אמנו, היו שתי אחיות שעמדו באותה עת בפני פרידה שתעצב את חייהן. בילדותן התייתמו מאימן. עם סיום מלחמת העולם השנייה איבדו גם את אביהן, מאיר, ואת אחיהן אברהם, שנרצחו בטבח שביצעו היפנים בעיר חרבין. הטרגדיות שחוו חיזקו את הקשר העמוק שנרקם ביניהן.</p>
+        <p>בתמונה הן עדיין צעירות מאוד, ניצבות בפני אחת ההחלטות המשמעותיות בחייהן: האם להמשיך לחיות יחד כפי שעשו עד אז, או להיפרד ולצאת כל אחת לדרך משלה.</p>
+        <p>ליקה עמדה להינשא ליעקב (יאשה) ולהגר עם הוריו לאוסטרליה. זלדה התלבטה אם להצטרף אליה או לפתוח חיים חדשים לבדה. בינתיים ניצלו השתיים את ימיהן האחרונים יחד כדי לטייל באתרים ששרדו את ההרס שהותיר אחריו הצבא היפני בנסיגתו, וליצור עוד זיכרונות משותפים.</p>
+        <p>מתוך הזדהות עמוקה עם רוח התנועה הציונית, החליטה זלדה להיפרד מאחותה ולעלות לבדה לישראל. היא הגיעה לבית החלוצות בחיפה, שם החלה לבנות את דרכה האישית והמקצועית בארץ החדשה ונישאה לדוד פרידמן.</p>
+        <p>ליקה לעומתה, היגרה עם משפחתה לסידני שבאוסטרליה. למרות המרחק הרב, שמרו שתי האחיות על קשר קרוב לאורך כל חייהן – באמצעות מכתבים, שיחות טלפון וביקורים הדדיים.</p>
+      </div>
+
+      <div class="frame">
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-53.webp" alt="פסטיבל הקרח בחרבין" decoding="async" width="620" height="427"></figure>
+          <figure><img loading="lazy" src="assets/images/snow-countryside.webp" alt="נוף כפרי מושלג מחלון הרכבת" decoding="async" width="476" height="337"></figure>
+        </div>
+        <h4>סין שלי</h4>
+        <p class="who">אפרת מרגלית</p>
+        <p>מאז שהתחלתי לעבוד באיגוד יוצאי סין שואלים אותי מה הקשר שלי לסין. אז לא, המשפחה שלי לא הגיעה מסין, ואני — את הסיפור שלי עם סין כתבתי וממשיכה לכתוב מאז ביקורי הראשון בשנת 1997, ואת השורשים בסין אני אומרת, שנטעתי בעצמי.</p>
+        <p>אחת החוויות החזקות והמשמעותיות שחוויתי בשנים בהן חייתי וטיילתי בסין, היתה הנסיעה לפסטיבל הקרח בחרבין. סיימתי את קורס הסינית באוניברסיטה לשפות ותרבות (BLCU) בבייג׳ין והמשכתי לטייל במדינה הענקית. החלטתי לקחת רכבת שינה מבייג׳ין, שאז, בסוף שנת 2005, היתה איטית וישנה. הצטיידתי בבגדים חמים במיוחד באחד השווקים ויצאתי למסע. אחרי שעות ארוכות של נופי כפרים מכוסי שלג ונחלים קפואים הגעתי לתחנת הרכבת בחרבין. הקור העז היכה בי ברגע שיצאתי מקרון הרכבת ואיתו הלכה וגברה הסקרנות.</p>
+        <p>זה היה בסוף דצמבר ואת ערב השנה האזרחית החדשה 2006 חגגתי במסעדה רוסית קטנה במרכז חרבין. ואז התחילו השאלות והמחשבות: מה לרוסים ולעיר בצפון סין? איך הגיעו לכאן היהודים ומהיכן? ומה הקשר לרכבת הטרנס־סיבירית (בה נסעתי כ־20 פעמים...)? ואיך חיים במזג אוויר קשה שכזה בחורף?</p>
+        <p>החיבור שלי לסין התחיל בשנות ה־90. אני חושבת שהקשר עם יהדות סין התחיל במסעדה רוסית קטנה, כשבחוץ מינוס 26 מעלות ופסלים וארמונות עשויים קרח, ואצלי עוד התחלה של סיפור. את סין עזבתי ברכבת הטרנס־מונגולית, דרך מונגוליה לסיביר. וזו היתה רק הפעם הראשונה...</p>
+      </div>
+
+      <div class="panel seal-panel">
+        <h3>יש לכם תמונה שרוצה לספר סיפור?</h3>
+        <p>שלחו אותה אלינו יחד עם קטע קצר של עד 100 מילים. נשמח לפרסם את הסיפור שלכם בגיליונות הבאים.</p>
+        <p class="contact"><a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a></p>
+      </div>
+    </article>
+
+    <article id="he-harbin" data-page="27">
+      <p class="kicker">חוזרים לחרבין</p>
+      <h2>מפגש המחזור הגדול של חרבין<span class="thin">אלכס נחומסון מספר</span></h2>
+      <p class="standfirst">בשנת 2017 הזמינה חרבין את ילידי העיר מרחבי העולם למפגש יוצא דופן. לצד קהילות רבות שחיו בה לאורך השנים, השתתפו גם נציגי הקהילה היהודית מישראל – במסע שהפך למפגש מרגש של אנשים, זיכרונות ומורשת.</p>
+      <p class="dropcap">בשנת 2017 החליטה עיריית חרבין לקיים כנס מיוחד לכל ילידי העיר באשר הם. לצד הקהילה היהודית חיו בחרבין לאורך השנים קהילות רבות – רוסים ״לבנים״ (נאמני הצאר), גרמנים, אוקראינים, פולנים, לטבים, ליטאים, אסטונים, ארמנים, יפנים, קוריאנים, טטרים, יוונים, גאורגים ועוד.</p>
+      <p>הזמנות נשלחו לכל המדינות שבהן פועלים ארגונים של יוצאי חרבין. מישראל הגיעו שתי משלחות: האחת מטעם איגוד יוצאי סין, והשנייה מטעם עיריית גבעתיים – שאמנם לא הורכבה מילידי חרבין, אך מקיימת עד היום קשר של עיר תאומה עם העיר.</p>
+      <p>בחרבין פגשנו את פרופסור דן בן־כנען, ישראלי יהודי שהקים את משפחתו בעיר ומרצה באוניברסיטה המקומית. דן הצטרף אלינו בשמחה, הוסיף למפגש הרבה חום ועליצות והיה גשר נפלא בינינו לבין המקומיים.</p>
+      <figure><img loading="lazy" src="assets/images/harbin-newspaper.webp" alt="כתבה בעיתונות הסינית על המפגש בחרבין" decoding="async" width="537" height="293"><figcaption>״לא משנה היכן אתה נמצא — חרבין היא הבית שלי״: הכנס בעיתונות המקומית</figcaption></figure>
+      <p>תושבי חרבין יצאו מגדרם כדי להעניק למשלחות שהגיעו לכנס חוויה בלתי נשכחת. כל משלחת שוכנה במלון אחר ברחבי העיר, ואנחנו זכינו להתארח במלון ״מודרן״ המפורסם – מלון בעל עבר יהודי עשיר, שנותר גם בגילו המופלג מטופח ומרשים.</p>
+      <p>במהלך הביקור השתתפנו במגוון פעילויות: הפלגה על נהר סונגהואה (״סונגרי״ בפי אבותינו), ביקור בתחנת הרכבת ההיסטורית בצפון העיר, נשף חגיגי עם סעודה מפוארת, וסיורים באתרי המורשת היהודית – בתי הכנסת הישן והחדש, בית העלמין, בית החולים היהודי שהפך למרפאת עיניים ועוד.</p>
+      <figure><img loading="lazy" src="assets/images/photo-56.webp" alt="רחוב בחרבין בימי הכנס" decoding="async" width="760" height="390"></figure>
+      <p>ביקרנו גם באי השמש (טאייאנג דאו), השוכן בנהר סונגהואה, שבו מתקיים בחורף פסטיבל הקרח המפורסם, ובקיץ ניתן לטייל בין המונומנטים והנופים הייחודיים. בסמוך סיירנו בפארק הנמרים הסיביריים – בעלי חיים מרשימים, יפים ומעוררי יראה.</p>
+      <p>כחלק מביקורנו, השתתפנו בטקס מרגש של הסרת הלוט מעל לוח זיכרון לזכרם של אברהם ותדי קאופמן, ממנהיגי הקהילה היהודית בעיר. הטקס נערך במעמד מנהל אגף קשרי החוץ של עיריית חרבין, והלוח הוצב באופן סמלי בכניסה החיצונית לבית הכנסת החדש. האירוע היווה עדות חיה למחויבותה של העירייה לשימור המורשת היהודית העשירה בחרבין.</p>
+      <figure><img loading="lazy" src="assets/images/photo-57.webp" alt="טקס הסרת הלוט מעל לוח הזיכרון לאברהם ותדי קאופמן" decoding="async" width="684" height="643"><figcaption>מימין: מנהל אגף קשרי החוץ של עיריית חרבין. משמאל: אלכס נחומסון</figcaption></figure>
+      <p>הביקור הזה נחרט בזיכרוני כחוויה יוצאת דופן – מפגש של אנשים, קהילות וזיכרונות, ואני מקווה שעוד מפגשים כאלה יתקיימו גם בעתיד. <span class="end">■</span></p>
+      <p class="sig">אלכס נחומסון<span>סגן יו״ר איגוד יוצאי סין</span></p>
+    </article>
+
+    <article id="he-save" data-page="28" data-source="29">
+      <p class="kicker">שריינו את התאריך</p>
+      <h2>מפגש חברים והדלקת נרות<span class="thin">נר ראשון של חנוכה, בשגרירות סין</span></h2>
+      <div class="std">
+        <p class="lbl">SAVE THE DATE</p>
+        <p class="date">4.12.2026</p>
+        <p>נר ראשון של חנוכה</p>
+        <p>אולם קבלת הפנים, שגרירות סין<br>רח׳ הברזל 29, רמת החייל, תל אביב</p>
+        <p class="ag">שמחים להיפגש שוב! מפגש חברים, הדלקת נרות, סיפורים, השראה — וכמובן טקס הענקת מלגות תשפ״ז.<br><br>10:30 — התכנסות וכיבוד קל<br>11:30 — טקס הענקת מלגות לשנה״ל תשפ״ז</p>
+      </div>
+    </article>
+
+    <footer><a class="pdf-download" href="Bulletin425.pdf" download>הורדת הגיליון המלא · PDF ↓</a>
+      <p><b>הנהלת איגוד יוצאי סין בישראל</b><br>
+      הוועד המנהל: יוסי קליין — נשיא של כבוד · יעקב (יקי) מטלין — יו״ר האיגוד · אלכס נחומסון — סגן יו״ר · מילי מקוב — חברת ועד · דרור טריגובוב — חבר ועד · אפרת מרגלית — מזכ״לית האיגוד<br>
+      ועדת ביקורת: דגנית הבר — יו״ר · ליאת ברכה</p>
+      <p><b>מערכת הבולטין</b><br>
+      עורכת ראשית — אפרת מרגלית · עיצוב — ענת פרידמן, הסטודיו של ענת · הדפסה — דפוס אילן בע״מ</p>
+      <p><b>המשרד</b> פתוח לקבלת קהל בימי שני (בתיאום מראש)<br>
+      הברזל 31, קומה 1, רמת החייל, תל אביב 6971045<br>
+      טלפון: <a href="tel:+97235171997">03-5171997</a><br>
+      <a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a> · <a href="mailto:igud.y.sin@gmail.com">igud.y.sin@gmail.com</a><br>
+      <a href="https://www.jewsofchina.org">www.jewsofchina.org</a></p>
+      <p>להצטרפות לאיגוד, לקבוצת הוואטסאפ, לרשימת התפוצה, לשאלות ורעיונות — מוזמנים לפנות אלינו בטלפון או במייל, או פשוט להגיע לבקר.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-58.webp" alt="שער קדמי" decoding="async" width="425" height="584"><figcaption><b>שער קדמי:</b> 1. מסילת הרכבת בחרבין · 2. בית הכנסת הישן בחרבין · 3. אסתר ואלכסנדר לויטין · 4. יוסי קליין והוריו שמואל וגולדה (אולה) · 5. ילדה יהודיה וילדה סינית, חרבין 1922 (Sino-Israel Research &amp; Study Center) · 6. בית הכנסת הישן בחרבין — סצינה מתוך סדרת הטלוויזיה הסינית Never-Ending Summer · 7. גסיה ויאשה טנדט מתחתנים בביהכ״נ הישן</figcaption></figure>
+        <figure><img loading="lazy" src="assets/images/photo-59.webp" alt="שער אחורי" decoding="async" width="425" height="584"><figcaption><b>שער אחורי:</b> 1. חרבין, הרחוב הראשי קיטאיסקייה · 2. רח׳ ג׳ונגיאנג (קיטאיסקייה), 2025 · 3. גשר המנורות בפארק בחרבין, 2025 · 4. משפ׳ פודולסקי בפארק בחרבין, 1942 · 5. רחוב בחרבין · 6. יוסי קליין ודינה טריגובוב, חרבין · 7. פסטיבל הקרח בחרבין, 2026 · 8. מלון מודרן, רח׳ ג׳ונגיאנג (קיטאיסקייה), חרבין 2026</figcaption></figure>
+      </div>
+    </footer>
+
+  </div>
+</section>
+
+<section id="sec-en" dir="ltr" lang="en" hidden>
+
+  <div class="cover"><div class="masthead">
+    <h1>Bulletin<sup>3.0</sup></h1>
+    <p class="sub">The Grandma &amp; Grandpa's Bulletin — 2026 Edition<br>Association of Former Residents of China</p>
+    <p class="meta">September 2026 &nbsp;|&nbsp; Issue No. 425<br><a href="https://www.jewsofchina.org">www.jewsofchina.org</a></p>
+  </div><div class="hero"><img loading="lazy" src="assets/images/photo-01.webp" alt="Bulletin cover: a collage of photographs and documents from the Jewish communities of China" decoding="async" width="860" height="1079"></div></div>
+
+  <div class="cover-actions"><a class="read-start" href="#en-chairman">Read the issue <span aria-hidden="true">↓</span></a><button class="original-open" type="button" data-original="48">Original pages</button></div><div class="wrap">
+
+    <div class="panel">
+      <h3>Contents</h3>
+      <ul class="toc" id="toc-en-top"></ul>
+    </div>
+
+    <div class="panel">
+      <h3>Grandma &amp; Grandpa Lit the Spark — We Keep It Burning</h3>
+      <p>The Bulletin of the Association of Former Residents of China has been around for many years and serves as a warm, meaningful community space. Our goals are:</p>
+      <ul class="plain">
+        <li>To strengthen the feeling of togetherness and shared identity among the Jewish community that once lived in China, and to involve the next generation in keeping the community and its story alive.</li>
+        <li>To keep a steady connection between former residents of China in Israel and around the world.</li>
+        <li>To help collect, document, preserve and share historical documents and personal stories that tell the unique tale of our community.</li>
+        <li>To support the Association's mission.</li>
+      </ul>
+      <p>In this bulletin, we chose to shine a light on personal and family stories. The names, places, time period and memories. Where did they come from? How did their lives look like? How was childhood in China like? And which small moments lingered in their hearts?</p>
+    </div>
+
+    <article id="en-chairman" data-page="3">
+      <p class="kicker">Chairman's Note</p>
+      <h2>Dear Members of the Association<span class="thin">Yaki (Jacob) Matlin, Chairman</span></h2>
+      <figure class="portrait"><img loading="lazy" src="assets/images/photo-02.webp" alt="Yaki (Jacob) Matlin, Chairman of the Association" decoding="async" width="443" height="568"></figure>
+      <p class="dropcap">Every year, we hope we will not have to wait any longer for peace and better days. This year, more than ever, I wish that peace will come soon and stay with us, and that the year ahead will be a good one.</p>
+      <p>In this bulletin, we are delighted to introduce a new section: "Behind the Frame — One Picture, 100 Words, A Story That Remains." In it, we will share nostalgic moments that bring a smile to our faces and warmth to our hearts.</p>
+      <p>There is something special about the stories that stay with us over the years. They connect us to our roots, to the people who shaped our lives, and to the small moments and experiences that, with time, become part of who we are.</p>
+      <p>Each and every one of us has a family story that has stayed with us, a tradition passed down from one generation to the next, an old photograph, a dish that takes us back to childhood, or a story told again and again around the family table.</p>
+      <p>These moments hold a special kind of power. They bring us home, to the people we love and to the warmth that stays with us even as the years go by. They remind us that every family has its own stories, its laughter, traditions and memories that make it unique.</p>
+      <p>I invite you to share these stories, so that they may be passed on to future generations. Because the fond memories of yesterday are the gifts that stay with us today, and through them, and thanks to them, we will continue together to preserve the story of Jews of China.</p>
+      <p class="sig">Shana Tova!<br>Yaki (Jacob) Matlin<span>Chairman of the Association of Former Residents of China</span></p>
+      <figure class="new-year"><img loading="lazy" src="assets/images/new-year-en.webp" width="1017" height="568" alt="Shana Tova from the Association of Former Residents of China"></figure>
+    </article>
+
+    <article id="en-amb" data-page="4">
+      <p class="kicker">Messages from the Ambassadors</p>
+      <h2>A friendship of many years<span class="thin">The Chinese Ambassador to Israel and the Israeli Ambassador to China</span></h2>
+
+      <h3>From the Chinese Ambassador</h3>
+      <figure class="portrait"><img loading="lazy" src="assets/images/photo-04.webp" alt="H.E. Xiao Junzheng, Chinese Ambassador to Israel" decoding="async" width="330" height="437"></figure>
+      <p>Dear Readers,</p>
+      <p>I am honored to be invited by your Bulletin and to have this opportunity to extend my warmest and most sincere greetings to all the friends of the Association of Former Residents of China.</p>
+      <p>During the Chinese People's War of Resistance Against Japanese Aggression and the World Anti-Fascist War, the Jewish people and the Chinese people shared hardships and stood together through difficult times, writing a memorable chapter in the history of China-Jewish friendship. You are the keepers and inheritors of this shared history. Your family stories and cherished memories are precious threads woven into the enduring friendship between our peoples, carrying the warmth of that shared history from one generation to the next.</p>
+      <p>Next year, we will celebrate the 35th anniversary of the establishment of diplomatic relations between China and Israel, as well as the 10th anniversary of the establishment of an innovative comprehensive partnership between the two countries.</p>
+      <p>Over the past three and a half decades, China-Israel relations have maintained steady and sound development despite various challenges, while practical cooperation has deepened across various fields. China has always viewed and developed its relations with Israel from a strategic and long-term perspective.</p>
+      <p>The Chinese Embassy in Israel stands ready to work together with the Association of Former Residents of China to further promote people-to-people exchanges between our two countries, strengthen the popular foundation of bilateral relations, and jointly ensure that the traditional friendship between China and Israel, and between the Chinese and Jewish peoples, continues to shine with renewed vitality in the new era.</p>
+      <p class="sig">H.E. Xiao Junzheng<span>Chinese Ambassador to Israel</span></p>
+
+      <hr class="rule">
+
+      <h3>From the Israeli Ambassador</h3>
+      <figure class="portrait"><img loading="lazy" src="assets/images/photo-05.webp" alt="H.E. Eli Belotsercovsky, Ambassador of Israel to China" decoding="async" width="330" height="437"></figure>
+      <p>Da Jia Hao to all readers,</p>
+      <p>I am delighted to have this opportunity to share my thoughts on the bond between Israel and China as the 35th anniversary of our relations approaches in 2027.</p>
+      <p>China is a cultural, social, scientific, economic, political superpower and more: a vast nation with a history spanning thousands of years. While the West was plunged into the darkness of the Middle Ages, by the 5th century China had already introduced a system of imperial examination for government positions and had invented gunpowder, paper and even ice cream.</p>
+      <p>After many years of suffering from wars, poverty and foreign influences, China managed to become one of the leading nations on the global arena. Every visitor to China is astounded by the sophisticated technologies its citizens enjoy, the impressive, futuristic urban architecture and the momentum of its state-of-the-art industries.</p>
+      <p>Israel, a small country yet a powerhouse in the field of innovation, can contribute greatly to areas relevant to the Chinese economy. These include population aging, one of the central challenges China faces, as well as education, particularly cultivating excellence and supporting students with special needs, agricultural research and development, water management and more.</p>
+      <p>Advancing relations between countries is not only a matter for governments. The bond between the nations is the core pillar connecting us, and in this context the Association of Former Residents of China serves as a bridge between us and the central government. Your history is a significant part of the shared heritage of our two nations, and we certainly view the Association as a partner in our efforts to strengthen relations with the superpowers in the East.</p>
+      <p>Next year we will be celebrating 35 years of diplomatic relations, and we are planning a series of events. We warmly invite both the Association and its individual members to take part in these events, visit China and get to know it better. People-to-people connections are always the foundational basis for relations between countries.</p>
+      <p class="sig">H.E. Eli Belotsercovsky<span>Ambassador of Israel to China</span></p>
+
+      <figure><img loading="lazy" src="assets/images/photo-06.webp" alt="Association representatives at the Chinese Embassy's Spring Festival walking event" decoding="async" width="900" height="194"><figcaption>In January 2026, representatives of the Association of Former Residents of China took part in the Chinese Embassy in Israel's traditional Spring Festival Walking Event, held along the Yarkon River in Tel Aviv.</figcaption></figure>
+    </article>
+
+    <article id="en-assoc" data-page="5">
+      <p class="kicker">What's Up at the Association</p>
+      <h2>Efrat Margalit's Column<span class="thin">Executive Director</span></h2>
+      <p class="standfirst">Another difficult year has passed, and I'm beginning my annual column with wishes for a good, peaceful, safe, healthy and happy year for all — in Israel and around the world. Despite the hardships and stress, we continued to work, plan and move forward, with the help of new members, children and grandchildren of Chinese-born Jews, dedicated to advancing the Association's work and preserving our heritage. So, what's new, and what are we planning for the future?</p>
+
+      <p><b>Celebrating Rosh Hashanah.</b> As every year, Association members as well as representatives from the Chinese Embassy came to our office to offer blessings. Unfortunately, because of the war, we couldn't hold the event we'd planned for Passover.</p>
+      <figure><img loading="lazy" src="assets/images/photo-07.webp" alt="Rosh Hashanah toast at the Association's office" decoding="async" width="760" height="512"><figcaption>Rosh Hashanah Toast at the Association's Office</figcaption></figure>
+
+      <p><b>Grants for soldiers</b> are another part of the Association's long-standing tradition, with grants awarded twice a year to soldiers serving in compulsory military service, on Rosh Hashanah and Israel's Independence Day. This year, around 40 direct descendants of former residents of China received 350 ILS for each holiday.</p>
+
+      <p><b>Chinese language lessons.</b> This year the Association offered two semesters of Chinese lessons. The course was held in partnership with the Israel-China Friendship Society. As part of the course, calligraphy lessons were also offered. We hope to open a beginners' course along with the advanced course after the holidays.</p>
+      <figure><img loading="lazy" src="assets/images/photo-08.webp" alt="Chinese classes at the Association" decoding="async" width="760" height="505"><figcaption>How Do You Say It in Chinese? Chinese Classes at the Association</figcaption></figure>
+
+      <p><b>The Association's film project "The Chinese are coming"</b> is completed. The film carries interviews with Chinese-born Jews, historic photographs including English and Hebrew subtitles. The full-length film will be screened at the beginning of next year.</p>
+      <figure><img loading="lazy" src="assets/images/photo-09.webp" alt="Logo of the film 'The Chinese are coming'" decoding="async" width="760" height="336"></figure>
+
+      <p><b>Heritage Trip to China.</b> In November 2025 a small delegation of Association members went on a trip to China. The trip was organized by CCECC and China Enterprise Association in Israel (CEAI). We visited Beijing, Tianjin, Harbin and Shanghai in preparation for the trip to China we'll be organizing for Association members. We're in touch with our hosts and they'll be taking part in our activities.</p>
+      <p>Our trip to China included a meeting with Israel's ambassador to China, Eli Belotsercovsky, and the Embassy staff. We brought up various matters to be dealt with in our effort to preserve our heritage and we're still in touch with them. In fact, the Embassy's cultural attaché joined us on our visit to Harbin. In Shanghai we met with the Consul General.</p>
+      <figure><img loading="lazy" src="assets/images/photo-11.webp" alt="Meeting with CECCC management, delegation members and representatives of the Israeli Embassy" decoding="async" width="760" height="460"><figcaption>Meeting with CECCC Management, Delegation Members, and Representatives of the Israeli Embassy</figcaption></figure>
+
+      <p><b>The scholarship award ceremony</b> for 2026 and the annual event of the Association took place in December 2025 at the Eretz Israel Museum. Around 200 Association members attended the ceremony. The ceremony was honored by the presence of H.E. Ambassador Xiao Junzheng, Ambassador of China to Israel, alongside fellow diplomats from the Chinese Embassy. The event began with a guided tour in the "Local Testimony" photography exhibition, followed by a reception with refreshments and screening of a short version of the Association's film "The Chinese are coming". The evening concluded with the scholarship award ceremony for descendants of former residents of China. Some of the scholarships were generously donated by Association members in honor or memory of their Chinese-born relatives. 1,000 ILS scholarships were awarded to 65 students. It was our pleasure to meet friends at the event.</p>
+
+      <p><b>Chinese New Year.</b> Members of the Association were invited to an event in honor of the Chinese New Year at the new Chinese Embassy which was opened this year near the Association's office in Ramat HaHayal. We enjoyed Chinese music, delicious food and fascinating encounters.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-12.webp" alt="The Chinese Ambassador at the Chinese New Year celebration" decoding="async" width="470" height="674"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-13.webp" alt="A performance at the Chinese New Year celebration" decoding="async" width="620" height="452"></figure>
+        <figcaption>Chinese New Year celebration at the Chinese Embassy. Left: H.E. Xiao Junzheng, Ambassador of China to Israel.</figcaption>
+      </div>
+
+      <p><b>Our new logo is in the air!</b> The Association's impressive new logo was designed by Anat Friedman, whose father, Arie Shohat, was born in China.</p><figure class="association-logo"><img loading="lazy" src="assets/images/association-logo.webp" alt="Association of Former Residents of China logo" width="363" height="152"></figure>
+
+      <p><b>Refreshing and Updating Our Website</b> is one of our biggest and most exciting projects. A many thanks to Michal Friedman, who teamed with Anat to design, build, and bring the new website to life.</p>
+
+      <p><b>The Synagogue in Memory of the Jewish communities in China.</b> We're looking for donations for renovating the synagogue so it can serve the Association and its members.</p>
+
+      <p><b>Meeting with Shir Gideon,</b> Deputy Chief of Mission at the Israeli Embassy in China. In July we (Association Chairman Yaki Matlin and Executive Director Efrat Margalit) met with the Deputy Chief of Mission who was visiting Israel at the Association synagogue in Tel Aviv. Shir showed great interest in the synagogue and the history of Chinese Jewry in general.</p>
+      <figure><img loading="lazy" src="assets/images/photo-14.webp" alt="Efrat Margalit, Shir Gideon and Yaki Matlin at the synagogue" decoding="async" width="760" height="534"><figcaption>Left: E.D. of the Association, Efrat Margalit; Deputy Ambassador of Israel to China Shir Gideon; and Yaki Matlin, Chairman of the Association.</figcaption></figure>
+
+      <p><b>On a personal note,</b> today I received a picture of my mother from when she was six, maybe seven. The picture was given a voice and color and it brought back story after story, resurrecting an entire world of yesterday. An entire world which, although long gone, still exists in the memories and stories passed down through the generations which will continue to be part of the present.</p>
+      <p>And I thought of our bulletin and of your stories and pictures, of the stories heard and written here over the years, and of what you'll continue to pass on to your children and grandchildren and to the world. It's our pleasure to carry on the tradition with you and to provide a forum for your and your families' stories and pictures, voices and memories.</p>
+      <p class="contact">To join the Association, the WhatsApp group, the email distribution list, and for questions and ideas, you're all welcome to contact us:<br>
+      <a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a> &nbsp;|&nbsp; <a href="tel:+97235171997">03-5171997</a></p>
+      <p class="sig">Shana Tova!<br>Efrat Margalit<span>Executive Director</span></p>
+    </article>
+
+    <article id="en-honor" data-page="7">
+      <p class="kicker">Open Your Heart</p>
+      <h2>Honor a Loved One, Support a student<span class="thin">Dedicate a scholarship in memory of a loved one</span></h2>
+      <figure><img loading="lazy" src="assets/images/photo-15.webp" alt="The annual scholarship award ceremony" decoding="async" width="900" height="337"></figure>
+      <p>Our donation will support a student, a grandchild or great-grandchild of the former Jewish residents of China, helping them grow while preserving our shared legacy.</p>
+      <p>Every contribution makes a difference. You're warmly invited to attend the award ceremony, while your generosity will be deeply valued whether or not you can join.</p>
+      <p><b>Minimum donation: 1,000 ILS.</b> Includes a certificate of appreciation and recognition in the next Bulletin.</p>
+      <p class="contact">Ready to make a lasting impact?<br>
+      <a href="tel:+97235171997">+972-3-5171997</a> &nbsp;|&nbsp; <a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a></p>
+
+      <h3>Honoring Your Generous Contribution</h3>
+      <table class="give">
+        <tr><td class="cty" rowspan="10">Israel</td><td>Ilana &amp; Giora Lask in memory of Ela and Shlomo Lask and Miryam and Daniel Berkovich</td><td>2,000 ILS</td></tr>
+        <tr><td>Ilana &amp; Giora Lask in memory of Dany and Musia Berkovich</td><td>5,000 ILS</td></tr>
+        <tr><td>Miryam Yakir and Arie Tandet in memory of Lika &amp; Mila Tandet</td><td>1,500 ILS</td></tr>
+        <tr><td>Rama Shalmoni (Rozen) in memory of Eran and Nurit Rozen</td><td>1,000 ILS</td></tr>
+        <tr><td>Makov, Bracha, Kedar Families in memory of Dina Trigubof Kedar</td><td>2,000 ILS</td></tr>
+        <tr><td>Judith Marom and Inon Perry in memory of Persoff Rachel and Persoff Isaac (Isai)</td><td>2,000 ILS</td></tr>
+        <tr><td>Liora Tandet in memory of Gesia and Yasha Tandet, Luba Brunner &amp; Lyova and Rivka Shohat</td><td>2,000 ILS</td></tr>
+        <tr><td>Yaki Matlin in memory of Boris Matlin</td><td>1,000 ILS</td></tr>
+        <tr><td>Triguboff Dror in honor of Moshe Triguboff</td><td>1,000 ILS</td></tr>
+        <tr><td>Israel Karni — a grant for soldiers in memory of Ruth Karni</td><td>350 ILS</td></tr>
+        <tr><td class="cty">Israel</td><td>Ida Shmuelson in memory of Leah (Lili) Koroshi Krugliak</td><td>200 ILS</td></tr>
+        <tr><td class="cty">China</td><td>The Embassy of the People's Republic of China in Israel, for the Association's activity fund</td><td>52,000 ILS</td></tr>
+        <tr><td class="cty">Australia</td><td>Received as a bequest under the will of Lucy Rayhill</td><td>77,485 AUD</td></tr>
+        <tr><td class="cty">USA</td><td>JP Morgan — Ethel Dunn Foundation</td><td>19,236 USD</td></tr>
+        <tr><td class="cty">GB</td><td>Received as a bequest under the will of Alex Julius Faiman</td><td>18,564 GBP</td></tr>
+      </table>
+    </article>
+
+    <article id="en-syn" data-page="8">
+      <p class="kicker">The Synagogue of Jews from China</p>
+      <h2>The Olim of China Synagogue<span class="thin">From a House of Worship to a Home for the Community</span></h2>
+      <p class="byline">By: Efrat Margalit and Anat Friedman</p>
+      <p class="standfirst">On HaGolan Street in Tel Aviv stands The Synagogue in Memory of the Jewish communities in China — a building that was born from the bond between China and the story of the Jews of China. Today, we seek to give it a new life, to turn it into a house of community, memories and heritage.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-31.webp" alt="The Olim of China Synagogue on HaGolan Street" decoding="async" width="760" height="600"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-32.webp" alt="Inside the Olim of China Synagogue" decoding="async" width="760" height="569"></figure>
+      </div>
+      <p class="dropcap">Did you know that at 31 HaGolan Street in the Ramat HaHayal District of Tel Aviv, in a large courtyard ornamented with tall trees and thick bushes, stands the Association of Former Residents of China Synagogue? By the side of the synagogue is a path that connects two streets. Along the path, children run, people hurrying to work pass by, a woman feeding the cats comes through, and the path leads to narrow streets where parking can be found. And I ask myself if the neighbors, the children, the passersby, have ever stopped outside the synagogue's main entrance and wondered who the Olim of China are and why the synagogue bears that name.</p>
+
+      <h3>A Little Bit of History</h3>
+      <p>In 1954, after Shanghai experienced a development boom, one of the city's synagogues was demolished (some, along with other Jewish community buildings, were appropriated by the government and one was converted into a museum). The Chinese government, although it didn't yet have diplomatic relations with Israel, as a gesture of goodwill, wanted to make up for the demolition of the synagogue. Through the consulates in Bern, Switzerland, the Chinese government transferred to Israel an amount of money equivalent to the value of the demolished synagogue. The condition for receiving the money was that it be put toward building a new synagogue in Israel. The Tel Aviv Municipality contributed a plot of land on HaGolan St. in Ramat Hahayal (known as "the Shanghai Projects" at the time).</p>
+      <p>With the money from the Chinese government, donations from former China residents and a contribution from the Ponve family, a synagogue in memory of the Jewish communities in China was erected. It was officially dedicated in 1962. Plaques were hung on its walls in memory of the community leaders and those from Israel and the world over who contributed toward its construction.</p>
+
+      <h3>The Vision</h3>
+      <p>The synagogue is the property of the Association, which maintains it from its budget. Over the years the synagogue has served as an important center for the Association members. Weddings, Bar and Bat Mitzvah celebrations and various festive get-togethers have been held there.</p>
+      <p>As part of the program for preserving the heritage of Chinese Jewry we are looking for options for financing the renovation of the synagogue with the aim of making it a home for our community — not only a house of prayer but a place of gatherings, culture and heritage preservation open to all.</p>
+      <p>Furthermore, we aspire to establish a small museum there which will tell the story of the Jews of China, their heritage and the unique bond forged between Israel, Judaism and China over the years. A place that will enable future generations to get to know their roots, to understand where they came from and to preserve the living story — not only for the descendants of the Jews of China but for the general public and anyone interested in this unique history and heritage.</p>
+      <p>At the 27th conference of the International Council of Museums which took place in August 2022 with the theme of "The Power of Museums," a new proposed definition of the word "museum" was proposed: "A museum is a not-for-profit, permanent institution in the service of society that researches, collects, conserves, interprets and exhibits tangible and intangible heritage. Open to the public, accessible and inclusive, museums foster diversity and sustainability. They operate and communicate ethically, professionally and with the participation of communities, offering varied experiences for education, enjoyment, reflection and knowledge sharing."</p>
+      <p>In Harbin, Tianjin and Shanghai the synagogues served, besides their main purpose as houses of prayer, as meeting-places for children and adults, celebrations and conferences. <span class="end">■</span></p>
+
+      <div class="panel seal-panel">
+        <h3>This is our home. Let's make it ours.</h3>
+        <p>We at the Association want to make the Synagogue a home for our community — a place to meet, celebrate, remember, and keep our heritage alive.</p>
+        <p>Now we want to hear from you. What should you find there? What family story should be preserved? Do you have photos, objects or memories from life in China to share?</p>
+        <p>Bring your ideas. Bring your stories. Be part of building the home of our community. Every story, every idea, and every contribution can help build our shared home.</p>
+        <p>Together, let's turn a place rooted in the past into a living, open and vibrant home for today — and for generations to come.</p>
+      </div>
+    </article>
+
+    <article id="en-frame" data-page="10">
+      <p class="kicker">Behind the Frame</p>
+      <h2>One Photograph. 100 Words. A Story That Remains.</h2>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-40.webp" alt="Baruch (Borya) Triguboff and his daughter Dina on a pedal boat on the Songari River" decoding="async" width="835" height="553"></figure>
+        <h4>A Hug on the Songari River</h4>
+        <p class="who">Mili Makov</p>
+        <p>On the Songari River (Songhua in Chinese) in Harbin, on a summer day in the 1940s, Baruch (Borya) Triguboff and his young daughter Dina gently glided along in a pedal boat. The calm waters around them, and a light breeze, accompanied this happy family moment.</p>
+        <p>For Dina, it was a little adventure; for her father, an opportunity to spend time with his beloved daughter. For Harbin's Jewish community, the Songari River was a part of everyday life — a place for ice skating in the winter, and for leisure and relaxation in the summer.</p>
+        <p>The photograph captures a moment of warmth, love, and family closeness, preserving a glimpse of Jewish life in Harbin.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-39.webp" alt="Dina Triguboff-Kedar in a Betar uniform, Harbin 1943–4" decoding="async" width="418" height="889"></figure>
+        <h4>Born A Betar Girl</h4>
+        <p class="who">Mili Makov</p>
+        <p>Dina Triguboff-Kedar, about four years old, is depicted in Harbin, China, in 1943–4, wearing a Betar uniform. At the time, Harbin was home to a vibrant, Zionist Jewish community. Dina's parents raised her in the spirit of Betar's values: responsibility, Jewish pride, and love of homeland.</p>
+        <p>While the world was being shaken by war, little Dina stands smiling with confidence and innocence, unaware that this photograph would preserve a story of identity and belonging. The photograph is more than a family memory; it is a testament to the strength of a community that held on to hope, tradition, and vision on the other side of the world.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-36.webp" alt="An original hat designed by Bava Riva" decoding="async" width="560" height="264"><figcaption>An original hat designed by Bava Riva, carefully preserved over the years by her great-granddaughter, Liora Tandt.</figcaption></figure>
+        <h4>The Magic of a Harbin Hat</h4>
+        <p class="who">Anat Friedman</p>
+        <p>My grandmother, Baba Riva, Riva Shohat, was a milliner, an artist who designed and hand-made women's hats, combining imagination, creativity, and fine needle work. For years, all I had was a half-remembered story about a small hat and fur shop in snowy Harbin at the beginning of the 20th century.</p>
+        <p>About two years ago, while studying Chinese at the Association, I met Tanya Schleifer, who was born in Harbin in 1931. When I told her about my roots in Harbin, and about Baba Riva, her eyes suddenly lit up: "I knew Riva! She designed and made my first hat, for my Bat Mitzvah."</p>
+        <p>In an instant, Tanya's hat became a real magic hat. It seemed to bend the rules of time, and a delicate thread of silk and nostalgia brought a warm piece of family history back to life — one that had been waiting nearly a century to be discovered.</p>
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-37.webp" alt="Baba Riva" decoding="async" width="460" height="697"><figcaption>Baba Riva</figcaption></figure>
+          <figure><img loading="lazy" src="assets/images/photo-38.webp" alt="Tanya Schleifer as a child" decoding="async" width="380" height="413"><figcaption>Tanya Schleifer</figcaption></figure>
+        </div>
+      </div>
+
+      <div class="frame">
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-41.webp" alt="Genia Tandet (née Shohat) and her son Ze'ev" decoding="async" width="620" height="641"></figure>
+          <figure><img loading="lazy" src="assets/images/photo-42.webp" alt="A dummy" decoding="async" width="360" height="406"></figure>
+        </div>
+        <h4>When My Dad Swallowed His Dummy</h4>
+        <p class="who">Liora Tandet</p>
+        <p>In the photograph are my grandmother, Genia Tandet (née Shohat), and my father, Ze'ev, both of whom were born in Harbin.</p>
+        <p>My grandmother told me that when my father was a tiny baby in Harbin, he swallowed his dummy. She was very frightened and rushed with him to the doctor. After examining him, the doctor said with a smile: "Mrs. Tandet, just buy him a new dummy!"</p>
+      </div>
+
+      <div class="frame">
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-43.webp" alt="The wooden spoon and the flight itinerary from Hong Kong" decoding="async" width="700" height="929"></figure>
+          <figure><img loading="lazy" src="assets/images/photo-44.webp" alt="The sign on Senya's Tree at Amikam" decoding="async" width="420" height="358"></figure>
+        </div>
+        <h4>The Spoon from Hong Kong</h4>
+        <p class="who">Dror Triguboff</p>
+        <p>At the entrance to Amikam, a sign is attached to the trunk of a tree. It reads: "Senya's Tree, in memory of Shimon Orlov, one of Amikam's founders."</p>
+        <p>I have no family connection to Senya Orlov, nor did I ever have the chance to know him. Senya, who was born in Harbin, died about a year after I was born. But his special connection with my grandparents, Mania and Borya Triguboff, left its mark — and some of the belongings of this enthusiastic chronicler were kept in the home of my parents, Leah and Morik Triguboff, for decades after his death.</p>
+        <p>Among the items that were preserved was a wooden spoon offered during a flight that departed from Hong Kong as part of his journey to Israel, along with a precise record of his stopovers and arrival times: Hong Kong, Bangkok, Calcutta, Sharjah and Lod.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-45.webp" alt="Ehud Olmert with his wife Aliza and his brother Amiram at the Jewish cemetery in Harbin" decoding="async" width="582" height="409"></figure>
+        <h4>At the Jewish Cemetery in Harbin</h4>
+        <p class="who">Former Prime Minister Ehud Olmert</p>
+        <p>The Jewish cemetery in Harbin is cared for and maintained by the provincial government, which makes an effort to preserve the Jewish heritage in this region of Manchuria in northeastern China. On one of the city's main streets stands a synagogue. The number of worshippers there generally depends on the number of Jewish visitors passing through the city, whether there for tourism or on business. A Jewish restaurant is also located nearby.</p>
+        <p>The cemetery is the first place my family and I visit when we arrive at the city. My grandfather, Yosef Olmert, of blessed memory, is buried there, along with several other family members who lived in the city.</p>
+        <p>In the photograph, you can see me with my wife, Aliza, and my older brother, Amiram, of blessed memory, who at the time of my visit was serving as Israel's Agricultural Attaché in China. This was my first visit to Harbin in an official capacity. At the time, I was Acting Prime Minister and Minister of Industry, Trade and Employment.</p>
+        <p>At the entrance to the cemetery, a large marble column was erected, bearing at its center a message of thanks that I wrote to the Chinese authorities for preserving the Jewish heritage in their country. The words, written in my own hand, are engraved in gold lettering on the marble.</p>
+        <p>The Jewish cemetery is a tourist site featured in informational brochures for tourists visiting China. For me, for my brother, and for my family, it is the starting point. It was from this city that my parents left for Israel, and it was to here I returned as Prime Minister of Israel to honor the memory of my grandfather, Yosef, who had lived in the city since 1917 and died and was buried there in 1941.</p>
+        <p>China is part of my family's life story, and of mine. It has been part of my life, and always will be.</p>
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-46.webp" alt="Monument at the Jewish cemetery in Harbin" decoding="async" width="560" height="747"></figure>
+          <figure><img loading="lazy" src="assets/images/photo-47.webp" alt="The marble column bearing Ehud Olmert's handwritten message" decoding="async" width="700" height="517"></figure>
+        </div>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-48.webp" alt="Four generations of women of the family, Harbin" decoding="async" width="700" height="478"></figure>
+        <h4>Four Generations from Harbin to the Founding of Amikam</h4>
+        <p class="who">Miriam Yakir</p>
+        <p>This family photograph was taken in Harbin, China, and captures four generations of women in the family. On the right, grandmother Vera Lipson. On the left, her daughter, Rosa Goldschmidt. Behind her stands her granddaughter, Lika Leah Goldschmidt. In the center foreground stands the great-granddaughter, young Miriam Yakir (formerly Tandt).</p>
+        <p>Together with Shmuel (Mila) Tandt, who married Lika, and 23 other families from China, they became the founders of the new Betar settlement of Amikam.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-49.webp" alt="The wedding of Sophia Birolin and Arieh Lichomanoff at the New Synagogue in Harbin, 1933" decoding="async" width="760" height="569"></figure>
+        <h4>Surprise on the Museum Wall</h4>
+        <p class="who">Moshe Lichomanoff</p>
+        <p>This is a photo of the grand wedding ceremony of my parents, Sophia Birolin and Arieh Lichomanoff, at the New Synagogue in Harbin in 1933. The photograph was taken by the renowned photographer Yaakov Lifshitz, who was the uncle of my mother, the bride, Sophia.</p>
+        <p>The photo was kept in our family album for many years, and I have known it since childhood. Then, during a heritage trip that my late sister Dina and I took to the New Synagogue in Harbin in 2006, we were astonished to find this very wedding picture displayed in the museum — alongside inaccurate details.</p>
+        <p>The museum director did not know who was in the photo, when it was taken, or who the photographer was. Naturally, we provided him with the correct information. Surprised, he noted down the names of the bride and groom along with the rest of the details, and promised to update the caption.</p>
+        <figure><img loading="lazy" src="assets/images/photo-50.webp" alt="Moshe Lichomanov and his sister Dina beside the displayed photograph" decoding="async" width="700" height="439"><figcaption>Moshe Lichomanov and his late sister, Dina Vinkov Lichomanoff, and I, standing next to the displayed photo, marveling and wondering how it came into Chinese hands.</figcaption></figure>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-51.webp" alt="Gita Kalisch (Muriel Ongemut)" decoding="async" width="520" height="576"></figure>
+        <h4>Who Were You, Gita Kalisch and Muriel Ongemut?</h4>
+        <p class="who">Ofer Dror</p>
+        <p>My mother, Gita Kalisch, was born in Dresden, Germany, in 1932 to her parents, Eva and Meyer. Shortly thereafter, Hitler came to power.</p>
+        <p>With his sharp instincts, my grandfather recognized the threat of Hitler's rise immediately and insisted they move to Paris. The move paid off — in Paris, my grandfather's business flourished, bringing the family great wealth.</p>
+        <p>In 1940, when the Germans entered Paris, my grandfather, who owned a jewelry store, purchased Swiss passports for the family from a Swiss citizen. The man reported the documents lost just after three days, giving the family just enough time to flee to Marseille. They were all given new names: my mother became Muriel, her sister Sonia became Jenny, and their surname became Ongemut. Within three days, they boarded a ship bound for Shanghai, China, arriving as non-Jewish Swiss nationals.</p>
+        <p>They settled in the French Concession. When the Japanese occupied Shanghai, they established a ghetto for Jewish residents — without fully understanding the how or why, but carrying out the demands of their German allies to the letter. Jews were forbidden to leave the ghetto unless they held employment outside. My grandfather, Meyer, "employed" about 40 Jews, enabling them to leave the ghetto and earn a living.</p>
+        <p>In 1949, a ship chartered by the UJF (United Jewish Federation) departed Shanghai for Israel and the United States. My mother and her sister sailed on this ship, arriving in Israel after a journey of several months. Their parents were waiting for them in Israel, and the entire family successfully rebuilt their lives here.</p>
+      </div>
+
+      <div class="frame">
+        <figure><img loading="lazy" src="assets/images/photo-52.webp" alt="Leah (Lika) Genkin and Zelda Genkin" decoding="async" width="620" height="888"></figure>
+        <h4>Just Before They Parted Ways</h4>
+        <p class="who">Irit Friedman and Sarit Carmi, Zelda's daughters</p>
+        <p>The dear departed Leah (Lika) Genkin and our mother Zelda Genkin were two sisters who simultaneously faced a separation that would shape the rest of their lives. They lost their mother when they were young. After World War Two they also lost their father Meir and their brother Avraham, who were murdered in the massacre perpetrated by the Japanese in the city of Harbin. The tragedies they experienced strengthened the bond between them.</p>
+        <p>In the photograph, they are both still very young, facing one of the most important decisions of their lives: whether to go on living together as they had until then, or to part ways and set out on their own individual paths.</p>
+        <p>Lika was about to marry Yaakov (Yasha) and emigrate with his parents to Australia. Zelda vacillated between joining her and starting a new life of her own. Meanwhile, the two took advantage of their last days together to visit the sites that had survived the destruction left behind by the Japanese army when it withdrew, and to create new memories together.</p>
+        <p>Out of a deep identification with the spirit of the Zionist movement, Zelda decided to part with her sister and emigrate to Israel alone. She arrived at the Pioneer Women's House in Haifa where she began to put together her personal and professional path in the new land, and married David Friedman.</p>
+        <p>Lika, on the other hand, emigrated with her family to Sydney, Australia. Despite the great distance the two sisters kept in close contact all their lives through letters, phone calls and mutual visits.</p>
+      </div>
+
+      <div class="frame">
+        <div class="pair">
+          <figure><img loading="lazy" src="assets/images/photo-53.webp" alt="The Ice Festival in Harbin" decoding="async" width="620" height="427"></figure>
+          <figure><img loading="lazy" src="assets/images/snow-countryside.webp" alt="Snow-covered countryside seen from the train" decoding="async" width="476" height="337"></figure>
+        </div>
+        <h4>My China</h4>
+        <p class="who">Efrat Margalit</p>
+        <p>Since I started working for the Association of Former Residents of China in Israel, people have asked me about my connection with China. Well, no, my family didn't come from China; as for me, I wrote and continue to write the story of China and me and I say that I planted my Chinese roots myself. This story began in 1997, when I first visited China, and it continues to this day.</p>
+        <p>One of the most memorable and meaningful experiences I had when I lived and traveled in China was the journey to the Ice Festival in Harbin. I'd finished the course at the Beijing Language and Culture University (BLCU) and continued to explore the enormous country. I decided to take a sleeper train from Beijing, which at the end of 2005 was slow and old. I equipped myself with especially warm clothes at one of the markets and set off on my journey. After long hours of landscapes of snow-covered villages and frozen rivers I arrived at the train station in Harbin. The bitter cold struck me the moment I stepped out of the train as my curiosity grew and grew.</p>
+        <p>It was the end of December and I celebrated New Year's Eve of 2006 in a little Russian restaurant in the center of Harbin. Then I started to wonder — what are Russians doing in a town in northern China? How did the Jews get here, and from where? And what do they have to do with the Trans-Siberian Railway (which I took about 20 times…) and how do people live through these harsh winters?</p>
+        <p>I first connected with China in the 1990s. I think my bond with the Jews of China began in a little Russian restaurant when it was 26 Celsius degrees below zero outside among statues and palaces made of ice and my story was just beginning. I left China on the Trans-Mongolian Railway via Mongolia and Siberia. And that was only the first time…</p>
+      </div>
+
+      <div class="panel seal-panel">
+        <h3>Do you have a photograph with a story to tell?</h3>
+        <p>Send it to us along with a short text of up to 100 words. We'd love to share your story in our upcoming issues.</p>
+        <p class="contact"><a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a></p>
+      </div>
+    </article>
+
+    <article id="en-clurman" data-page="14">
+      <p class="kicker">Home far away</p>
+      <h2>A Home Far Away<span class="thin">The Clurman Family's Golden Years</span></h2>
+      <p class="byline">By Irene Clurman, USA</p>
+      <p class="standfirst">Some family stories are also stories of an era. The story of the Clurman family is one of them. From fleeing pogroms in Europe to building a life of hope and prosperity in Harbin, they were part of a generation of Jews who helped turn a young city in northern China into a vibrant home and center of community and culture.</p>
+      <figure><img loading="lazy" src="assets/images/photo-18.webp" alt="Ethel (Rosa) and Isak Clurman with their children" decoding="async" width="335" height="454"><figcaption>Ethel (Rosa) and Isak with their children, Ruvim (Charles) and Tzvia (Sylvia), 1928</figcaption></figure>
+
+      <p class="dropcap">After centuries of oppression, persecution and poverty in the old country, Jews who found their way to Harbin in the early 20th century were at last free to govern themselves, start businesses, establish cultural and religious institutions and help build a city from the ground up. My relatives treasured this part of their Harbin experience, and the tragic events they endured toward the end of their stay could not erase their pride in being "Jews from China."</p>
+      <p>My grandmother Ethel (Roza) Keilis Clurman was five years old when she arrived in Harbin with her younger sister Nina and their pregnant mother Yelena Keilis. They had just survived the infamous 1905 Odessa pogrom by hiding for days in the attic of their apartment building. As soon as it was safe to go out, they took a train across Russia to Harbin to reunite with Roza's father Naum, who had already emigrated to what was then Manchuria. Yelena was so frightened she was afraid to step off the train to buy food, and the three travelers had to subsist on dried salami for the journey of several weeks.</p>
+      <p>In 1905, Harbin was a frontier town, with no visas required for entry but not many amenities either. Roza remembered ice forming on the inside walls of their hastily constructed dwelling. However, by the time Naum and Yelena's family had grown to include eight children, Harbin had become a boomtown and Naum's butchery business prospered. After elementary school in Harbin, Roza was sent to the Institut de St. Joseph, an elite Catholic boarding school in Shanghai, where she studied English and French.</p>
+      <p>About 1906, my grandfather Isak (Isko Chaim Gershevich) Clurman arrived from Orinin, a town in the district of Kamenetz-Podolsk in what is now Ukraine. His father, a fulltime Torah scholar, could not earn a living, so Isak started working at the age of 10. At 15, he ran away from an apprenticeship in a bicycle shop and arrived in Harbin with one ruble and 50 kopecks in his pocket.</p>
+      <p>In Harbin, Isak worked as a laborer, then a butcher and an entrepreneur. During World War I, he left Harbin to avoid being conscripted into the Russian Army and worked as a window washer in New York City. There he saved his money and bought salvaged building materials he shipped to China to resell after the war ended.</p>
+      <p>On his return to Harbin, he met 17-year-old Roza when he was weighing building materials on the Keilis butchery's commercial scales. Though Isak was a decade older than she was and had little formal education, Roza's family pushed her to accept the prosperous Isak's proposal of marriage.</p>
+      <p>My father Ruvim Itzhak (later changed to Charles Isaac) was born to Roza and Isak in October 1918. His sister Tziva (Sylvia) was born in 1921 and his brother Israel (Izra or Izrick, later changed to Johnny) in 1928. By the time Johnny was born, the Clurman family was wealthy, and the feast they hosted went on for three days.</p>
+      <p>Isak eventually established a lumberyard and cattle feedlots. He also built several apartment buildings and owned a stable of race horses, which were his pride and joy.</p>
+      <figure><img loading="lazy" src="assets/images/photo-19.webp" alt="Isak Clurman and his son Israel in a park in Harbin, April 1937" decoding="async" width="620" height="776"><figcaption>Isak Clurman and his son, Israel Clurman, in a park in Harbin, April 1937</figcaption></figure>
+      <p>The Clurmans lived on Second Street in an elegant building Isak designed and built. The six flats had the latest conveniences, including indoor toilets, a novelty in Harbin in those days. In addition to race horses, the family had a horse and carriage because Harbin's muddy streets were not suitable for private automobiles in the 1920s.</p>
+      <p>The children attended Harbin's excellent Russian schools. Sylvia had a private piano teacher, and the boys had private tutors for their Bar Mitzvahs at the New Synagogue, one of Harbin's two shuls. All three children were active in the sports, gymnastics and social events sponsored by Betar, a Zionist scouting organization.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-20.webp" alt="Ruvim (Charles) Clurman with the Betar scouts, 1930" decoding="async" width="760" height="465"></figure>
+        <figure><img loading="lazy" src="assets/images/photo-21.webp" alt="The Betar gymnastics team, Harbin, 1940s" decoding="async" width="760" height="485"></figure>
+      </div>
+      <figure><img loading="lazy" src="assets/images/photo-22.webp" alt="Skating on the frozen Songari river" decoding="async" width="760" height="391"><figcaption>Skating on the frozen Songari (Songhua) river. Right: Ruvim (Charles) Clurman</figcaption></figure>
+
+      <p>However, life in Harbin grew increasingly dark as White Russians fleeing the Bolshevik Revolution brought antisemitism to the community. My father and his Jewish friends regularly fought their way to school, and Isak occasionally used his fists on Russian hoodlums.</p>
+      <p>Japanese tanks rolled into Harbin in 1931. By the time Isak constructed a new apartment building on Yamskaya Street in 1936, Japanese occupation personnel filled two floors of the three-story structure. Kidnappings and assaults abounded. The entire city lived in fear, and businessmen were specifically targeted.</p>
+      <figure><img loading="lazy" src="assets/images/photo-23.webp" alt="Isak Clurman in front of his new apartment building on Yamskaya Street, 1936" decoding="async" width="860" height="534"><figcaption>Isak Clurman in front of his new apartment building at 83 Yamskaya (today Da'an) Street in 1936. The building no longer exists today.</figcaption></figure>
+      <p>In 1938, shortly after my father arrived in California to attend university, Isak was abducted by the Japanese secret police. No one ever saw him again, and the family lost everything. Instead of going to college, my father went to work. As soon as the U.S. entered the war in 1941, he enlisted in the U.S. Army and volunteered to fight in Asia.</p>
+      <p>In 1942, Roza, Johnny and Sylvia left Harbin to spend the war in Shanghai. Sylvia played the piano in a nightclub. Johnny looked after Japanese cavalry horses and horses left behind by interned British and American allies.</p>
+      <p>After the war, my father was able to bring his mother and brother to San Francisco. His sister Sylvia made aliyah from Shanghai to Israel in 1949, where she married Heinz Epstein and had a daughter, Nurit. Fluent in Russian and English, Sylvia worked at the Tel Aviv office of Igud Yotzei Sin for 10 years. She also worked for WIZO, the Women's International Zionist Organization. Sylvia died in Rishon le Zion in 1988.</p>
+      <p>In 1951, Charlie moved my mother Miriam, my brother Greg and me to the Philippines to open a branch of the Shriro trading company, founded by a Harbin family. Charlie's brother Johnny and his wife Eva also moved to Manila, where their daughters Rose and Helen were born. Eventually, this part of the family regrouped in the U.S.</p>
+      <p>Neither my grandmother nor her children ever returned to Harbin, but two of her granddaughters made the trip as tourists. Chinese Communists took over the Yamskaya apartments after the war. The building has since been demolished. <span class="end">■</span></p>
+      <p class="note">More about Harbin Jewish history: <a href="https://kehilalinks.jewishgen.org/harbin/index.htm">kehilalinks.jewishgen.org/harbin</a></p>
+    <p class="source-reference">More about Harbin Jewish history: <a href="https://kehilalinks.jewishgen.org/harbin/index.htm">Harbin community archive</a></p>
+</article>
+
+    <article id="en-miller" data-page="16">
+      <p class="kicker">Mom and Dad from China</p>
+      <h2>The Chinese Family<span class="thin">What is China for Liat Muller?</span></h2>
+      <p class="byline">By Liat Muller, Sam Muller's daughter</p>
+      <p class="standfirst">What do we carry with us from the place where our story began, even after we have traveled thousands of miles and made a life far from where we were born? For Liat Muller, China was more than her parents' homeland. It was language, friends, stories, memories — and above all, a part of home.</p>
+      <p class="dropcap">As a child, I was always slightly confused about where my parents came from. People's reaction to the answer given by a little girl with stick-straight black hair falling over almond-shaped eyes — "You really do look a little Chinese" — provided me with all the proof I needed as to my parents' country of origin. Sam and Hannah Muller were both born in China.</p>
+      <p>At home, there was an ongoing and eternal debate over the merits of their two childhood cities. My father, who grew up in Tianjin, a large and prosperous international port city, naturally claimed its superiority over my mother's birthplace, Harbin. My mother remembered Harbin as a large, lively city, distinctly Russian in character and rich in community life; my father, on the other hand, loved to tease her by insisting that it was no more than a one-street town.</p>
+      <p>Their "Chinese" roots filled our home, not only through furniture and works of art, but above all through their Chinese friends: Harry Marinsky, Teddy Kaufman, George Poliak, Bobby Bershadsky, George Kanpol, and many others.</p>
+      <p>These were, of course, childhood friends who had grown up in Tianjin and in other Jewish communities across China, most of whom later immigrated to Israel. In time they married some fellow Jews from China, others native-born Israelis, but the friendships between them remained deep and endured throughout their lives.</p>
+      <p>Behind those friendships lay the story of a young Jewish-Zionist generation that had grown up on the other side of the world, yet for whom the Land of Israel had been present from an early age. My father and Harry Marinsky left China before the establishment of the State of Israel, making their way toward the country, and later returned to China to help other young members of the community make the journey themselves. This was part of the larger story of their lives, but to me, long before I understood its historical significance, they were simply my parents' friends.</p>
+      <p>To me, our "Chinese family" was my extended family — always warm, always full of stories and joy. Whenever they met, whether they were fifty, sixty, eighty or even older, something in them changed. Together, they became once again the young men and women who had grown up on the other side of the world and dreamed of the Land of Israel. That same spark — courage, perhaps a touch of mischief — never really left them.</p>
+      <p>I think China itself preserved something of those youthful years for them. Perhaps because they had left it so young; perhaps because so many of their shared memories had remained there.</p>
+
+      <h3>Back to Tianjin</h3>
+      <p>In 1998, we set out on a journey back to their roots — my father, my mother, my sister Ilana and her two older children Shauli and Noa; Pini Marinsky, Harry's son, and his two daughters; and Ilana Olshevsky, whose husband Arieh had also been born in China. We returned to the cities of their childhood and were able to see with our own eyes the places we had previously known mainly through their stories: the old synagogue, the British school my father had attended, and even his childhood home in Tianjin.</p>
+      <figure><img loading="lazy" src="assets/images/photo-34.webp" alt="The Muller family in the lanes of Tianjin, 1998" decoding="async" width="860" height="500"><figcaption>My father Sam, me, my sister Ilana and her children Shauli and Noa and my mother Hannah</figcaption></figure>
+      <p>I remember the walk to the house in particular. It is worth remembering that these were the days before smartphones, Google Maps or Waze. We wandered through the narrow lanes of Tianjin, and my father, by then almost seventy, needed none of them. He knew exactly where to go. With quick, confident steps he led us from lane to lane as though he had left only yesterday — and for a moment, it seemed that he was once again that eighteen-year-old boy.</p>
+      <p>To our amazement, the house was still standing, intact.</p>
+      <p>Western tourists were still a rare sight in China in those days, certainly in those small neighbourhood lanes, so we were rather conspicuous — a group of about ten "white people" walking together through the neighbourhood.</p>
+      <p>At the side of the road stood a Chinese father and his young son. The boy looked at us curiously and asked his father, in Mandarin, of course, what all these white people were doing there.</p>
+      <p>What he did not know was that one of those "white people" was my father.</p>
+      <p>My father spoke close to eight languages, among them Mandarin, which he had learned as a child from the Chinese nanny who worked in his family home. Without hesitation, he turned to the boy and replied in fluent Mandarin:</p>
+      <p><b>"Me? This was my house. I was born here."</b></p>
+      <p>For a moment, the boy and his father were left speechless. From there, a lively conversation unfolded between the three of them, and by the end of it we were invited inside to look around the house.</p>
+      <p>And so, almost fifty years after leaving Tianjin, my father stepped once again into the house where he had been born and raised — this time with us.</p>
+      <figure><img loading="lazy" src="assets/images/photo-35.webp" alt="Illustration of Sam Muller's house in Tianjin" decoding="async" width="700" height="1084"><figcaption>Sam Muller's House in Tianjin. Illustration: Liat Miller</figcaption></figure>
+
+      <h3>What Stays With Us</h3>
+      <p>Years later, I of course know that I am not Chinese. But I think what has stayed with me most is the understanding that China was never simply the place my parents came from. It remained part of the home they built here.</p>
+      <p>Perhaps that is also why the Association of Former Residents of China meant so much to my father. It was far more than a social organisation or a place to reminisce. It was a way of preserving the thread that connected the people, the places, and who they had been there with who they became here; a way of keeping alive their heritage, their friendships and the values they had grown up with, and of ensuring that these stories would not disappear along with the generation that carried them.</p>
+      <p>And within all of this, the Land of Israel was preserved as they had once seen it from thousands of miles away — not merely as a place, but as a promise. A promise of home, of freedom, of belonging, and of a society they could build together.</p>
+      <p>I think that, for my father, preserving this story was never only about looking back. It also held a hope — that the country which had once been, for them, both a dream and a promise, might know how to become that again. <span class="end">■</span></p>
+    </article>
+
+    <article id="en-scholarships" data-page="18">
+      <p class="kicker">2025/6 Scholarships</p>
+      <h2>A Scholarship That Feels Like Home<span class="thin">65 scholarships awarded to grandchildren and great-grandchildren</span></h2>
+      <p class="standfirst">In 2025/26, we were proud to award 65 scholarships to grandchildren and great-grandchildren of families from the Chinese Jewish community. Funded by memorial foundations established by generations of community members, these scholarships support young people with strong roots and bright futures.</p>
+      <figure><img loading="lazy" src="assets/images/scholarship-group.webp" alt="The scholarship award ceremony" decoding="async" width="2800" height="541"><figcaption>Photo: Hila Aizinger</figcaption></figure>
+
+      <div class="names">
+        <h3>Harbin Community Scholarship Awardees</h3>
+        <p><span class="src">In memory of Ela &amp; Shlomo Lask and Miryam &amp; Daniel Berkovich, from Ilana &amp; Giora Lask</span>
+        Orenshtein Itamar, grandson of Menahem Moiseyev (Assif) · Elazar Natan, grandson of Noah Dragon</p>
+        <p><span class="src">In memory of Persoff Rachel &amp; Persoff Isaac (Isai), from Judith Marom &amp; Inon Perry</span>
+        Booton Naomi, granddaughter of Paul Miller · Booton Ruth, granddaughter of Paul Miller</p>
+        <p><span class="src">In memory of Lika &amp; Mila Tandet, from Miryam Yakir &amp; Arie Tandet</span>
+        Bitton Noa, granddaughter of Moshe Krotern</p>
+        <p><span class="src">In memory of Gesia &amp; Yasha Tandet, Riva Shohat, Luba and Lyova Brunner, from Liora Tandet</span>
+        Berger Mor, granddaughter of Lev Sandler · Brill Maanit, granddaughter of Fine Gershon</p>
+        <p><span class="src">In memory of Boris Matlin, from Yaki Matlin</span>
+        Kapon Nir, grandson of Shmuel Kislev</p>
+        <p><span class="src">From the Ethel Dunn Foundation</span>
+        Yafe Ofer, grandson of Yarho Shlomo · Lebovich Jacob, grandson of Rachel Lebovich, great-grandson of Genya Golnik · Lyubman Miri, granddaughter of Cecilia Lyubman · Lasman Noy, granddaughter of Isabel Bella Tikotzki · Mordekovich Haggai Hanan, grandson of Arie Mordekovich · Makov Arbel, grandson of Dina Trigubov Kedar · Navon Gali, granddaughter of Esther Katz · Novhari Eden, granddaughter of Noah Dragon · Simmer Tal, grandson of Moshe Simmerinov · Sapir Noa, granddaughter of Sylvia and Naftali Sharon · Sarusi Gilad, grandson of Tania and Reuven Shlifer · Pokhodyayev Ilya, grandson of Espir Yarcho · Robinson Rachel, granddaughter of Nadia and Zeev Robinzon · Sadeh Kfir, grandson of Netanitel Padowicz, great-grandson of Bruria Glazman (Padowicz) · Shohat Idan, grandson of Arie (Lyova) Shohat · Strenberg Noam, great-granddaughter of Nyusia &amp; David Hanin · Shmueli Barak, grandson of Hatina Kravezky Degamle · Shmueli Isar, grandson of Hatina Kravezky Degamle</p>
+        <p><span class="src">In memory of the Jewish community in China, from the Association of Former Jews of China</span>
+        Biton Oshri, grandson of Ester (Frida) Wandel · Bar Orin Traiber Shaked, granddaughter of Pnina Traiber · Barnea Idan, great-granddaughter of Hanna Fridovich Balkumin · Goldiner Linoy, granddaughter of Miriam Goldiner Tandet · Goldiner Roni, granddaughter of Miriam Goldiner Tandet · Gilad Shir, granddaughter of Yosef Gilad · Gershon Linoy, granddaughter of Anyia Mizrachi · Degani Ori, granddaughter of Henry Lemberg · Wagner Nizan, grandson of Daniel Miller</p>
+        <p><span class="src">In memory of Teddy Kaufman, from the Association of Former Jews of China</span>
+        Haziz Dana, granddaughter of Bella and Israel Chernomorsky · Yanir Niv, granddaughter of Judith Sandel · Yasinover Rotem, grandson of Shimon Yasinover</p>
+
+        <h3>Shanghai Community Scholarship Awardees</h3>
+        <p><span class="src">In memory of Nurit Rozen, from Rama Shalmoni (Rozen)</span>
+        Bahnof Inbar, granddaughter of Nathan Bahnof</p>
+        <p><span class="src">In honor of Triguboff Moshe, from Triguboff Dror</span>
+        Lowe Ben, grandson of Eva Lowe</p>
+        <p><span class="src">In memory of the Jewish community in China, from the Association of Former Jews of China</span>
+        Bomash Aviad, grandson of Yosi Bomash · Bomash Shachar, grandson of Yosi Bomash · Bloch-Wust Eliana Topaz, granddaughter of George &amp; Eugenie Bloch · Ben Yosef Liri Renne, granddaughter of Ilana Ben Yosef, great-granddaughter of David Volovik · Barazani Gal, great-granddaughter of Erica Schlesinger · Gershon Amit, great-grandson of David and Hadasa Volovick</p>
+        <p><span class="src">In memory of Teddy Kaufman, from the Association of Former Jews of China</span>
+        Wandel Eyal, grandson of Esther Wandel · Heifetz Tomer, grandson of Rachel Hillel · Taub Guy, grandson of Michael and Malka Laor</p>
+        <p><span class="src">From the Ethel Dunn Foundation</span>
+        Yaron Yuval, granddaughter of Miriam Hausner Meinzer · Cohen Shahar, grandson of Clara Cohen, great-grandson of Erika Wilhoit · Casif Jasmin, granddaughter of Zlata Schagrin (Tusia Casif) · Sarusi Brom Gal, granddaughter of Kler Cohen · Kalfus Efrat, granddaughter of Haya Rivka Rut Kalfus (Toronchik) · Konen Kalfus Roni, granddaughter of Haya Rivka Rut Kalfus · Raam Tamar, granddaughter of Arie Raam · Schagrin Natali, daughter of Mike (Marcel) Schagrin · Shafriri Ido, grandson of Aliza Frida Shafriri Gordin · Shafriri Iftach, grandson of Aliza Frida Shafriri Gordin</p>
+
+        <h3>Tianjin Community Scholarship Awardees</h3>
+        <p><span class="src">In memory of Dina Triguboff Kedar, from the family</span>
+        Geffen Amos, grandson of Daniel Friedman · Geffen Yoav, grandson of Daniel Friedman</p>
+        <p><span class="src">In memory of the Jewish community in China, from the Association of Former Jews of China</span>
+        Bar Or Yariv, grandson of Abie Kislev (Kisilov)</p>
+        <p><span class="src">In memory of Teddy Kaufman, from the Association of Former Jews of China</span>
+        Ziv Chen, granddaughter of Mary Schwartz</p>
+
+        <h3>Kunming Community Scholarship Awardees</h3>
+        <p><span class="src">From the Ethel Dunn Foundation</span>
+        Mainzer Jonathan, great-grandson of Wilhelm and Seling Meinzer &amp; grandson of Israel Mainzer</p>
+
+        <h3>Wusu (Xihu) Community Scholarship Awardees</h3>
+        <p>Knubovets Alexander, grandson of Lidiya Nonin</p>
+      </div>
+    </article>
+
+    <article id="en-save" data-page="20">
+      <p class="kicker">Save the date</p>
+      <h2>Let's get together<span class="thin">The Annual Friends Meetup, Hanukkah Candle Lighting &amp; Scholarship Awards</span></h2>
+      <div class="std">
+        <p class="lbl">SAVE THE DATE</p>
+        <p class="date">4.12.2026</p>
+        <p>First candle of Hanukkah</p>
+        <p>Reception Hall, Embassy of the People's Republic of China<br>29 HaBarzel St., Ramat HaHayal, Tel Aviv</p>
+        <p class="ag">The Annual Friends Meetup, Stories, Inspiration, Hanukkah Candle lighting &amp; Scholarship Awards 2026/27.<br><br>10:30 — Gathering and snacks<br>11:30 — Scholarship Awards 2026/27</p>
+      </div>
+    </article>
+
+    <footer><a class="pdf-download" href="Bulletin425.pdf" download>Download the full issue · PDF ↓</a>
+      <p><b>Leadership of the Association of Former Residents of China</b><br>
+      Executive Committee: Yossi Klein — Honorary President · Yaki Matlin — Chairman · Alex Nahumson — Vice Chairman · Mili Makov — Committee member · Dror Trigubof — Committee member · Efrat Margalit — Executive Director<br>
+      Audit Committee: Dganit Haber — Chairman · Liat Bracha</p>
+      <p><b>Bulletin Editorial</b><br>
+      Chief Editor: Efrat Margalit · Graphic design: Anat Friedman · Press: Ilan Print LTD</p>
+      <p><b>Our office</b> is open on Mondays<br>
+      31 Habarzel St., 1st floor, Ramat HaHayal, Tel Aviv 6971045, Israel<br>
+      Tel: <a href="tel:+97235171997">+972-3-5171997</a><br>
+      <a href="mailto:igud@jewsofchina.org">igud@jewsofchina.org</a> · <a href="mailto:igud.y.sin@gmail.com">igud.y.sin@gmail.com</a><br>
+      <a href="https://www.jewsofchina.org">www.jewsofchina.org</a></p>
+      <p>To join our mailing list, for questions, or ideas, feel free to email us.</p>
+      <div class="pair">
+        <figure><img loading="lazy" src="assets/images/photo-58.webp" alt="Front cover" decoding="async" width="425" height="584"><figcaption><b>Front Cover:</b> 1. Railway tracks in Harbin · 2. The Old Synagogue in Harbin · 3. Esther and Alexander Levitin · 4. Yossi Klein and his parents Shmuel and Golda (Ola) · 5. Jewish and Chinese girls, Harbin, 1922 (Sino-Israel Research &amp; Study Center) · 6. The Old Synagogue in Harbin — scene from the Chinese TV series "Never-Ending Summer" · 7. Gesia and Yasha Tandt get married at the Old Synagogue</figcaption></figure>
+        <figure><img loading="lazy" src="assets/images/photo-59.webp" alt="Back cover" decoding="async" width="425" height="584"><figcaption><b>Back Cover:</b> 1. Harbin, Main Kitaiskaya Street · 2. Zhongyang Street (Kitaiskaya), 2025 · 3. Lantern Bridge, Harbin Park, 2025 · 4. The Podolsky Family in Harbin Park, 1942 · 5. A Street in Harbin · 6. Yossi Klein and Dina Trigubov, Harbin · 7. Harbin Ice Festival, 2025 · 8. Modern Hotel, Zhongyang Street (Kitaiskaya), Harbin, 2025</figcaption></figure>
+      </div>
+    </footer>
+
+  </div>
+</section>
+
+</main>
+
+<button class="totop" id="totop" type="button" aria-label="חזרה לראש העמוד / Back to top">↑</button>
+
+<dialog id="original-reader" aria-labelledby="reader-title">
+<div class="reader-toolbar"><h2 id="reader-title">הגיליון המקורי</h2><button type="button" id="reader-close">סגירה ✕</button></div>
+<div class="reader-nav"><button id="page-prev" type="button">←</button><label for="page-select" id="page-label">עמוד</label><select id="page-select"></select><span>/ 48</span><button id="page-next" type="button">→</button><button id="page-zoom" type="button" aria-pressed="false">＋</button></div>
+<div class="reader-canvas"><img id="original-page" alt=""></div>
+<a class="reader-pdf" href="Bulletin425.pdf" target="_blank" rel="noopener">PDF ↗</a></dialog>
+<div class="reading-progress" aria-hidden="true"><span></span></div>
+<script src="bulletin-mobile.js"></script>
+</body>
+</html>
