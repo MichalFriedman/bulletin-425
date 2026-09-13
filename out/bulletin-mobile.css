@@ -157,3 +157,102 @@ section[lang='he'] h2,section[lang='he'] .frame h4{font-family:'Bulletin Poeti',
 section[lang='en'] h2,section[lang='en'] .frame h4{font-family:'Bulletin Mekomi',var(--sans)}
 .poem,.poem h3{font-family:'Bulletin Mekomi',serif}
 .course-main h3{font-family:'Bulletin Almoni Tzar',var(--sans)}
+
+/* ---------------------------------------------------------------
+   Editorial pass against the printed issue.
+   --------------------------------------------------------------- */
+
+/* The page gutter, so a full-bleed notice can cancel it out. */
+.wrap{--gutter:24px}
+@media(min-width:900px){.wrap{--gutter:42px}}
+@media(max-width:360px){.wrap{--gutter:19px}}
+
+/* Cover: the association seal sits above the wordmark, subtitle in bold. */
+.cover-seal{width:clamp(34px,9vw,46px);height:auto;margin:0 auto 10px}
+.masthead .sub{font-weight:700;font-size:clamp(14px,3.6vw,19px);line-height:1.5}
+
+/* Captions read as captions: italic, clear of the picture and of the text. */
+figure{margin:26px 0 30px}
+figcaption{font-style:italic;margin-top:12px;line-height:1.6}
+.pair{gap:16px;margin:26px 0 30px}
+.pair figcaption{margin-top:12px}
+.pair figure figcaption{margin-bottom:0}
+.covers figcaption,.frame .who{font-style:normal}
+@media(min-width:521px){.pair-3{grid-template-columns:repeat(3,1fr)}.pair-3 img{height:min(300px,38vw);width:auto;max-width:100%;margin-inline:auto;object-fit:contain}}
+
+/* Every stand-first is set bold, as in print. */
+main .standfirst{font-weight:700;color:#1f1f1f;font-size:1.12em;line-height:1.65}
+
+/* Front-matter panels carried over from printed page 2. */
+.panel.board ul.plain,.panel.covers .pair{margin-bottom:0}
+.panel.board h4{margin:1.1em 0 .35em;font-size:1.05em;color:var(--ink)}
+.panel.board>h3,.panel.covers>h3{font-size:1.5em;line-height:1.3;color:var(--blue);margin:0 0 16px}
+.panel.board li{margin-bottom:.3em}
+.panel.covers figcaption{font-size:12px;line-height:1.7}
+
+/* Articles that carry no kicker still need the printed double rule. */
+article.rule-top{border-top:4px double var(--print-rule);padding-top:26px}
+.section-seal{width:clamp(30px,7vw,40px);margin:0 0 22px;margin-inline-end:auto}
+.section-seal img{width:100%}
+.amb-head{font-size:1.6em;line-height:1.25;color:var(--ink);border-bottom:4px double var(--print-rule);padding-bottom:12px;margin:38px 0 22px}
+.section-seal+.amb-head{margin-top:0}
+
+/* "Honour with love, give a future" is an advertisement, not an article. */
+article.notice{background:#eaf3fa;border-block:1px solid #b7d7e7;margin:34px calc(-1 * var(--gutter));padding:0 var(--gutter) 34px}
+article.notice>.notice-band{margin:0 calc(-1 * var(--gutter))}
+article.notice>.notice-band img{width:100%}
+article.notice>h2{color:var(--blue);font-size:clamp(34px,10vw,56px);margin:0 0 22px}
+article.notice>.pair{margin-top:22px}
+main p.notice-over{position:relative;margin:-1.2em 0 .05em;color:#fff;font-weight:700;line-height:1.1;font-size:clamp(28px,8vw,46px)!important;text-shadow:0 2px 16px rgba(0,0,0,.55)}
+main p.notice-lead{color:var(--blue);font-weight:700;line-height:1.3;font-size:clamp(20px,5.4vw,30px)!important;margin:24px 0}
+main p.notice-contact{color:var(--blue);font-weight:700}
+main p.notice-contact a{color:var(--blue);border-bottom-color:var(--blue)}
+main p.notice-thanks{color:var(--blue);font-weight:700;text-align:center;font-size:clamp(22px,6vw,34px)!important;margin:24px 0 0}
+
+/* Memorial notice, set as the bordered panel on printed page 11. */
+.memorial{border:1px solid #3a3a3a!important;padding:0 26px 30px;margin:78px 0 42px;text-align:start}
+.memorial>.portrait{float:none;width:min(150px,42vw);margin:-62px auto 22px}
+.memorial>.portrait img{border-radius:50%;border:7px solid #fff;background:#fff}
+.memorial h2{color:#222;font-size:1.45em;font-weight:700;margin:0 0 18px;letter-spacing:0}
+main .memorial p{margin:0 0 .9em}
+main .memorial .mem-name{font-weight:700;font-size:1.45em!important;line-height:1.3;margin-bottom:.25em}
+main .memorial .mem-name span{font-size:.65em!important;font-weight:400}
+main .memorial .mem-born{margin-bottom:.15em}
+main .memorial .life-dates{font-size:1.45em!important;font-weight:700;letter-spacing:.06em;margin-bottom:1em}
+main .memorial .mem-blessing{text-align:center;font-weight:700;font-size:1.15em!important;margin:28px 0 0}
+
+/* Behind the Frame: one title, then each item as heading, text, pictures. */
+.frame-title{font-size:clamp(26px,7vw,42px)}
+.frame{border-top:1px solid #444;padding:34px 0 0;margin:34px 0 0}
+.frame:first-of-type{border-top:0;padding-top:22px;margin-top:22px}
+.frame h4{font-size:1.5em;line-height:1.3;margin:0 0 .7em;color:var(--ink)}
+.frame h4 .who{font-weight:400;font-size:.62em;color:#555;white-space:nowrap}
+.frame figure,.frame .pair{margin:24px 0 0}
+.frame>figure:first-child{margin-top:24px}
+.story-note{max-width:430px;margin:36px auto 4px}
+.story-note img{width:100%}
+main p.story-note-contact{text-align:center;margin-bottom:0}
+
+/* Scholarship roll: the city headings carry the section, so set them larger. */
+.names h3{font-size:1.55em;line-height:1.25;padding-bottom:12px;margin-top:38px}
+
+/* Save the date, following the printed invitation on page 29. */
+.std{position:relative;background:linear-gradient(165deg,#2c6ca6,#9dc0da);padding:18px 14px 18px clamp(46px,13vw,62px);color:#12305a}
+.std .lbl{position:absolute;left:10px;top:16px;margin:0;writing-mode:vertical-rl;transform:rotate(180deg);color:#c8102e;font-weight:900;letter-spacing:.04em;font-size:clamp(22px,5.4vw,36px)!important;line-height:1}
+.std-card{background:rgba(255,255,255,.9);padding:clamp(16px,4.5vw,26px) clamp(14px,4vw,22px) clamp(20px,5vw,28px)}
+section[lang="he"] .std-card{text-align:right}
+section[lang="en"] .std-card{text-align:left}
+.std-card>p[dir="ltr"]{text-align:inherit}
+.std-card>div[lang="en"]{text-align:left;margin-top:4px}
+main .std p{color:#12305a;opacity:1;margin:0 0 .6em}
+main .std .date{font-family:var(--sans);font-weight:700;font-size:clamp(32px,9vw,50px)!important;line-height:1.1;direction:ltr;margin-bottom:.1em;color:#12305a;font-variant-numeric:normal;white-space:nowrap}
+main .std .std-when{font-size:1.15em!important;margin-bottom:.5em}
+main .std .std-where{line-height:1.55}
+main .std .std-hello{font-weight:700;margin-bottom:.3em}
+main .std .std-award{font-weight:700;font-size:clamp(20px,5.4vw,30px)!important;line-height:1.25;margin:.4em 0 .8em}
+main .std .ag{font-size:.92em!important;line-height:1.7;margin-bottom:0}
+.std-sep{border:0;border-top:1px solid #7a9bb8;margin:20px 0}
+
+/* Contents entries carry the printed sub-line. */
+.toc .t .d{display:block}
+.byline-end{margin:1.6em 0 0;font-weight:700;color:var(--ink)}
