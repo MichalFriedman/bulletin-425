@@ -167,8 +167,11 @@ section[lang='en'] h2,section[lang='en'] .frame h4{font-family:'Bulletin Mekomi'
 @media(min-width:900px){.wrap{--gutter:42px}}
 @media(max-width:360px){.wrap{--gutter:19px}}
 
-/* Cover: the association seal sits above the wordmark, subtitle in bold. */
-.cover-seal{width:clamp(34px,9vw,46px);height:auto;margin:0 auto 10px}
+/* Cover: the printed wordmark, "Bulletın" with the association seal as the dot of the i. */
+.masthead h1.wordmark{direction:ltr;unicode-bidi:isolate;font-weight:500;font-size:clamp(64px,19vw,104px);letter-spacing:-.02em;line-height:1;margin:.42em 0 0}
+.wm-i{position:relative;display:inline-block}
+.wm-seal{position:absolute;left:50%;bottom:.88em;width:.34em;height:auto;max-width:none;margin:0;transform:translateX(-46%);box-shadow:none}
+.wm-ver{font-size:.4em;letter-spacing:0;margin-left:.3em}
 .masthead .sub{font-weight:700;font-size:clamp(14px,3.6vw,19px);line-height:1.5}
 
 /* Captions read as captions: italic, clear of the picture and of the text. */
@@ -189,6 +192,15 @@ main .standfirst{font-weight:700;color:#1f1f1f;font-size:1.12em;line-height:1.65
 .panel.board>h3,.panel.covers>h3{font-size:1.5em;line-height:1.3;color:var(--blue);margin:0 0 16px}
 .panel.board li{margin-bottom:.3em}
 .panel.covers figcaption{font-size:12px;line-height:1.7}
+/* Each cover is keyed by the numbered thumbnail from printed page 2, caption alongside. */
+.cover-key{display:grid;grid-template-columns:minmax(0,42%) 1fr;gap:16px;align-items:start;margin:0}
+.cover-key img{width:100%;box-shadow:none}
+.panel.covers .cover-key figcaption{margin:0}
+.back-covers{margin-top:44px}
+.back-cover{margin:0 0 22px}
+.back-cover img{width:100%}
+/* The English donations table heads its own section, like the Hebrew one. */
+.give-title{border-top:4px double var(--print-rule);padding-top:26px;margin-top:44px}
 
 /* Articles that carry no kicker still need the printed double rule. */
 article.rule-top{border-top:4px double var(--print-rule);padding-top:26px}
@@ -221,13 +233,23 @@ main .memorial .mem-born{margin-bottom:.15em}
 main .memorial .life-dates{font-size:1.45em!important;font-weight:700;letter-spacing:.06em;margin-bottom:1em}
 main .memorial .mem-blessing{text-align:center;font-weight:700;font-size:1.15em!important;margin:28px 0 0}
 
-/* Behind the Frame: one title, then each item as heading, text, pictures. */
+/* Behind the Frame: one title, then each item as heading and pictures with text
+   (Hebrew: pictures first; English: text first, as printed). */
 .frame-title{font-size:clamp(26px,7vw,42px)}
 .frame{border-top:1px solid #444;padding:34px 0 0;margin:34px 0 0}
 .frame:first-of-type{border-top:0;padding-top:22px;margin-top:22px}
 .frame h4{font-size:1.5em;line-height:1.3;margin:0 0 .7em;color:var(--ink)}
 .frame h4 .who{font-weight:400;font-size:.62em;color:#555;white-space:nowrap}
+section[lang="en"] .frame h4 .who{font-weight:700;color:#333}
+@media(max-width:360px){.frame h4 .who{white-space:normal}}
+/* English section head, as printed: small seal, bold name, the motto beneath. */
+.frame-kicker{align-items:flex-start;font-family:'Bulletin Mekomi',var(--serif);font-size:15px;font-weight:400;line-height:1.4}
+.frame-kicker::before{margin-top:3px}
+.frame-kicker b{font-size:1.3em;font-weight:700}
 .frame figure,.frame .pair{margin:24px 0 0}
+/* Baba Riva and Tanya stay side by side, small, as the printed portraits. */
+.frame .pair.portraits{grid-template-columns:1fr 1fr;align-items:end}
+.frame .pair.portraits img{width:100%;max-height:none}
 .frame>figure:first-child{margin-top:24px}
 .story-note{max-width:430px;margin:36px auto 4px}
 .story-note img{width:100%}
@@ -237,19 +259,19 @@ main p.story-note-contact{text-align:center;margin-bottom:0}
 .names h3{font-size:1.55em;line-height:1.25;padding-bottom:12px;margin-top:38px}
 
 /* Save the date, following the printed invitation on page 29. */
-.std{position:relative;background:linear-gradient(165deg,#2c6ca6,#9dc0da);padding:18px 14px 18px clamp(46px,13vw,62px);color:#12305a}
-.std .lbl{position:absolute;left:10px;top:16px;margin:0;writing-mode:vertical-rl;transform:rotate(180deg);color:#c8102e;font-weight:900;letter-spacing:.04em;font-size:clamp(22px,5.4vw,36px)!important;line-height:1}
-.std-card{background:rgba(255,255,255,.9);padding:clamp(16px,4.5vw,26px) clamp(14px,4vw,22px) clamp(20px,5vw,28px)}
+.std{position:relative;background:#3f78b3 url('assets/images/save-date-lanterns.jpg') center/cover;padding:18px 14px 18px clamp(46px,13vw,62px);color:#12305a}
+.std .lbl{position:absolute;left:10px;top:16px;margin:0;writing-mode:vertical-rl;transform:rotate(180deg);color:#c8102e;font-family:'Bulletin Almoni Tzar',var(--sans);font-weight:700;letter-spacing:.04em;font-size:clamp(22px,5.4vw,36px)!important;line-height:1}
+.std-card{background:rgba(228,238,246,.88);padding:clamp(16px,4.5vw,26px) clamp(14px,4vw,22px) clamp(20px,5vw,28px)}
 section[lang="he"] .std-card{text-align:right}
 section[lang="en"] .std-card{text-align:left}
 .std-card>p[dir="ltr"]{text-align:inherit}
 .std-card>div[lang="en"]{text-align:left;margin-top:4px}
-main .std p{color:#12305a;opacity:1;margin:0 0 .6em}
-main .std .date{font-family:var(--sans);font-weight:700;font-size:clamp(32px,9vw,50px)!important;line-height:1.1;direction:ltr;margin-bottom:.1em;color:#12305a;font-variant-numeric:normal;white-space:nowrap}
+main .std p{color:#1d3b73;opacity:1;margin:0 0 .6em}
+main .std .date{font-family:'Bulletin Almoni Tzar',var(--sans);font-weight:700;font-size:clamp(36px,10vw,56px)!important;line-height:1.1;direction:ltr;margin-bottom:.1em;color:#1d3b73;font-variant-numeric:normal;white-space:nowrap}
 main .std .std-when{font-size:1.15em!important;margin-bottom:.5em}
 main .std .std-where{line-height:1.55}
 main .std .std-hello{font-weight:700;margin-bottom:.3em}
-main .std .std-award{font-weight:700;font-size:clamp(20px,5.4vw,30px)!important;line-height:1.25;margin:.4em 0 .8em}
+main .std .std-award{font-weight:400;font-size:clamp(20px,5.4vw,30px)!important;line-height:1.25;margin:.4em 0 .8em}
 main .std .ag{font-size:.92em!important;line-height:1.7;margin-bottom:0}
 .std-sep{border:0;border-top:1px solid #7a9bb8;margin:20px 0}
 

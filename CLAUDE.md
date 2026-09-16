@@ -17,7 +17,7 @@ rsync -a --delete assets/ out/assets/
 cp bulletin-425.html bulletin-mobile.css bulletin-mobile.js out/
 cp bulletin-425.html out/index.html
 
-# Check every referenced asset exists (73 unique refs across the HTML and CSS)
+# Check every referenced asset exists (77 unique refs across the HTML and CSS)
 grep -oh "assets/[^\"')]*" bulletin-425.html bulletin-mobile.css | sort -u |
   while read -r f; do [ -e "$f" ] || echo "MISSING $f"; done
 ```
