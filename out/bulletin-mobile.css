@@ -310,3 +310,5 @@ main .partners .lead{font-weight:700;color:var(--ink)}
 main .partners .lead+p:not(.lead){margin-top:.9em;margin-bottom:0}
 /* Country names in the donors table never break mid-word. */
 table.give td.cty{white-space:nowrap;overflow-wrap:normal;word-break:normal}
+/* The 1928 Clurman portrait is an oval print: show only the oval. */
+figure.round-photo img{border-radius:50%;box-shadow:none;max-width:min(100%,320px);margin-inline:auto;display:block}
