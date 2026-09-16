@@ -71,7 +71,7 @@ figcaption{font-family:var(--sans);font-weight:400;font-size:12px;line-height:1.
 .give{font-size:.74em;table-layout:fixed;width:100%}
 .give td{padding:12px 5px;overflow-wrap:anywhere}
 .give td:first-child.cty{width:17%;color:var(--blue)}
-.give td:last-child{width:25%;white-space:normal;font-variant-numeric:tabular-nums}
+.give td:last-child{width:28%;white-space:normal;font-variant-numeric:tabular-nums}
 .poem{text-align:center;background:#fff;padding:30px 16px;margin:40px 0;border-block:1px solid var(--rule);font-family:var(--serif)}
 .poem h3{font-family:var(--serif);font-size:1.4em;margin:0 0 10px}
 .poem p:last-child{line-height:1.9;font-size:1.15em;margin:26px 0 0}
@@ -234,14 +234,15 @@ main .memorial .life-dates{font-size:1.45em!important;font-weight:700;letter-spa
 main .memorial .mem-blessing{text-align:center;font-weight:700;font-size:1.15em!important;margin:28px 0 0}
 
 /* Behind the Frame: one title, then each item as heading and pictures with text
-   (Hebrew: pictures first; English: text first, as printed). */
+   (Hebrew: pictures first; English: text first, except the museum-wall item). */
 .frame-title{font-size:clamp(26px,7vw,42px)}
 .frame{border-top:1px solid #444;padding:34px 0 0;margin:34px 0 0}
 .frame:first-of-type{border-top:0;padding-top:22px;margin-top:22px}
 .frame h4{font-size:1.5em;line-height:1.3;margin:0 0 .7em;color:var(--ink)}
 .frame h4 .who{font-weight:400;font-size:.62em;color:#555;white-space:nowrap}
 section[lang="en"] .frame h4 .who{font-weight:700;color:#333}
-@media(max-width:360px){.frame h4 .who{white-space:normal}}
+/* The writer may wrap; the script keeps "/ Name" together so the title never strands a word. */
+.frame h4 .who{white-space:normal}
 /* English section head, as printed: small seal, bold name, the motto beneath. */
 .frame-kicker{align-items:flex-start;font-family:'Bulletin Mekomi',var(--serif);font-size:15px;font-weight:400;line-height:1.4}
 .frame-kicker::before{margin-top:3px}
@@ -256,7 +257,9 @@ section[lang="en"] .frame h4 .who{font-weight:700;color:#333}
 main p.story-note-contact{text-align:center;margin-bottom:0}
 
 /* Scholarship roll: the city headings carry the section, so set them larger. */
-.names h3{font-size:1.55em;line-height:1.25;padding-bottom:12px;margin-top:38px}
+/* City headings stay well below the article title; each donor line reads above its recipients. */
+.names h3{font-size:1.4em;line-height:1.3;padding-bottom:10px;margin-top:38px}
+main .award-group h4.src{font-size:1.12em;line-height:1.45;color:#222}
 
 /* Save the date, following the printed invitation on page 29. */
 .std{position:relative;background:#3f78b3 url('assets/images/save-date-lanterns.jpg') center/cover;padding:18px 14px 18px clamp(46px,13vw,62px);color:#12305a}
@@ -278,3 +281,32 @@ main .std .ag{font-size:.92em!important;line-height:1.7;margin-bottom:0}
 /* Contents entries carry the printed sub-line. */
 .toc .t .d{display:block}
 .byline-end{margin:1.6em 0 0;font-weight:700;color:var(--ink)}
+
+/* No block ends on a lone word (the script ties the last two words); pretty wrapping helps elsewhere. */
+main p,main li,main figcaption,main td,.toc .t{text-wrap:pretty}
+
+/* A caption belongs to its picture: keep clear space below it before the text resumes. */
+figure:has(>figcaption),.pair:has(>figcaption){margin-bottom:44px}
+.frame figure,.frame .pair{margin-bottom:24px}
+.frame figure:has(>figcaption),.frame .pair:has(figcaption){margin-bottom:38px}
+
+/* Walking-event photograph, set between Efrat's column and the Chinese course. */
+.wrap>.walk-photo{margin:40px 0 44px}
+.walk-photo img{width:100%}
+
+/* Round frames, as in print: Baba Riva and Tanya, four generations, Gita. */
+.frame figure.round img,.frame .pair.round img{border-radius:50%;box-shadow:none}
+/* Cut-out composites (pacifier, spoon) sit on the page with no picture shadow. */
+.frame figure.cutout img{box-shadow:none;width:100%}
+
+/* Tanya's three photographs share one width on phones. */
+@media(max-width:520px){.pair-3 img{width:100%;max-height:none}}
+
+/* "Come be partners": printed hierarchy — large headline, bold lead and invitation, plain questions. */
+.panel.seal-panel.partners h3{color:var(--ink);font-size:1.9em;line-height:1.2;margin:0 0 .75em}
+main .partners p{margin:0 0 .55em}
+main .partners .lead{font-weight:700;color:var(--ink)}
+.partners .asks{margin:1.7em 0}
+main .partners .lead+p:not(.lead){margin-top:.9em;margin-bottom:0}
+/* Country names in the donors table never break mid-word. */
+table.give td.cty{white-space:nowrap;overflow-wrap:normal;word-break:normal}

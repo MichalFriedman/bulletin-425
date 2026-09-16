@@ -21,6 +21,30 @@
   [he,en].forEach(sec=>{const l=sec.lang;const entries=[...sec.querySelectorAll('article[id]')];for(const suffix of ['', '-top']){const ul=$('toc-'+l+suffix);if(!ul)continue;entries.forEach(a=>{if(a.dataset.toc==='skip')return;const h=a.querySelector('h2');const text=a.dataset.tocTitle||(h?h.firstChild.textContent.trim():'');if(!text)return;tocEntry(ul,a.dataset.page,text,a.dataset.tocSub,'#'+a.id,a)});const x=crossRef[l];if(x)tocEntry(ul,x.page,x.title,'',x.href,null)}
     entries.forEach(a=>{const b=document.createElement('button');b.type='button';b.className='source-open';b.textContent=l==='he'?'צפייה בעמוד המקורי · '+a.dataset.page:'View original page · '+a.dataset.page;b.dataset.original=a.dataset.source||(l==='he'?a.dataset.page:49-Number(a.dataset.page));a.append(b)})
   });
+  // Never leave a single word alone on a line. Paragraph-like blocks tie their last two words (and any trailing mark
+  // such as ■) with no-break spaces unless that would overflow the column; headings that still strand a word are
+  // eased down in size until no line holds a lone word. Re-run whenever widths can change.
+  const WORD=/[\p{L}\p{N}]/u,untied=new Map(),resized=new Set();
+  const segments=el=>{const segs=[[]];const walk=n=>{for(const c of n.childNodes){if(c.nodeType===3)segs.at(-1).push(c);else if(c.nodeType===1){if(c.tagName==='BR'||getComputedStyle(c).display!=='inline'){segs.push([]);walk(c);segs.push([])}else walk(c)}}};walk(el);return segs};
+  const lonelyLines=el=>{let lonely=0;for(const seg of segments(el)){const mids=[];for(const node of seg){const re=/[^\s ]+/g;let m;while(m=re.exec(node.data)){if(!WORD.test(m[0]))continue;const r=document.createRange();r.setStart(node,m.index);r.setEnd(node,m.index+m[0].length);for(const q of r.getClientRects())if(q.width)mids.push(q.top+q.height/2)}}
+    if(mids.length<2)continue;const lines=[];for(const t of mids){const line=lines.find(x=>Math.abs(x.t-t)<5);line?line.n++:lines.push({t,n:1})}if(lines.length>1)lonely+=lines.filter(x=>x.n===1).length}return lonely};
+  const setText=(node,data,touched)=>{if(!untied.has(node))untied.set(node,node.data);touched.push([node,node.data]);node.data=data};
+  const tie=el=>{const touched=[];
+    el.querySelectorAll('.who').forEach(w=>{const n=w.firstChild;if(n?.nodeType===3&&/^\/\s+/.test(n.data))setText(n,n.data.replace(/^\/\s+/,'/ '),touched)});
+    for(const seg of segments(el)){let token='';outer:for(let k=seg.length-1;k>=0;k--){const node=seg[k];let t=node.data;for(let i=t.length-1;i>=0;i--){if(!/\s/.test(t[i])||t[i]===' '&&!token){token=t[i]+token;continue}if(!token)continue;let j=i;while(j>0&&/\s/.test(t[j-1]))j--;t=t.slice(0,j)+' '+t.slice(i+1);setText(node,t,touched);i=j;if(WORD.test(token))break outer;token=''}}}
+    return touched};
+  const undo=touched=>{for(const [node,data] of [...touched].reverse())node.data=data};
+  const overflows=el=>el.scrollWidth>el.clientWidth+1;
+  const tieBlock=el=>{let touched=tie(el);if(touched.length&&overflows(el)){undo(touched);touched=[]}
+    if(!el.matches('h2,h3,h4,td,.std-award,.notice-lead,.notice-over,.notice-thanks,.mem-name,.note'))return;
+    if(touched.length&&lonelyLines(el)){const tiedCount=lonelyLines(el),tied=touched.map(([node])=>[node,node.data]);undo(touched);if(lonelyLines(el)>=tiedCount)tied.forEach(([node,data])=>node.data=data);else touched=[]}
+    if(!lonelyLines(el))return;const base=parseFloat(getComputedStyle(el).fontSize);resized.add(el);
+    for(let f=.96;f>=.6&&lonelyLines(el);f-=.04){el.style.setProperty('font-size',(base*f).toFixed(1)+'px','important');if(!touched.length){touched=tie(el);if(touched.length&&overflows(el)){undo(touched);touched=[]}}}};
+  const retie=()=>{untied.forEach((data,node)=>node.data=data);untied.clear();resized.forEach(el=>el.style.removeProperty('font-size'));resized.clear();const l=root.lang==='en'?'en':'he';document.querySelectorAll(`#sec-${l} :is(p,li,figcaption,h2,h3,h4,td):not(.sr,.lbl),#drawer-${l} li`).forEach(tieBlock)};
+  let lastWidth=innerWidth,resizeTimer;retie();document.fonts?.ready.then(retie);
+  new MutationObserver(retie).observe(root,{attributes:true,attributeFilter:['lang']});
+  ['smaller','bigger'].forEach(id=>$(id).addEventListener('click',retie));
+  window.addEventListener('resize',()=>{if(innerWidth===lastWidth)return;lastWidth=innerWidth;clearTimeout(resizeTimer);resizeTimer=setTimeout(retie,150)});
   const reader=$('original-reader'),pageImg=$('original-page'),select=$('page-select');let page=1;
   for(let i=1;i<=48;i++){const o=document.createElement('option');o.value=i;o.textContent=i;select.append(o)}
   function showPage(n){page=Math.min(48,Math.max(1,n));select.value=page;pageImg.src='assets/pages/page-'+String(page).padStart(2,'0')+'.webp';pageImg.alt=(root.lang==='en'?'Original issue, page ':'הגיליון המקורי, עמוד ')+page;$('page-prev').disabled=page===1;$('page-next').disabled=page===48;document.querySelector('.reader-canvas').scrollTo(0,0)}

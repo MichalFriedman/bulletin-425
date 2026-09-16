@@ -17,7 +17,7 @@ rsync -a --delete assets/ out/assets/
 cp bulletin-425.html bulletin-mobile.css bulletin-mobile.js out/
 cp bulletin-425.html out/index.html
 
-# Check every referenced asset exists (77 unique refs across the HTML and CSS)
+# Check every referenced asset exists (75 unique refs across the HTML and CSS)
 grep -oh "assets/[^\"')]*" bulletin-425.html bulletin-mobile.css | sort -u |
   while read -r f; do [ -e "$f" ] || echo "MISSING $f"; done
 ```
@@ -49,7 +49,8 @@ To publish a change: mirror source into `out/` (see Commands), commit, and `git 
 **The JS generates structure from markup conventions**, so new content must follow them:
 - Every `<article id data-page>` inside a language section is picked up automatically for the contents drawer and the top-of-section ToC; the entry number comes from `data-page` and the title from the first text node of its `<h2>`.
 - Each article also gets a "View original page" button appended. The original-page number is `data-page` for Hebrew and `49 - data-page` for English (the two editions run from opposite ends of the printed issue); `data-source` overrides this where the mapping breaks — currently only `he-save` (the shared central event notice, page 29).
-- The scholarship roll is authored as `.names p` with a leading `<span class="src">`, and rewritten at runtime into `.award-group` heading + `<ul class="awardees">` so recipients read one per line.
+- The scholarship roll is authored as `.names p` with a leading `<span class="src">`, and rewritten at runtime into `.award-group` heading + `<ul class="awardees">` so recipients read one per line; the text before the first comma of each recipient (their name) is set bold.
+- **No line may ever hold a single word**, on phone or desktop (a hard editorial rule). The script ties the last two words of every text block with no-break spaces (skipped where that would overflow), and headings, table cells and display lines that still strand a word are shrunk step by step until none does. It re-runs on resize, language switch, text-size change and font load. Run a lone-word check at every test width, including the largest text size at 320px.
 
 **Original-page reader.** A `<dialog>` over `assets/pages/page-01…48.webp` (the 25 printed sheets split into 48 single pages), with select/prev/next, arrow keys, a zoom toggle, and a PDF link. Page images are the only place page numbers are hard-coded (`1…48` in the loop).
 
@@ -58,6 +59,8 @@ To publish a change: mirror source into `out/` (see Commands), commit, and `git 
 **Fonts.** The eight licensed InDesign OTFs from the print issue live in `assets/fonts/` and are mapped by role at the bottom of `bulletin-mobile.css`: Almoni (`--sans`, UI and Hebrew body), Mekomi (`--serif`, English body and English headlines), Poeti (Hebrew headlines), Almoni Tzar (the Chinese-course headline).
 
 ## Content rules
+
+- The first mention of each person in a section is bold (authored as `<b>` in the HTML), as are donor names in the donations tables.
 
 - Wording differences between the Hebrew and English editions are in the source issue and are intentional — do not "fix" them by syncing the two sections.
 - The scholarship roll is 65 recipients in each language; keep both lists complete and equal.
