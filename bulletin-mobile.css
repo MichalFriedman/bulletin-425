@@ -269,9 +269,7 @@ main .award-group h4.src{font-size:1.12em;line-height:1.45;color:#222}
 .std::before,.std::after{content:"";position:absolute;left:0;right:0;z-index:0;
   background-image:url('assets/images/save-date-lanterns.jpg');background-repeat:no-repeat}
 .std::before{top:0;bottom:42cqw;background-position:top center;background-size:100% max(113.64%,215cqw)}
-.std::after{bottom:0;height:42cqw;background-position:bottom center;background-size:100% 833.33%;
-  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%);
-  mask-image:linear-gradient(to bottom,transparent 0,#000 18%)}
+.std::after{bottom:0;height:42cqw;background-position:bottom center;background-size:100% 833.33%}
 main .std .lbl{position:relative;z-index:1;writing-mode:horizontal-tb;transform:none;
   margin:39cqw 10.5% 8.4cqw;text-align:center;
   color:#f2c673;font-family:'Bulletin Almoni Tzar',var(--sans);font-weight:700;
