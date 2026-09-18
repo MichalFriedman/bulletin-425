@@ -261,22 +261,35 @@ main p.story-note-contact{text-align:center;margin-bottom:0}
 .names h3{font-size:1.4em;line-height:1.3;padding-bottom:10px;margin-top:38px}
 main .award-group h4.src{font-size:1.12em;line-height:1.45;color:#222}
 
-/* Save the date, following the printed invitation on page 29. */
-.std{position:relative;background:#3f78b3 url('assets/images/save-date-lanterns.jpg') center/cover;padding:18px 14px 18px clamp(46px,13vw,62px);color:#12305a}
-.std .lbl{position:absolute;left:10px;top:16px;margin:0;writing-mode:vertical-rl;transform:rotate(180deg);color:#c8102e;font-family:'Bulletin Almoni Tzar',var(--sans);font-weight:700;letter-spacing:.04em;font-size:clamp(22px,5.4vw,36px)!important;line-height:1}
-.std-card{background:rgba(228,238,246,.88);padding:clamp(16px,4.5vw,26px) clamp(14px,4vw,22px) clamp(20px,5vw,28px)}
+/* Save the date: the full invitation poster — gold headline on the lantern sky, the
+   invitation card, the menorah below. Sky and menorah band are two slices of one
+   painting (its top 88% and its last 12%), so however tall the card grows the menorah
+   still sits clear beneath it. Poster proportions are in cqw, off the poster's width. */
+.std{position:relative;container-type:inline-size;overflow:hidden;padding:0;color:#12305a;background:#2f7cb5}
+.std::before,.std::after{content:"";position:absolute;left:0;right:0;z-index:0;
+  background-image:url('assets/images/save-date-lanterns.jpg');background-repeat:no-repeat}
+.std::before{top:0;bottom:42cqw;background-position:top center;background-size:100% max(113.64%,215cqw)}
+.std::after{bottom:0;height:42cqw;background-position:bottom center;background-size:100% 833.33%;
+  -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 18%);
+  mask-image:linear-gradient(to bottom,transparent 0,#000 18%)}
+main .std .lbl{position:relative;z-index:1;writing-mode:horizontal-tb;transform:none;
+  margin:39cqw 10.5% 8.4cqw;text-align:center;
+  color:#f2c673;font-family:'Bulletin Almoni Tzar',var(--sans);font-weight:700;
+  letter-spacing:-.015em;font-size:12cqw!important;line-height:1;white-space:nowrap}
+.std-card{position:relative;z-index:1;background:rgba(228,238,246,.88);margin:0 10.5% 42cqw;
+  padding:7cqw 5cqw 6.5cqw}
 section[lang="he"] .std-card{text-align:right}
 section[lang="en"] .std-card{text-align:left}
 .std-card>p[dir="ltr"]{text-align:inherit}
 .std-card>div[lang="en"]{text-align:left;margin-top:4px}
 main .std p{color:#1d3b73;opacity:1;margin:0 0 .6em}
-main .std .date{font-family:'Bulletin Almoni Tzar',var(--sans);font-weight:700;font-size:clamp(36px,10vw,56px)!important;line-height:1.1;direction:ltr;margin-bottom:.1em;color:#1d3b73;font-variant-numeric:normal;white-space:nowrap}
+main .std .date{font-family:'Bulletin Almoni Tzar',var(--sans);font-weight:700;font-size:clamp(36px,10cqw,56px)!important;line-height:1.1;direction:ltr;margin-bottom:.1em;color:#1d3b73;font-variant-numeric:normal;white-space:nowrap}
 main .std .std-when{font-size:1.15em!important;margin-bottom:.5em}
 main .std .std-where{line-height:1.55}
 main .std .std-hello{font-weight:700;margin-bottom:.3em}
-main .std .std-award{font-weight:400;font-size:clamp(20px,5.4vw,30px)!important;line-height:1.25;margin:.4em 0 .8em}
+main .std .std-award{font-weight:400;font-size:1.4em!important;line-height:1.25;margin:.4em 0 .8em}
 main .std .ag{font-size:.92em!important;line-height:1.7;margin-bottom:0}
-.std-sep{border:0;border-top:1px solid #7a9bb8;margin:20px 0}
+.std-sep{border:0;border-top:1px solid #7a9bb8;margin:5.5cqw 0 5cqw}
 
 /* Contents entries carry the printed sub-line. */
 .toc .t .d{display:block}
