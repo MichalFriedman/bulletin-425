@@ -123,23 +123,30 @@ hr.rule{border-top:4px double var(--print-rule);clear:both}
 .wrap>.panel{border-bottom:4px double var(--print-rule)}
 figure img{border-radius:0;box-shadow:none;object-fit:contain}
 article>.portrait{float:inline-end;width:30%;max-width:145px;margin:0 0 16px 0;margin-inline-start:18px}
+/* The chairman's portrait runs on the reader's starting side: right in Hebrew, left in English. */
+#he-chairman>.portrait,#en-chairman>.portrait{float:inline-start;margin-inline-start:0;margin-inline-end:18px}
 article>figure:not(.portrait),article>.pair,article>.panel,article>.new-year,article>.chinese-course{clear:both}
 .frame>figure img,.frame .pair img{box-shadow:2px 3px 5px #0002}
 .association-logo img,.new-year img,.hero img{box-shadow:none}
 .memorial>.portrait{float:none;width:120px;margin:20px auto}
 .new-year{margin:28px 0;width:100%;padding:0}
 .new-year img{width:100%;height:auto;max-height:none}
-.chinese-course{border:2px solid #c00;margin:30px 0;background:#fdfdfb;color:#202020;font-family:var(--sans)}
+.chinese-course{border:2px solid #c00;margin:30px 0;background:#fdfdfb;color:#202020;font-family:var(--sans);container-type:inline-size}
 .course-main{padding:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center;position:relative}
 .course-art{grid-column:2;grid-row:1 / 4;align-self:start;width:100%;aspect-ratio:1.16;background:url('assets/Screenshot 2026-09-09 at 17.04.41.png') left top/222% auto no-repeat}
-.course-main h3{grid-column:1;grid-row:1;margin:0;font-size:clamp(20px,5.2vw,29px);font-weight:900;line-height:1.25;color:#202020}
-.course-main h4{grid-column:1;grid-row:2;margin:8px 0 0;color:#202020;font-size:24px;line-height:1.15;font-weight:900}
+.course-main h3{grid-column:1;grid-row:1;margin:0;font-size:clamp(27px,10cqw,42px);font-weight:900;line-height:1.2;color:#202020}
+.course-main h4{grid-column:1;grid-row:2;margin:8px 0 0;color:#202020;font-size:clamp(19px,5vw,26px);line-height:1.15;font-weight:900}
 .course-main .course-date{grid-column:1;grid-row:3;margin:0;font-weight:700}
 .course-main ul{grid-column:1 / -1;margin:0;padding:0;list-style:none;font-size:var(--base);line-height:1.65}
 .course-main li::before{content:'– ';}
 .course-contact{background:#c00;color:#fff;text-align:center;padding:14px 12px;font-weight:700}
 .course-contact p{margin:0}.course-contact a{color:#fff;text-decoration:none;overflow-wrap:anywhere}
-@media(min-width:600px){.course-main ul{grid-column:2;grid-row:3 / 5}.course-art{grid-row:1 / 3}.course-main .course-date{grid-row:4}}
+/* On phones the artwork runs full width above the headline, so it reads at poster size. */
+@media(max-width:599px){.course-main{grid-template-columns:1fr}
+.course-art{grid-column:1;grid-row:1}
+.course-main h3{grid-row:2}.course-main h4{grid-row:3}.course-main .course-date{grid-row:4}.course-main ul{grid-row:5}}
+@media(min-width:600px){.course-main ul{grid-column:2;grid-row:3 / 5}.course-art{grid-row:1 / 3}.course-main .course-date{grid-row:4}
+.course-main h3{font-size:clamp(24px,5.6cqw,34px)}}
 .course-art{background-position:-2px -2px}
 
 /* Supplied InDesign document fonts, matched to their roles in Bulletin425.pdf. */
@@ -241,6 +248,8 @@ main .memorial .mem-blessing{text-align:center;font-weight:700;font-size:1.15em!
 .frame h4{font-size:1.5em;line-height:1.3;margin:0 0 .7em;color:var(--ink)}
 .frame h4 .who{font-weight:400;font-size:.62em;color:#555;white-space:nowrap}
 section[lang="en"] .frame h4 .who{font-weight:700;color:#333}
+/* The byline sits on its own line, so a long one never forces the title to shrink. */
+section[lang="en"] .frame h4 .who{display:block;margin-top:.15em}
 /* The writer may wrap; the script keeps "/ Name" together so the title never strands a word. */
 .frame h4 .who{white-space:normal}
 /* English section head, as printed: small seal, bold name, the motto beneath. */
@@ -323,3 +332,4 @@ main .partners .lead+p:not(.lead){margin-top:.9em;margin-bottom:0}
 table.give td.cty{white-space:nowrap;overflow-wrap:normal;word-break:normal}
 /* The 1928 Clurman portrait is an oval print: show only the oval. */
 figure.round-photo img{border-radius:50%;box-shadow:none;max-width:min(100%,320px);margin-inline:auto;display:block}
+
