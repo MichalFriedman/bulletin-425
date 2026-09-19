@@ -271,15 +271,12 @@ main p.story-note-contact{text-align:center;margin-bottom:0}
 main .award-group h4.src{font-size:1.12em;line-height:1.45;color:#222}
 
 /* Save the date: the full invitation poster — gold headline on the lantern sky, the
-   invitation card, the menorah below. Sky and menorah band are two slices of one
-   painting (its top 80% and its last 20%, split in the haze above the trees). The band
-   keeps its proportions under the card; the sky covers whatever height the card needs,
-   scaling up and cropping its sides rather than stretching. Poster proportions are in
-   cqw, off the poster's width. */
-.std{position:relative;container-type:inline-size;overflow:hidden;padding:0;color:#12305a;background:#2a73a8}
-.std::before,.std::after{content:"";position:absolute;left:0;right:0;z-index:0;background-repeat:no-repeat}
-.std::before{top:0;bottom:51.2cqw;background:url('assets/images/save-date-sky.jpg') center bottom/cover no-repeat}
-.std::after{bottom:0;height:51.2cqw;background:url('assets/images/save-date-menorah.jpg') center bottom/100% auto no-repeat}
+   invitation card, the menorah below. The painting is always shown whole, at its own
+   proportions, pinned to the bottom so the menorah sits under the card; the poster is
+   at least the painting's height, and where the card needs more, the sky carries on
+   upward in the painting's top-edge blue. Poster proportions are in cqw, off its width. */
+.std{position:relative;container-type:inline-size;overflow:hidden;padding:0;color:#12305a;
+  aspect-ratio:625/1600;background:#176a9a url('assets/images/save-date-poster.jpg') center bottom/100% auto no-repeat}
 main .std .lbl{position:relative;z-index:1;writing-mode:horizontal-tb;transform:none;
   margin:39cqw 10.5% 8.4cqw;text-align:center;
   color:#f2c673;font-family:'Bulletin Almoni Tzar',var(--sans);font-weight:700;
