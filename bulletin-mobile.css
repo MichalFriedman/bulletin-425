@@ -273,11 +273,12 @@ main .award-group h4.src{font-size:1.12em;line-height:1.45;color:#222}
 /* Save the date: the full invitation poster — gold headline on the lantern sky, the
    invitation card, the menorah below. Sky and menorah band are two slices of one
    painting (its top 88% and its last 12%), so however tall the card grows the menorah
-   still sits clear beneath it. Poster proportions are in cqw, off the poster's width. */
+   still sits clear beneath it. The sky keeps the painting's own proportions, pinned at
+   its 88% line, so a shorter card crops empty sky off the top, never the lanterns. Poster proportions are in cqw, off the poster's width. */
 .std{position:relative;container-type:inline-size;overflow:hidden;padding:0;color:#12305a;background:#2f7cb5}
 .std::before,.std::after{content:"";position:absolute;left:0;right:0;z-index:0;
   background-image:url('assets/images/save-date-lanterns.jpg');background-repeat:no-repeat}
-.std::before{top:0;bottom:42cqw;background-position:top center;background-size:100% max(113.64%,215cqw)}
+.std::before{top:0;bottom:42cqw;background-position:center bottom -51.72cqw;background-size:100% auto}
 .std::after{bottom:0;height:42cqw;background-position:bottom center;background-size:100% 833.33%}
 main .std .lbl{position:relative;z-index:1;writing-mode:horizontal-tb;transform:none;
   margin:39cqw 10.5% 8.4cqw;text-align:center;
